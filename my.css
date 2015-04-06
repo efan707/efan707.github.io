@@ -1,0 +1,52 @@
+.article-inner .article-header .article-title{
+	font-family:"arial unicode ms","Microsoft Yahei" ,Georgia,Serif;
+	color: #009fcc;
+}
+.article-inner  .article-entry h3{
+	font-family:"Microsoft Yahei",STHeiti,sans-serif; 
+	font-weight: 500;
+	color: #007799;
+}
+#scroll{
+	display:none;
+	position: fixed;
+	height: 60px;
+	width: 30px;
+	top:500px;
+	right:10%;
+	overflow: hidden;
+}
+#scroll div{
+	height: 20px;
+	width: 100%
+}
+#up{
+	background:url("http://efan.qiniudn.com/sprite.png") no-repeat scroll 0 -308px;
+}
+#down{
+	margin-top: 13px;
+	background:url("http://efan.qiniudn.com/sprite.png") no-repeat scroll 0 -376px;
+}
+#up:hover{
+	background:url("http://efan.qiniudn.com/sprite.png") no-repeat scroll -31px -308px;
+}
+#down:hover{
+	margin-top: 13px;
+	background:url("http://efan.qiniudn.com/sprite.png") no-repeat scroll -31px -376px;
+}
+.intrude-less #header .profilepic img{
+	transition: all  0.5s  ease;
+   -moz-transition: all  0.5s  ease;
+   -webkit-transition: all  0.5s  ease;
+    -o-transition: all  0.5s  ease;
+}
+.intrude-less #header .profilepic img:hover{
+    transform:rotate(360deg);
+     -moz-transform: rotate(360deg);
+     -webkit-transform: rotate(360deg);
+     -o-transform: rotate(360deg);
+     -ms-transform: rotate(360deg);
+}
+.mid-col .article-header .article-title{
+
+}
