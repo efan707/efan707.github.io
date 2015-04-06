@@ -174,9 +174,10 @@
 
         
           
-            CSS之各式图形实现
+            <p>利用CSS，可以画出<a href="http://www.cssshapes.com/">各式各样的图形</a>，下面就列举一二示之。</p>
+<h3 id="不同边界样式">不同边界样式</h3><p>通过对border属性的设置，可以产生一些另类的效果。<br><img src="/imgs/shape1.png" alt="shape1"> <img src="/imgs/shape2.png" alt="shape2"> <img src="/imgs/shape3.png" alt="shape3"> <img src="/imgs/shape4.png" alt="shape4"> <img src="/imgs/shape5.png" alt="shape5"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#border-style1&#123;</span></span><br><span class="line">    width: <span class="number">40</span>px;</span><br><span class="line">    height: <span class="number">40</span>px;</span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-width: <span class="number">30</span>px;</span><br><span class="line">    border-color: red blue green yellow; &#125;</span><br><span class="line"><span class="comment">#border-style2&#123;</span></span><br><span class="line">    width: <span class="number">0</span>;</span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-width: <span class="number">50</span>px;</span><br><span class="line">    border-color: red blue green yellow; &#125;</span><br><span class="line"><span class="comment">#border-style3&#123;</span></span><br><span class="line">    width: <span class="number">20</span>px;</span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-width: <span class="number">50</span>px <span class="number">40</span>px;</span><br><span class="line">    border-color: red blue green yellow;&#125;</span><br><span class="line"><span class="comment">#border-style4&#123;</span></span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-width: <span class="number">70</span>px <span class="number">60</span>px <span class="number">30</span>px <span class="number">40</span>px;</span><br><span class="line">    border-color: red blue green yellow; &#125;</span><br><span class="line"><span class="comment">#border-style5&#123;</span></span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-width: <span class="number">70</span>px <span class="number">60</span>px <span class="number">30</span>px <span class="number">40</span>px;</span><br><span class="line">    border-color: red blue green yellow;</span><br><span class="line">    -webkit-transform: skew(<span class="number">20</span>deg);    </span><br><span class="line">    -moz-transform: skew(<span class="number">20</span>deg);          </span><br><span class="line">    -o-transform: skew(<span class="number">20</span>deg); &#125;</span><br></pre></td></tr></table></figure></p>
             <div class="post-more-link text-center">
-              <a class="btn" href="/2014/12/06/CSS之各式图形/">
+              <a class="btn" href="/2014/12/06/CSS之各式图形/#more">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -271,9 +272,9 @@
 
         
           
-            JS实现简单拖拽
+            <h3 id="实现原理">实现原理</h3><p>前提条件：对象为body子元素，position为absolute。<br>拖拽原理：拖拽前后主要有三个事件——mousedown、mouseover和mouseup。当鼠标按下并且移动时，对象跟随移动；当鼠标up时，拖拽结束。<br>a、鼠标按下时，设置可拖动标识为true，并且获得鼠标相对于对象边框的距离，如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">obj.onmousedown = <span class="keyword">function</span> (event)&#123;   </span><br><span class="line">   var e=event?event:window.event;</span><br><span class="line">   dragable = <span class="literal">true</span>;  </span><br><span class="line">   deltaX = e.clientX - obj.offsetLeft;  //鼠标与对象相对位置</span><br><span class="line">   deltaY = e.clientY - obj.offsetTop;    </span><br><span class="line">   <span class="built_in">return</span> <span class="literal">false</span>;  </span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure></p>
             <div class="post-more-link text-center">
-              <a class="btn" href="/2014/11/30/JS实现简单拖拽/">
+              <a class="btn" href="/2014/11/30/JS实现简单拖拽/#more">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -368,9 +369,9 @@
 
         
           
-            JS实现简单漂浮
+            <h3 id="实现原理">实现原理</h3><p>漂浮的实现比较简单，其核心是搞清楚各种位置关系，然后设置元素的position为absolute，动态地改变元素的位置，便实现了漂浮。具体代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">var xPos = <span class="number">50</span>,yPos = <span class="number">60</span>; </span><br><span class="line">var toRight= <span class="literal">true</span>, toBottom = <span class="literal">true</span> ;  //漂浮方向控制</span><br><span class="line">var step = <span class="number">1</span> ;</span><br><span class="line">var delay = <span class="number">10</span> ;</span><br><span class="line">var obj=document.getElementById(<span class="string">"floatDiv"</span>);</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">rollMethod</span></span>() &#123; </span><br><span class="line">    var minX=minY=<span class="number">0</span>;</span><br><span class="line">    var maxX,maxY;</span><br><span class="line">    <span class="keyword">if</span>(document.compatMode==<span class="string">"BackCompat"</span>)&#123;    //<span class="keyword">for</span> IE</span><br><span class="line">       maxX=document.body.clientWidth-obj.offsetWidth ;</span><br><span class="line">       maxY= document.body.clientHeight-obj.offsetHeight ;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">       maxX= document.documentElement.clientWidth-obj.offsetWidth ;</span><br><span class="line">       maxY= document.documentElement.clientHeight-obj.offsetHeight ;</span><br><span class="line">    &#125;</span><br><span class="line">    obj.style.left = xPos + document.body.scrollLeft+<span class="string">"px"</span> ;</span><br><span class="line">    obj.style.top = yPos + document.body.scrollTop+<span class="string">"px"</span> ;</span><br><span class="line">    xPos = xPos + step*(toRight?<span class="number">1</span>:-<span class="number">1</span>);    </span><br><span class="line">    <span class="keyword">if</span> (xPos &lt; minX) &#123; toRight = <span class="literal">true</span>; xPos=minX;&#125; </span><br><span class="line">    <span class="keyword">if</span> (xPos &gt; maxX) &#123; toRight = <span class="literal">false</span>; xPos= maxX;&#125; </span><br><span class="line">    yPos = yPos + step*(toBottom?<span class="number">1</span>:-<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (yPos &lt; minY) &#123; toBottom = <span class="literal">true</span>; yPos =minY; &#125; </span><br><span class="line">    <span class="keyword">if</span> (yPos &gt;maxY) &#123; toBottom = <span class="literal">false</span>; yPos = maxY;&#125; </span><br><span class="line">&#125; </span><br><span class="line"> var <span class="built_in">float</span>Go= <span class="built_in">set</span>Interval(rollMethod,delay) ;</span><br><span class="line"> obj.onmouseover=<span class="function"><span class="title">function</span></span>()&#123;clearInterval(<span class="built_in">float</span>Go);&#125;; </span><br><span class="line"> obj.onmouseout=<span class="function"><span class="title">function</span></span>()&#123;<span class="built_in">float</span>Go=<span class="built_in">set</span>Interval(rollMethod,delay);&#125; ;</span><br><span class="line"> var shut=document.getElementById(<span class="string">"floatClose"</span>) ;</span><br><span class="line"> shut.onclick=<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">     obj.style.display=<span class="string">'none'</span>;&#125;;</span><br><span class="line"> window.onload=<span class="built_in">float</span>Go;</span><br></pre></td></tr></table></figure></p>
             <div class="post-more-link text-center">
-              <a class="btn" href="/2014/11/26/JS实现简单漂浮/">
+              <a class="btn" href="/2014/11/26/JS实现简单漂浮/#more">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -465,9 +466,9 @@
 
         
           
-            JS判断鼠标进出方向
+            <h3 id="实现原理">实现原理</h3><p>实际过程中，有时候需要判断鼠标进出容器的方向，<a href="http://stackoverflow.com/questions/3627042/jquery-animation-for-a-hover-with-mouse-direction">jQuery animation for a hover with mouse direction</a>便给出了解决方案。具体代码如下所示。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">jQuery(document).ready(<span class="keyword">function</span>($) &#123;</span><br><span class="line">	$(<span class="string">"#test"</span>).bind(<span class="string">"mouseenter mouseleave"</span>,<span class="keyword">function</span>(e) &#123;</span><br><span class="line">        var w = $(this).width();</span><br><span class="line">        var h = $(this).height();</span><br><span class="line">        var x = (e.pageX - this.offsetLeft - (w / <span class="number">2</span>)) * (w &gt; h ? (h / w) : <span class="number">1</span>);</span><br><span class="line">        var y = (e.pageY - this.offsetTop - (h / <span class="number">2</span>)) * (h &gt; w ? (w / h) : <span class="number">1</span>);</span><br><span class="line">        var direction = Math.round((((Math.atan2(y, x) * (<span class="number">180</span> / Math.PI)) + <span class="number">180</span>) / <span class="number">90</span>) + <span class="number">3</span>) % <span class="number">4</span>; </span><br><span class="line">        //direction的值为“<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>”分别对应着“上，右，下，左”</span><br><span class="line">        var eventType = e.type;</span><br><span class="line">        var dirName = new Array(<span class="string">'上方'</span>,<span class="string">'右侧'</span>,<span class="string">'下方'</span>,<span class="string">'左侧'</span>);</span><br><span class="line">        <span class="keyword">if</span>(e.type == <span class="string">'mouseenter'</span>)&#123;</span><br><span class="line">           $(<span class="string">"#result"</span>).html(dirName[direction]+<span class="string">'进入'</span>);</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">           $(<span class="string">'#result'</span>).html(dirName[direction]+<span class="string">'离开'</span>);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
             <div class="post-more-link text-center">
-              <a class="btn" href="/2014/11/26/JS判断鼠标进出方向/">
+              <a class="btn" href="/2014/11/26/JS判断鼠标进出方向/#more">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -562,9 +563,57 @@
 
         
           
-            CSS选择器之孰重孰轻
+            <h3 id="CSS不同方式引入">CSS不同方式引入</h3><p>CSS优先级即CSS样式在浏览器中被解析出来的先后顺序。<br>对于不同方式引入的样式，一般情况下，优先级如下：<br>外部样式(External style sheet) &lt; 内部样式(Internal style sheet) &lt; 内联样式(Inline style)<br>——如果外部样式放在内部样式的后面，则外部样式将覆盖内部样式；JS设置的样式为内联样式。<br>总之一句话：</p>
+<blockquote>
+<p>样式位置愈近之，优先级愈高之</p>
+</blockquote>
+<h3 id="选择器权重">选择器权重</h3><p>约定俗成，我们用(A,B,C,D)来表示CSS选择器的权重，其中：<br>A表示CSS是否为内联样式，是为1，否为0<br>B表示ID选择器的个数<br>C表示类、伪类和属性选择器的个数<br>D表示标签、伪元素的个数（例如，p:first-letter 这样的选择器，计算为0, 0, 0, 2）。<br>具体如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>选择器类型</th>
+<th>权重(A,B,C,D)</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内联样式</td>
+<td>(1,0,0,0)</td>
+<td></td>
+</tr>
+<tr>
+<td>ID选择器</td>
+<td>(0,1,0,0)</td>
+<td>#IDName{}</td>
+</tr>
+<tr>
+<td>CLASS类选择器</td>
+<td>(0,0,1,0)</td>
+<td>.className{}</td>
+</tr>
+<tr>
+<td>伪类选择器</td>
+<td>(0,0,1,0)</td>
+<td>:hover{}</td>
+</tr>
+<tr>
+<td>属性选择器</td>
+<td>(0,0,1,0)</td>
+<td>[href]{}</td>
+</tr>
+<tr>
+<td>标签选择器</td>
+<td>(0,0,0,1)</td>
+<td>p{}</td>
+</tr>
+</tbody>
+</table>
+<p>优先级比较规则：从权重左边的第一位开始比较大小，如果较大，则优先级较高；反之，则优先级较低；如果一样，继续往右逐位比较。(IE不支持!important)</p>
+<blockquote>
+<p>权重优先级：important &gt; 内联 &gt; ID &gt; 类 | 伪类 | 属性选择 &gt; 标签 | 伪对象 &gt; 继承 &gt; 通配符<br>
             <div class="post-more-link text-center">
-              <a class="btn" href="/2014/11/22/CSS选择器之孰重孰轻/">
+              <a class="btn" href="/2014/11/22/CSS选择器之孰重孰轻/#more">
                 閱讀全文 &raquo;
               </a>
             </div>

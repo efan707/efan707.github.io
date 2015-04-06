@@ -206,11 +206,8 @@
 </table>
 <p>优先级比较规则：从权重左边的第一位开始比较大小，如果较大，则优先级较高；反之，则优先级较低；如果一样，继续往右逐位比较。(IE不支持!important)</p>
 <blockquote>
-<p>权重优先级：important &gt; 内联 &gt; ID &gt; 类 | 伪类 | 属性选择 &gt; 标签 | 伪对象 &gt; 继承 &gt; 通配符</p>
-</blockquote>
-<h3 id="特殊情况">特殊情况</h3><p>上面的优先级适用于一般场合，但对于一些极致的情况，则不再适应<br>——IE, Mozilla或WebKit浏览器(如FireFox)中，一个ID的权重为(0,1,0,0)，256个CLASS类选择器的权重为(0,0,256,0)，但他们的优先级是一样的；Opera、Chorme中，则符合优先级判比规则，权重为(0,1,0,0)的较高。可参照文章<a href="http://www.thecssninja.com/css/extreme-specificity" target="_blank" rel="external">Extreme specificity overriding a CSS ID with 256 chained Classes</a>。<br>具体原因为：</p>
-<blockquote>
-<p>@ryanseddon From hg.mozilla.org/mozilla-centra… Gecko overflows the count of classes into the count of IDs, each of which holds 8 bits.<br>— Cameron McCormack (@heycam) August 16, 2012</p>
+<p>权重优先级：important &gt; 内联 &gt; ID &gt; 类 | 伪类 | 属性选择 &gt; 标签 | 伪对象 &gt; 继承 &gt; 通配符<br><a id="more"></a></p>
+<h3 id="特殊情况">特殊情况</h3><p>上面的优先级适用于一般场合，但对于一些极致的情况，则不再适应<br>——IE, Mozilla或WebKit浏览器(如FireFox)中，一个ID的权重为(0,1,0,0)，256个CLASS类选择器的权重为(0,0,256,0)，但他们的优先级是一样的；Opera、Chorme中，则符合优先级判比规则，权重为(0,1,0,0)的较高。可参照文章<a href="http://www.thecssninja.com/css/extreme-specificity" target="_blank" rel="external">Extreme specificity overriding a CSS ID with 256 chained Classes</a>。<br>具体原因为：<br>@ryanseddon From hg.mozilla.org/mozilla-centra… Gecko overflows the count of classes into the count of IDs, each of which holds 8 bits.<br>— Cameron McCormack (@heycam) August 16, 2012</p>
 <p>@ryanseddon and to close the loop: yes, opera uses 16 bits instead of 8. bring on 65536 classes…<br>— patrick h. lauke (@patrick_h_lauke) August 16, 2012</p>
 </blockquote>
 <p>IE, Mozilla或WebKit浏览器，他们的类名(classes)都是以8字节(256位)字符串存储的，当同时指定256个类时，溢出到id区域；Opera、Chorme浏览器class类名的存储是以16字节的字符串，想发生class溢出到id的话，需要连续65536个class。</p>

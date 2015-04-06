@@ -174,7 +174,7 @@
 
         
           
-            <h3 id="前言">前言</h3><p><a href="http://baike.baidu.com/link?url=scPWbR3LkrJfCkWAb97mDZ-YdPMHYJpYH-8tb1TJpAuQXOFDwtKmw59Eb-yMmynILYvXovC_8i2bjZmryysCsq">Prezi</a>打破了传统Powerpoint的单线条时序，采用系统性与结构性一体化的方式来进行演示，使得演示更有视觉冲击力。最让本人喜欢的特点有五：<br>a、灵活的展现方式，你可以像个艺术家，放飞自己的思维，构建属于自己的图文故事。<br>b、对SWF支持很好（SWF透明层在PPT中转为白色），可以设计各式各样的SWF来点缀每个页面。<br>c、制作完成后，生成的文件可以在任何电脑上进行播放，而无需那台电脑也安装Prezi。<br>d、上手很简单，效果却很赞，海量的模版更能让人一飞冲天。<br>e、Prezi可以任意插入你想展现出来的各种图片、视频、Youtube视频、PDF文件，甚至更多你想展现的其他内容。此外，Prezi推出PowerPoint文件导入，支持PPT和PPTX两种格式。<br>
+            <h3 id="前言">前言</h3><p><a href="http://baike.baidu.com/link?url=scPWbR3LkrJfCkWAb97mDZ-YdPMHYJpYH-8tb1TJpAuQXOFDwtKmw59Eb-yMmynILYvXovC_8i2bjZmryysCsq">Prezi</a>打破了传统Powerpoint的单线条时序，采用系统性与结构性一体化的方式来进行演示，使得演示更有视觉冲击力。最让本人喜欢的特点有五：<br>a、灵活的展现方式，你可以像个艺术家，放飞自己的思维，构建属于自己的图文故事。<br>b、对SWF支持很好（SWF透明层在PPT中转为白色），可以设计各式各样的SWF来点缀每个页面。<br>c、制作完成后，生成的文件可以在任何电脑上进行播放，而无需那台电脑也安装Prezi。<br>d、上手很简单，效果却很赞，海量的模版更能让人一飞冲天。<br>e、Prezi可以任意插入你想展现出来的各种图片、视频、Youtube视频、PDF文件，甚至更多你想展现的其他内容。此外，Prezi推出PowerPoint文件导入，支持PPT和PPTX两种格式。<br><img src="/imgs/prezi/1.png" alt="Prezi"><br>
             <div class="post-more-link text-center">
               <a class="btn" href="/2015/01/10/Prezi两三事/#more">
                 閱讀全文 &raquo;
@@ -271,9 +271,9 @@
 
         
           
-            PPT中插入SWF
+            <p>在制作PPT时，为了使展示页面更加炫彩，我们可以插入GIF或者SWF，而静态的页面配合动态的SWF更是丰富多彩、引人注目。下面就以PPT2007为例，讲解如何在页面中嵌入SWF。<br>1、首先查看PPT窗口，看是否有“开发工具”选项，若无，单击左上角的office图标，在弹出的下拉列表中单击“Powerpoint选项”按钮。<br><img src="/imgs/ppt/ppt2.png" alt="ppt"><br>2、依次点击&gt;开发工具&gt;其他控件&gt;shockwave falsh object&gt;确定。<br><img src="/imgs/ppt/ppt1.png" alt="ppt"><br>
             <div class="post-more-link text-center">
-              <a class="btn" href="/2015/01/06/PPT中插入SWF/">
+              <a class="btn" href="/2015/01/06/PPT中插入SWF/#more">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -368,9 +368,11 @@
 
         
           
-            正则表达式
+            <p>正则表达式非一言两语所能说清，有很多相关的书籍进行了专门的介绍。今天主要是管中窥豹，不做长篇大论。正则表达式的书写方式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var expression = /pattern/flags;  //flags可省略 </span><br><span class="line">var expression = new RegExp(<span class="string">"pattern"</span>,<span class="string">"flags"</span>); //flags可省略</span><br></pre></td></tr></table></figure></p>
+<p>正则表达式字面量始终会共享一个RegExp实例，而使用构造函数创建的每一个实例都是新的实例。</p>
+<h3 id="RegExp方法与属性">RegExp方法与属性</h3><p>JS中关于正则的方法如下，关于这些函数的具体使用方法，可以参阅JS的相关函数手册。<br>test — RegExp的test方法用来测试字符串是否匹配给出的匹配模式，返回布尔值；<br>exec — RegExp的exec方法返回包含第一个匹配的的数组或null；<br>match — String的match方法返回包含所有匹配子字符串的数组；<br>replace — String的replace方法完成string的替换操作，支持正则表达式；<br>search — 与String的indexof方法类似，不同的是search支持正则表达式，而不仅仅是字符串；<br>split — 按照一定规则拆分字符串并将子字符串存储到数组中的String方法。<br>
             <div class="post-more-link text-center">
-              <a class="btn" href="/2014/12/16/正则表达式/">
+              <a class="btn" href="/2014/12/16/正则表达式/#more">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -465,9 +467,10 @@
 
         
           
-            HTML5多媒体播放
+            <h3 id="video兼容性">video兼容性</h3><p>支持情况如下所示：<br><img src="/imgs/media/video1.png" alt="media"><br>更为详尽的支持情况可查阅<a href="http://en.wikipedia.org/wiki/HTML5_video">HTML5 Vedio</a>。<br>要想让主流浏览器都支持HTML5的media标签，只要在页面上（头部或底部）有这么段代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="video写法">video写法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;video width=<span class="string">"320"</span> height=<span class="string">"240"</span> controls=<span class="string">"controls"</span>&gt;</span><br><span class="line">  &lt;<span class="built_in">source</span> src=<span class="string">"movie.ogg"</span> <span class="built_in">type</span>=<span class="string">"video/ogg"</span>&gt;</span><br><span class="line">  &lt;<span class="built_in">source</span> src=<span class="string">"movie.mp4"</span> <span class="built_in">type</span>=<span class="string">"video/mp4"</span>&gt;</span><br><span class="line">Your browser does not support the video tag.</span><br><span class="line">&lt;/video&gt;</span><br></pre></td></tr></table></figure>
             <div class="post-more-link text-center">
-              <a class="btn" href="/2014/12/15/HTML5多媒体播放/">
+              <a class="btn" href="/2014/12/15/HTML5多媒体播放/#more">
                 閱讀全文 &raquo;
               </a>
             </div>
@@ -562,9 +565,9 @@
 
         
           
-            HTML5本地存储
+            <p>HTML5的存储方案主要有以下几种：<br>a、本地存储（localstorage &amp; sessionstorage）<br>b、离线缓存（application cache）<br>c、IndexedDB &amp; WebSql<br>今天着重学习下本地存储localstorage &amp; sessionstorage。它们基本类似，唯一的区别就是localstorage永久存储，而sessionstorage只在页面没有关闭的情况下存在（页面一旦关闭，所存数据便丢失）。本地存储采用键值对的方式，只能存字符串数据，所有数据在写入的时候会被隐式调用toString方法转为字符串。每个域（包括子域）有独立的存储空间，各个存储空间是完全独立的，因此不会造成数据混乱。下面是浏览器关于本地存储的推进史：<br><img src="/imgs/storage/storage1.jpg" alt="浏览器本地存储"><br>HTML5本地存储主要有以下特性：<br>a、和cookie一样提供了把数据保存到本地的能力，页面刷新或者关掉浏览器后，数据依然存在<br>b、一般都在5~10M，比cookie的4k强多了<br>c、本地存储的数据不会被发到服务器，与cookie相比，节省带宽，加快响应速度<br>由于sessionstorage与localstorage方法一样，下面就以localstorage为例进行讲解。<br>
             <div class="post-more-link text-center">
-              <a class="btn" href="/2014/12/15/HTML5本地存储/">
+              <a class="btn" href="/2014/12/15/HTML5本地存储/#more">
                 閱讀全文 &raquo;
               </a>
             </div>
