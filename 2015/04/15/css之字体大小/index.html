@@ -18,9 +18,19 @@
 
 
 
-	<meta name="keywords" content="Media," />
 
-  <title> HTML5多媒体播放 // Efan’s Notes </title>
+    <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+    <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.1" />
+
+
+
+
+  <title> CSS长度单位及字体大小 // Efan’s Notes </title>
 </head>
 
 <body>
@@ -110,7 +120,7 @@
           
           
             
-              HTML5多媒体播放
+              CSS长度单位及字体大小
             
           
         </h1>
@@ -119,7 +129,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            Posté le 2014-12-15
+            Posté le 2015-04-15
           
         </span>
 
@@ -128,7 +138,7 @@
             <span class="post-category">
               &nbsp; | &nbsp; In
               
-                <a href="/categories/HTML5/">HTML5</a>
+                <a href="/categories/CSS/">CSS</a>
 
                 
                 
@@ -142,8 +152,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2014/12/15/HTML5多媒体播放/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/12/15/HTML5多媒体播放/"></span>
+            <a href="/2015/04/15/css之字体大小/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/15/css之字体大小/"></span>
             </a>
           </span>
           
@@ -158,18 +168,9 @@
         
 
         
-          <h3 id="video兼容性">video兼容性</h3><p>支持情况如下所示：<br><img src="/imgs/media/video1.png" alt="media"><br>更为详尽的支持情况可查阅<a href="http://en.wikipedia.org/wiki/HTML5_video" target="_blank" rel="external">HTML5 Vedio</a>。<br>要想让主流浏览器都支持HTML5的media标签，只要在页面上（头部或底部）有这么段代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="video写法">video写法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;video width=<span class="string">"320"</span> height=<span class="string">"240"</span> controls=<span class="string">"controls"</span>&gt;</span><br><span class="line">  &lt;<span class="built_in">source</span> src=<span class="string">"movie.ogg"</span> <span class="built_in">type</span>=<span class="string">"video/ogg"</span>&gt;</span><br><span class="line">  &lt;<span class="built_in">source</span> src=<span class="string">"movie.mp4"</span> <span class="built_in">type</span>=<span class="string">"video/mp4"</span>&gt;</span><br><span class="line">Your browser does not support the video tag.</span><br><span class="line">&lt;/video&gt;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>video标签有如下属性：<br><img src="/imgs/media/video2.png" alt="media"></p>
-<h3 id="audio兼容性">audio兼容性</h3><p>支持情况如下所示：<br><img src="/imgs/media/audio1.png" alt="media"></p>
-<h3 id="audio写法">audio写法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio controls=<span class="string">"controls"</span>&gt;</span><br><span class="line">  &lt;<span class="built_in">source</span> src=<span class="string">"song.ogg"</span> <span class="built_in">type</span>=<span class="string">"audio/ogg"</span>&gt;</span><br><span class="line">  &lt;<span class="built_in">source</span> src=<span class="string">"song.mp3"</span> <span class="built_in">type</span>=<span class="string">"audio/mpeg"</span>&gt;</span><br><span class="line">Your browser does not support the audio tag.</span><br><span class="line">&lt;/audio&gt;</span><br></pre></td></tr></table></figure>
-<p>audio标签有如下属性：<br><img src="/imgs/media/audio2.png" alt="media"></p>
-<h3 id="HTML5_Audio/Video_方法">HTML5 Audio/Video 方法</h3><p><img src="/imgs/media/media1.png" alt="media"></p>
-<h3 id="HTML5_Audio/Video_属性">HTML5 Audio/Video 属性</h3><p><img src="/imgs/media/media2.png" alt="media"></p>
-<h3 id="HTML5_Audio/Video_事件">HTML5 Audio/Video 事件</h3><p><img src="/imgs/media/media3.png" alt="media"></p>
-<h3 id="video截屏">video截屏</h3><p>视频截图的关键在于调用canvas元素的图形上下文对象的drawImage方法。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var canvas=document.getElementById(<span class="string">"canvas"</span>);</span><br><span class="line">var ctx=canvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line">canvas.width=video.videoWidth;</span><br><span class="line">canvas.height=video.videoHeight;</span><br><span class="line">ctx.drawImage(video,<span class="number">0</span>,<span class="number">0</span>,canvas.width,canvas.height);</span><br><span class="line">canvas.style.display=<span class="string">"block"</span>;</span><br></pre></td></tr></table></figure></p>
-<h3 id="插件">插件</h3><p><a href="http://www.videojs.com/" target="_blank" rel="external">video.js</a><br>其他插件也非常多，只需搜索html5视频播放器或html5音乐播放器便可。</p>
+          <p>在网页设计时，会设计到字体大小的设置。究竟多大的字体，或者字体的单位该如何选择，才比较合适，这就是本文所要探讨的问题。一般浏览器默认的字体大小为1medium，为16px。</p>
+<h3 id="单位">单位</h3><p>CSS中的长度单位很多，今天就一些主要单位作一说明。CSS中的单位可分为相对单位和绝对单位，具体如下表所示。<br><img src="/imgs/fontSize/1.png" alt="font-size"><br><a id="more"></a><br>实际中，常用的单位有em、px、%，几种单位对应关系如下所示：<br><img src="/imgs/fontSize/2.png" alt="font-size"><br>除上述之外，还有一些描述字体大小的关键字（属于绝对单位）：<br><img src="/imgs/fontSize/3.png" alt="font-size"></p>
+<h3 id="拓展问题">拓展问题</h3><p>1、浏览器对于含小数值px(像素)解析的差异及小数值如何解决兼容性问题。<br>2、各单位在页面缩放时的效果。</p>
 
         
       </div>
@@ -178,26 +179,16 @@
     
       <div class="post-footer">
         
-          <div class="post-tags">
-            
-              <a href="/tags/Media/">
-                #Media
-              </a>
-            
-          </div>
-        
 
         
           <div class="post-nav">
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2014/12/16/正则表达式/">正则表达式</a>
-              
             </div>
 
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2014/12/15/HTML5本地存储/">HTML5本地存储</a>
+                <a href="/2015/04/15/CSS盒模型/">css盒模型及元素分类</a>
               
             </div>
           </div>
@@ -214,8 +205,8 @@
   
     <div class="comments" id="comments">
       
-        <div class="ds-thread" data-thread-key="2014/12/15/HTML5多媒体播放/"
-             data-title="HTML5多媒体播放" data-url="http://yoursite.com/2014/12/15/HTML5多媒体播放/">
+        <div class="ds-thread" data-thread-key="2015/04/15/css之字体大小/"
+             data-title="CSS长度单位及字体大小" data-url="http://yoursite.com/2015/04/15/css之字体大小/">
         </div>
 
       
@@ -297,7 +288,7 @@
         <div class="post-toc">
           
           
-            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#video兼容性"><span class="nav-number">1.</span> <span class="nav-text">video兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#video写法"><span class="nav-number">2.</span> <span class="nav-text">video写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#audio兼容性"><span class="nav-number">3.</span> <span class="nav-text">audio兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#audio写法"><span class="nav-number">4.</span> <span class="nav-text">audio写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5_Audio/Video_方法"><span class="nav-number">5.</span> <span class="nav-text">HTML5 Audio/Video 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5_Audio/Video_属性"><span class="nav-number">6.</span> <span class="nav-text">HTML5 Audio/Video 属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5_Audio/Video_事件"><span class="nav-number">7.</span> <span class="nav-text">HTML5 Audio/Video 事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#video截屏"><span class="nav-number">8.</span> <span class="nav-text">video截屏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插件"><span class="nav-number">9.</span> <span class="nav-text">插件</span></a></li></ol></div>
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#单位"><span class="nav-number">1.</span> <span class="nav-text">单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拓展问题"><span class="nav-number">2.</span> <span class="nav-text">拓展问题</span></a></li></ol></div>
           
         </div>
         <div class="post-toc-indicator-bottom post-toc-indicator"></div>
