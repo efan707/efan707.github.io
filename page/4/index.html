@@ -123,6 +123,104 @@
           
           
             
+              <a class="post-title-link" href="/2014/12/12/Less is more/">
+                Less is more
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            發表於 2014-12-12
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分類於
+              
+                <a href="/categories/CSS/">CSS</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2014/12/12/Less is more/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2014/12/12/Less is more/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <p><a href="http://less.bootcss.com/#">Less</a>是一种由AlexisSellier设计的动态层叠样式表语言，是开源的，其第一个版本由Ruby写成，但在后续的版本当中，Ruby逐渐被替换为JavaScript。受益于JavaScript，Less可以在客户端上运行（IE6+、Webkit、Firefox），也可以在服务端运行（Node.js、Rhino）。<br>在语法方面，Less与CSS较为接近，一个合法的CSS代码段本身也是一段合法的Less代码段。Less提供变量、嵌套、混合、操作符、函数等一般编程所需的抽象机制。</p>
+<h3 id="编译工具"><strong>编译工具</strong></h3><p>编译Less的方法很多，具体可参照官方文档中的<a href="http://less.bootcss.com/usage/#using-less-environments">Less使用</a>,在这里推荐使用一个图形界面的编译器—<a href="http://koala-app.com/index-zh.html">Koala</a>。koala是一个前端预处理器语言图形编译工具，支持Less、Sass、Compass、CoffeeScript，帮助web开发者更高效地使用它们进行开发。跨平台运行，完美兼容windows、linux、mac。<br>下面就一些常用的语法简要说明下，具体更详细的资料请查阅<a href="http://less.bootcss.com/features/">官方文档</a>。<br>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2014/12/12/Less is more/#more">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Less/">
+                #Less
+              </a>
+            
+          </div>
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2014/12/08/CSS3动画/">
                 CSS3动画
               </a>
@@ -504,109 +602,12 @@
 
 
   
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2014/11/26/JS实现简单漂浮/">
-                JS实现简单漂浮
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            發表於 2014-11-26
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分類於
-              
-                <a href="/categories/JS/">JS</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2014/11/26/JS实现简单漂浮/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/26/JS实现简单漂浮/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <h3 id="实现原理">实现原理</h3><p>漂浮的实现比较简单，其核心是搞清楚各种位置关系，然后设置元素的position为absolute，动态地改变元素的位置，便实现了漂浮。具体代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">var xPos = <span class="number">50</span>,yPos = <span class="number">60</span>; </span><br><span class="line">var toRight= <span class="literal">true</span>, toBottom = <span class="literal">true</span> ;  //漂浮方向控制</span><br><span class="line">var step = <span class="number">1</span> ;</span><br><span class="line">var delay = <span class="number">10</span> ;</span><br><span class="line">var obj=document.getElementById(<span class="string">"floatDiv"</span>);</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">rollMethod</span></span>() &#123; </span><br><span class="line">    var minX=minY=<span class="number">0</span>;</span><br><span class="line">    var maxX,maxY;</span><br><span class="line">    <span class="keyword">if</span>(document.compatMode==<span class="string">"BackCompat"</span>)&#123;    //<span class="keyword">for</span> IE</span><br><span class="line">       maxX=document.body.clientWidth-obj.offsetWidth ;</span><br><span class="line">       maxY= document.body.clientHeight-obj.offsetHeight ;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">       maxX= document.documentElement.clientWidth-obj.offsetWidth ;</span><br><span class="line">       maxY= document.documentElement.clientHeight-obj.offsetHeight ;</span><br><span class="line">    &#125;</span><br><span class="line">    obj.style.left = xPos + document.body.scrollLeft+<span class="string">"px"</span> ;</span><br><span class="line">    obj.style.top = yPos + document.body.scrollTop+<span class="string">"px"</span> ;</span><br><span class="line">    xPos = xPos + step*(toRight?<span class="number">1</span>:-<span class="number">1</span>);    </span><br><span class="line">    <span class="keyword">if</span> (xPos &lt; minX) &#123; toRight = <span class="literal">true</span>; xPos=minX;&#125; </span><br><span class="line">    <span class="keyword">if</span> (xPos &gt; maxX) &#123; toRight = <span class="literal">false</span>; xPos= maxX;&#125; </span><br><span class="line">    yPos = yPos + step*(toBottom?<span class="number">1</span>:-<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (yPos &lt; minY) &#123; toBottom = <span class="literal">true</span>; yPos =minY; &#125; </span><br><span class="line">    <span class="keyword">if</span> (yPos &gt;maxY) &#123; toBottom = <span class="literal">false</span>; yPos = maxY;&#125; </span><br><span class="line">&#125; </span><br><span class="line"> var <span class="built_in">float</span>Go= <span class="built_in">set</span>Interval(rollMethod,delay) ;</span><br><span class="line"> obj.onmouseover=<span class="function"><span class="title">function</span></span>()&#123;clearInterval(<span class="built_in">float</span>Go);&#125;; </span><br><span class="line"> obj.onmouseout=<span class="function"><span class="title">function</span></span>()&#123;<span class="built_in">float</span>Go=<span class="built_in">set</span>Interval(rollMethod,delay);&#125; ;</span><br><span class="line"> var shut=document.getElementById(<span class="string">"floatClose"</span>) ;</span><br><span class="line"> shut.onclick=<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">     obj.style.display=<span class="string">'none'</span>;&#125;;</span><br><span class="line"> window.onload=<span class="built_in">float</span>Go;</span><br></pre></td></tr></table></figure></p>
-            <div class="post-more-link text-center">
-              <a class="btn" href="/2014/11/26/JS实现简单漂浮/#more">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-          <div class="post-tags">
-            
-              <a href="/tags/Code/">
-                #Code
-              </a>
-            
-          </div>
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
 
           </div>
 
           
             <div class="pagination">
-              <a class="extend prev" rel="prev" href="/page/3/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/">&raquo;</a>
+              <a class="extend prev" rel="prev" href="/page/3/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/5/">&raquo;</a>
             </div>
           
         </div>
@@ -634,7 +635,7 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">35</span>
+            <span class="site-state-item-count">36</span>
             <span class="site-state-item-name">文章</span>
           </a>
         </div>
