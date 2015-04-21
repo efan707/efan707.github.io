@@ -187,7 +187,7 @@
 <li>perspective-origin为透视点的位置，与perspective配合设置，默认位置为正对变换元素中心。</li>
 </ul>
 <p>下面是改变perspective-origin后的效果。<br><img src="/imgs/3d/6.png" alt="3d"></p>
-<p>perspective有两种写法：perspective用在动画元素的父元素stage身上；perspective()用在当前动画元素上，写在其他的transform属性前面。如下代码示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.stage &#123;</span><br><span class="line">    perspective: <span class="number">600</span>px;</span><br><span class="line">  &#125;</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line">.stage .box &#123;</span><br><span class="line">    transform: perspective(<span class="number">600</span>px);   //有其他属性时，perspective置于前面</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>perspective有两种写法：perspective用在动画元素的父元素stage身上，stage内的元素被透视；perspective()用在当前动画元素上，写在其他的transform属性前面，元素自身被透视。如下代码示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.stage &#123;</span><br><span class="line">    perspective: <span class="number">600</span>px;</span><br><span class="line">  &#125;</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line">.stage .box &#123;</span><br><span class="line">    transform: perspective(<span class="number">600</span>px);   //有其他属性时，perspective置于前面</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="transform-style">transform-style</h3><p>写法如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transform-style:flat | preserve-<span class="number">3</span>d;</span><br></pre></td></tr></table></figure></p>
 <p>前面通过对透视的设置，已可以看见立体感的图，但是如果不设置transform-style，则默认为flat。此时，该元素的所有子元素都将被平展到该元素的2D平面中进行呈现。如下图所示：<br><img src="/imgs/3d/7.png" alt="3d"></p>
 <blockquote>
@@ -195,6 +195,12 @@
 </blockquote>
 <h3 id="backface-visibility">backface-visibility</h3><p>backface-visibility属性决定元素旋转背面是否可见，默认是可见的。写法如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">backface-visibility:visible | hidden;</span><br></pre></td></tr></table></figure></p>
 <p><img src="/imgs/3d/8.png" alt="3d"></p>
+<h3 id="常见写法">常见写法</h3><pre style="color:blue;">
+舞台 为舞台加上perspective,整个舞台被透视
+   容器 为容器加上preserve-3d，使容器内为同一3D渲染环境
+     内容 实际transform效果</pre>
+
+<h3 id="例子">例子</h3><p>请参照<a href="http://www.script-tutorials.com/css3-animated-photo-slider/" target="_blank" rel="external">CSS3 Animated Photo Slider</a>。</p>
 
         
       </div>
@@ -207,6 +213,8 @@
         
           <div class="post-nav">
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2015/04/20/几种常见的图像替换技术/">几种常见的图像替换技术</a>
               
             </div>
 
@@ -274,7 +282,7 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">37</span>
+            <span class="site-state-item-count">38</span>
             <span class="site-state-item-name">文章</span>
           </a>
         </div>
@@ -312,7 +320,7 @@
         <div class="post-toc">
           
           
-            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标系"><span class="nav-number">1.</span> <span class="nav-text">坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3D变换"><span class="nav-number">2.</span> <span class="nav-text">3D变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transform-origin"><span class="nav-number">3.</span> <span class="nav-text">transform-origin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#perspective_&_perspective-origin"><span class="nav-number">4.</span> <span class="nav-text">perspective & perspective-origin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transform-style"><span class="nav-number">5.</span> <span class="nav-text">transform-style</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#backface-visibility"><span class="nav-number">6.</span> <span class="nav-text">backface-visibility</span></a></li></ol></div>
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标系"><span class="nav-number">1.</span> <span class="nav-text">坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3D变换"><span class="nav-number">2.</span> <span class="nav-text">3D变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transform-origin"><span class="nav-number">3.</span> <span class="nav-text">transform-origin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#perspective_&_perspective-origin"><span class="nav-number">4.</span> <span class="nav-text">perspective & perspective-origin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transform-style"><span class="nav-number">5.</span> <span class="nav-text">transform-style</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#backface-visibility"><span class="nav-number">6.</span> <span class="nav-text">backface-visibility</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见写法"><span class="nav-number">7.</span> <span class="nav-text">常见写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">8.</span> <span class="nav-text">例子</span></a></li></ol></div>
           
         </div>
         <div class="post-toc-indicator-bottom post-toc-indicator"></div>

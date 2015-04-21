@@ -18,9 +18,19 @@
 
 
 
-	<meta name="keywords" content="RegExp," />
 
-  <title> 正则表达式 // Efan’s Notes </title>
+    <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+    <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.1" />
+
+
+
+
+  <title> 几种常见的图像替换技术 // Efan’s Notes </title>
 </head>
 
 <body>
@@ -110,7 +120,7 @@
           
           
             
-              正则表达式
+              几种常见的图像替换技术
             
           
         </h1>
@@ -119,7 +129,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            發表於 2014-12-16
+            發表於 2015-04-20
           
         </span>
 
@@ -128,7 +138,7 @@
             <span class="post-category">
               &nbsp; | &nbsp; 分類於
               
-                <a href="/categories/JS/">JS</a>
+                <a href="/categories/CSS/">CSS</a>
 
                 
                 
@@ -142,8 +152,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2014/12/16/正则表达式/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/12/16/正则表达式/"></span>
+            <a href="/2015/04/20/几种常见的图像替换技术/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/20/几种常见的图像替换技术/"></span>
             </a>
           </span>
           
@@ -158,10 +168,21 @@
         
 
         
-          <p>正则表达式非一言两语所能说清，有很多相关的书籍进行了专门的介绍。今天主要是管中窥豹，不做长篇大论。正则表达式的书写方式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var expression = /pattern/flags;  //flags可省略 </span><br><span class="line">var expression = new RegExp(<span class="string">"pattern"</span>,<span class="string">"flags"</span>); //flags可省略</span><br></pre></td></tr></table></figure></p>
-<p>正则表达式字面量始终会共享一个RegExp实例，而使用构造函数创建的每一个实例都是新的实例。</p>
-<h3 id="RegExp方法与属性">RegExp方法与属性</h3><p>JS中关于正则的方法如下，关于这些函数的具体使用方法，可以参阅JS的相关函数手册。<br>test — RegExp的test方法用来测试字符串是否匹配给出的匹配模式，返回布尔值；<br>exec — RegExp的exec方法返回包含第一个匹配的的数组或null；<br>match — String的match方法返回包含所有匹配子字符串的数组；<br>replace — String的replace方法完成string的替换操作，支持正则表达式；<br>search — 与String的indexof方法类似，不同的是search支持正则表达式，而不仅仅是字符串；<br>split — 按照一定规则拆分字符串并将子字符串存储到数组中的String方法。<br><a id="more"></a><br>一个实例对象除了方法当然还有属性，一个正则表达式有以下属性：<br>global — 布尔值，若全局选项g已设置则返回true，否则返回false；<br>ignoreCase — 布尔值，若忽略大小写选项i已设置则返回true，否则返回false；<br>lastIndex — 整数，使用exec或test方法时被填入，表示下次匹配将会从哪个字符位置开始；<br>multiline — 布尔值，表示多行模式选项m是否设置，若设置则返回true，否则返回false；<br>source — 正则表达式的元字符串形式。/\/的source将返回“\”。</p>
-<h3 id="网络教程">网络教程</h3><p><a href="http://www.nowamagic.net/librarys/veda/detail/1019" target="_blank" rel="external">什么是正则表达式？</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1020" target="_blank" rel="external">正则入门：匹配固定的单个字符</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1021" target="_blank" rel="external">正则入门：匹配任意的单个字符</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1022" target="_blank" rel="external">正则入门：字符组的使用</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1023" target="_blank" rel="external">正则入门：在字符组中使用字符区间</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1024" target="_blank" rel="external">正则入门：反义字符组的使用</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1025" target="_blank" rel="external">正则入门：匹配空字符</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1032" target="_blank" rel="external">正则入门：匹配一个或多个字符</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1033" target="_blank" rel="external">正则入门：匹配零个或多个字符 </a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1034" target="_blank" rel="external">正则入门：匹配零个或一个字符串</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1035" target="_blank" rel="external">正则入门：匹配固定数目的字符</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1036" target="_blank" rel="external">正则入门：匹配区间内数目的字符</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1037" target="_blank" rel="external">正则入门：贪婪匹配</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1038" target="_blank" rel="external">正则入门：惰性匹配</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1039" target="_blank" rel="external">正则入门：两个匹配模式</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1040" target="_blank" rel="external">正则入门：匹配单词边界</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1071" target="_blank" rel="external">正则入门：边界的定义与相对性</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1073" target="_blank" rel="external">正则入门：匹配非单词边界</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1072" target="_blank" rel="external">正则入门：匹配文本首和尾</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1264" target="_blank" rel="external">正则入门：子模式</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1265" target="_blank" rel="external">正则入门：“或”匹配</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1280" target="_blank" rel="external">正则入门：后向引用文本替换</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1280" target="_blank" rel="external">正则入门：后向引用文本替换</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1281" target="_blank" rel="external">正则入门：非获取匹配</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1283" target="_blank" rel="external">正则总结：JavaScript中的正则表达式</a><br><a href="http://www.nowamagic.net/librarys/veda/detail/1284" target="_blank" rel="external">正则总结：正则表达式在js中的高级应用</a></p>
+          <p>在WEB设计过程中，我们有时候需要用生动的图片去代替枯燥的文字，例如我们经常看见的网站LOGO等。下面是淘宝网，在将logo标题的overflow禁用后，淘宝网三字便显露出来。<br><img src="/imgs/imgReplace/1.png" alt="imgReplace"><br><a id="more"></a><br>之所以引入图像替换技术，一方面是为了使得视觉感受更好一点；另一方面是为了方便搜索引擎来识别（故不去掉文字标题，而是采用各种技术让其“隐身”）。下面是一些常用的图像替换技术：</p>
+<h3 id="Fahrner图像替换">Fahrner图像替换</h3><p>为了表示对发明者Todd Fahrner的尊重，此方法被命名为“Fahrner图像替换（Fahrner Image Replacement，FIR）”。<br>策略：用span元素将文本包围起来，然后通过CSS样式隐藏span内的文本，之后将背景图像应用到该元素上即可。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">----------------HTML--------------------</span><br><span class="line">&lt;h1 id=<span class="string">"header"</span>&gt;</span><br><span class="line"> &lt;span&gt;your tittle&lt;/span&gt;  //添加span元素包裹标题</span><br><span class="line">&lt;/h1&gt;</span><br><span class="line">----------------CSS---------------------</span><br><span class="line"><span class="comment">#header </span></span><br><span class="line">&#123;</span><br><span class="line"> width: <span class="number">400</span>px;</span><br><span class="line"> height: <span class="number">200</span>px;</span><br><span class="line"> background: url(logo.gif) no-repeat;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">#header span</span></span><br><span class="line"> &#123;</span><br><span class="line"> display: none;    //隐藏标题文字</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>优点：简单<br>缺点：增加额外标签，禁用图像后无文字显示。</p>
+<h3 id="Leahy/_Langridge方法">Leahy/ Langridge方法</h3><p>此方法由Seamus Leahy和Stuart Langridge独立发现，无需增加额外标签。淘宝网采用的就是此种方案。<br>策略：将容器高度设为0，此时容器内的文本必然溢出，再通过overflow属性将溢出的文本隐藏，之后添加背景图片即可。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">----------------HTML--------------------</span><br><span class="line">&lt;h1 id=<span class="string">"header"</span>&gt;your tittle&lt;/h1&gt;</span><br><span class="line">----------------CSS---------------------</span><br><span class="line"><span class="comment">#header &#123;</span></span><br><span class="line"> overflow: hidden;     //隐藏溢出文字</span><br><span class="line"> background: url(logo.gif) no-repeat;</span><br><span class="line"> height: <span class="number">0</span>px !important;   </span><br><span class="line"> height /**/:<span class="number">25</span>px;    // IE6之前版本需采用hack</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>优点：不增加额外标签<br>缺点：需要采用hack；没有解决浏览器禁用图像后空白页面的可访问问题。</p>
+<h3 id="PHARK方法">PHARK方法</h3><p>此方法由Mike Rundle提出，也无需增加额外标签。京东采用的是此种方案。<br>策略：使用text-indent属性，将文字缩进到屏幕的左边缘之外。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">----------------HTML--------------------</span><br><span class="line">&lt;h1 id=<span class="string">"header"</span>&gt;your tittle&lt;/h1&gt;</span><br><span class="line">----------------CSS---------------------</span><br><span class="line"><span class="comment">#header &#123;</span></span><br><span class="line"> text-indent: -<span class="number">3000</span>px;  //将文字置于窗口左边缘之外</span><br><span class="line"> background: url(logo.gif) no-repeat;</span><br><span class="line"> height: <span class="number">50</span>px;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>优点：不增加额外标签，也无需采用hack，简洁优雅。<br>缺点：有时在IE5.0中无法使用（貌似已不算问题）；没有解决浏览器禁用图像后空白页面的可访问问题。</p>
+<h3 id="Levin方法">Levin方法</h3><p>此方法由Levin Alexander提出，解决了禁用图像后的可访问性问题。<br>策略：增加span标签，但是文字不置于其内，然后用span覆盖住文本，便将背景图像应用于span之上便可。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">----------------HTML--------------------</span><br><span class="line">&lt;h1 id=<span class="string">"header"</span>&gt;&lt;span&gt;&lt;/span&gt;your tittle&lt;/h1&gt; //增加空span</span><br><span class="line">----------------CSS---------------------</span><br><span class="line"><span class="comment">#header &#123;</span></span><br><span class="line"> position: relative;</span><br><span class="line"> margin: <span class="number">0</span>px; padding: <span class="number">0</span>px;</span><br><span class="line"> overflow: hidden;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">#header span&#123;</span></span><br><span class="line"> display: block;</span><br><span class="line"> position: absolute;</span><br><span class="line"> top:<span class="number">0</span>px; left: <span class="number">0</span>px;</span><br><span class="line"> z-index: <span class="number">1</span>;  /*<span class="keyword">for</span> opera <span class="number">5</span> and <span class="number">6</span>*/</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">#header,#header span&#123;</span></span><br><span class="line"> height:<span class="number">300</span>px;</span><br><span class="line"> width:<span class="number">600</span>px;</span><br><span class="line"> background-image:url(logo.gif);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>优点：解决了禁用图像后的可防性问题。<br>缺点：图片不能是透明的，否则文字可见；增加额外标签，CSS代码冗长。</p>
+<h3 id="吉尔德/莱法">吉尔德/莱法</h3><p>相当于Lewin方法的改进。<br>策略：增加span标签，但是文字不置于其内，然后利用absolute将span覆盖住文本，之后将背景图像应用于span之上便可。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">----------------HTML--------------------</span><br><span class="line">&lt;h1 id=<span class="string">"header"</span>&gt;&lt;span&gt;&lt;/span&gt;your tittle&lt;/h1&gt; //增加空span</span><br><span class="line">----------------CSS---------------------</span><br><span class="line"><span class="comment">#header &#123;</span></span><br><span class="line"> width: <span class="number">300</span>px;</span><br><span class="line"> height: <span class="number">25</span>px;</span><br><span class="line"> position: relative;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">#header span &#123;</span></span><br><span class="line"> background: url(sample-opaque.gif) no-repeat;</span><br><span class="line"> position: absolute;    //设置absolute后，文字置于图片下方；不设置文字会溢出</span><br><span class="line"> width: <span class="number">100</span>%;</span><br><span class="line"> height: <span class="number">100</span>%;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>优点：解决了禁用图像后的可防性问题；代码相对比较简短。<br>缺点：图片不能是透明的，否则文字可见；增加额外标签。</p>
+<h3 id="拉杜方法">拉杜方法</h3><p>策略：将h1的宽度设大一点（具体看左移多少，以及图像最终应在的位置而定），然后利用负margin将h1左移，此时文字也随之左移而不见，之后将背景图置于（right，top）位置。如下：<br><img src="/imgs/imgReplace/2.png" alt="imgReplace"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">----------------HTML--------------------</span><br><span class="line">&lt;h1 id=<span class="string">"header"</span>&gt;your tittle&lt;/h1&gt; </span><br><span class="line">----------------CSS---------------------</span><br><span class="line"><span class="comment">#header </span></span><br><span class="line">&#123;</span><br><span class="line"> background: url(logo.gif) no-repeat top right; //图置于h1右上角</span><br><span class="line"> width: <span class="number">2300</span>px;  //左移<span class="number">2000</span>px后，剩<span class="number">300</span>px，即h1可见区域大小为<span class="number">300</span>*<span class="number">25</span></span><br><span class="line"> height: <span class="number">25</span>px;</span><br><span class="line"> margin: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">2000</span>px;   //h1左移<span class="number">2000</span>px</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>优点：代码相对比较简短，无额外标签。<br>缺点：没有解决禁用图像后的可访问性问题。</p>
+<h3 id="Lindsay方法">Lindsay方法</h3><p>策略：将文字设置为1px, 并将文字颜色设置成替换用图片背景的颜色，由于文字与背景颜色一样，造成“不可见”。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">----------------HTML--------------------</span><br><span class="line">&lt;h1 id=<span class="string">"header"</span>&gt;your tittle&lt;/h1&gt; </span><br><span class="line">----------------CSS---------------------</span><br><span class="line"><span class="comment">#header </span></span><br><span class="line">&#123;</span><br><span class="line"> background: url(logo.gif) no-repeat;</span><br><span class="line"> width: <span class="number">300</span>px;</span><br><span class="line"> height: <span class="number">25</span>px;</span><br><span class="line"> font-size: <span class="number">1</span>px; </span><br><span class="line"> color: <span class="comment">#xxxxxx;   //根据背景颜色来设定</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>优点：代码相对比较简短，无额外标签。<br>缺点：没有解决禁用图像后的可访问性问题；文字颜色需设置的跟背景一样，增加操作的复杂度。</p>
 
         
       </div>
@@ -170,26 +191,16 @@
     
       <div class="post-footer">
         
-          <div class="post-tags">
-            
-              <a href="/tags/RegExp/">
-                #RegExp
-              </a>
-            
-          </div>
-        
 
         
           <div class="post-nav">
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2015/01/06/PPT中插入SWF/">PPT07中嵌入SWF</a>
-              
             </div>
 
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2014/12/15/HTML5多媒体播放/">HTML5多媒体播放</a>
+                <a href="/2015/04/19/css 3D/">CSS3 3D</a>
               
             </div>
           </div>
@@ -206,8 +217,8 @@
   
     <div class="comments" id="comments">
       
-        <div class="ds-thread" data-thread-key="2014/12/16/正则表达式/"
-             data-title="正则表达式" data-url="http://yoursite.com/2014/12/16/正则表达式/">
+        <div class="ds-thread" data-thread-key="2015/04/20/几种常见的图像替换技术/"
+             data-title="几种常见的图像替换技术" data-url="http://yoursite.com/2015/04/20/几种常见的图像替换技术/">
         </div>
 
       
@@ -289,7 +300,7 @@
         <div class="post-toc">
           
           
-            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#RegExp方法与属性"><span class="nav-number">1.</span> <span class="nav-text">RegExp方法与属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络教程"><span class="nav-number">2.</span> <span class="nav-text">网络教程</span></a></li></ol></div>
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fahrner图像替换"><span class="nav-number">1.</span> <span class="nav-text">Fahrner图像替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Leahy/_Langridge方法"><span class="nav-number">2.</span> <span class="nav-text">Leahy/ Langridge方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHARK方法"><span class="nav-number">3.</span> <span class="nav-text">PHARK方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Levin方法"><span class="nav-number">4.</span> <span class="nav-text">Levin方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#吉尔德/莱法"><span class="nav-number">5.</span> <span class="nav-text">吉尔德/莱法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉杜方法"><span class="nav-number">6.</span> <span class="nav-text">拉杜方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lindsay方法"><span class="nav-number">7.</span> <span class="nav-text">Lindsay方法</span></a></li></ol></div>
           
         </div>
         <div class="post-toc-indicator-bottom post-toc-indicator"></div>
