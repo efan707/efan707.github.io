@@ -60,7 +60,7 @@
       <li class="menu-item menu-item-home">
         <a href="/">
           <i class="menu-item-icon icon-home"></i> <br />
-          首頁
+          Home
         </a>
       </li>
     
@@ -68,7 +68,7 @@
       <li class="menu-item menu-item-categories">
         <a href="/categories">
           <i class="menu-item-icon icon-categories"></i> <br />
-          分類
+          Categories
         </a>
       </li>
     
@@ -76,7 +76,7 @@
       <li class="menu-item menu-item-archives">
         <a href="/archives">
           <i class="menu-item-icon icon-archives"></i> <br />
-          歸檔
+          Archives
         </a>
       </li>
     
@@ -84,7 +84,7 @@
       <li class="menu-item menu-item-tags">
         <a href="/tags">
           <i class="menu-item-icon icon-tags"></i> <br />
-          標籤
+          Tags
         </a>
       </li>
     
@@ -92,7 +92,7 @@
       <li class="menu-item menu-item-about">
         <a href="/about">
           <i class="menu-item-icon icon-about"></i> <br />
-          關於
+          About
         </a>
       </li>
     
@@ -123,6 +123,151 @@
           
           
             
+              <a class="post-title-link" href="/2014/11/22/CSS选择器之孰重孰轻/">
+                CSS选择器优先级判定
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            Posted on 2014-11-22
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; In
+              
+                <a href="/categories/CSS/">CSS</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2014/11/22/CSS选择器之孰重孰轻/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/22/CSS选择器之孰重孰轻/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <h3 id="CSS不同方式引入">CSS不同方式引入</h3><p>CSS优先级即CSS样式在浏览器中被解析出来的先后顺序。<br>对于不同方式引入的样式，一般情况下，优先级如下：<br>外部样式(External style sheet) &lt; 内部样式(Internal style sheet) &lt; 内联样式(Inline style)<br>——如果外部样式放在内部样式的后面，则外部样式将覆盖内部样式；JS设置的样式为内联样式。<br>总之一句话：</p>
+<blockquote>
+<p>样式位置愈近之，优先级愈高之</p>
+</blockquote>
+<h3 id="选择器权重">选择器权重</h3><p>约定俗成，我们用(A,B,C,D)来表示CSS选择器的权重，其中：<br>A表示CSS是否为内联样式，是为1，否为0<br>B表示ID选择器的个数<br>C表示类、伪类和属性选择器的个数<br>D表示标签、伪元素的个数（例如，p:first-letter 这样的选择器，计算为0, 0, 0, 2）。<br>具体如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>选择器类型</th>
+<th>权重(A,B,C,D)</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内联样式</td>
+<td>(1,0,0,0)</td>
+<td></td>
+</tr>
+<tr>
+<td>ID选择器</td>
+<td>(0,1,0,0)</td>
+<td>#IDName{}</td>
+</tr>
+<tr>
+<td>CLASS类选择器</td>
+<td>(0,0,1,0)</td>
+<td>.className{}</td>
+</tr>
+<tr>
+<td>伪类选择器</td>
+<td>(0,0,1,0)</td>
+<td>:hover{}</td>
+</tr>
+<tr>
+<td>属性选择器</td>
+<td>(0,0,1,0)</td>
+<td>[href]{}</td>
+</tr>
+<tr>
+<td>标签选择器</td>
+<td>(0,0,0,1)</td>
+<td>p{}</td>
+</tr>
+</tbody>
+</table>
+<p>优先级比较规则：从权重左边的第一位开始比较大小，如果较大，则优先级较高；反之，则优先级较低；如果一样，继续往右逐位比较。(IE不支持!important)</p>
+<blockquote>
+<p>权重优先级：important &gt; 内联 &gt; ID &gt; 类 | 伪类 | 属性选择 &gt; 标签 | 伪对象 &gt; 继承 &gt; 通配符<br>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2014/11/22/CSS选择器之孰重孰轻/#more">
+                Read more &raquo;
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/selector/">
+                #selector
+              </a>
+            
+          </div>
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2014/11/19/网页字体选置指南/">
                 网页字体选择指南
               </a>
@@ -134,14 +279,14 @@
       <div class="post-meta">
         <span class="post-time">
           
-            發表於 2014-11-19
+            Posted on 2014-11-19
           
         </span>
 
         
           
             <span class="post-category">
-              &nbsp; | &nbsp; 分類於
+              &nbsp; | &nbsp; In
               
                 <a href="/categories/CSS/">CSS</a>
 
@@ -177,7 +322,7 @@
             <p>网页设计时，由于各个浏览器解析不同，字体样式会呈现各异。为了让页面字体显示达到一致的效果，需要我们去人为地设置字体样式。虽然CSS3已允许我们去引入各式各样的字体，但是对于中文字体，往往1M以上，极度影响网站效率。因此，在实际开发过程中，我们会设置字体样式为那些客户端本就有的（系统或者其他所含)。<br>下面是一些网站的字体样式设置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">font-family: arial,sans-serif;   //Google（中文默认为宋体）</span><br><span class="line">font-family: <span class="string">"Helvetica Neue"</span>,Helvetica,Arial,sans-serif; //知乎（Helvetica Neue为优化版）</span><br><span class="line">font-family: Arial,Helvetica,sans-serif;  //豆瓣</span><br><span class="line">font: <span class="number">12</span>px/<span class="number">1.3</span> <span class="string">"Arial"</span>,<span class="string">"Microsoft YaHei"</span>; //微博</span><br><span class="line">font-family: <span class="string">"Microsoft YaHei"</span>,<span class="string">"WenQuanYi Micro Hei"</span>,SimHei,tahoma,sans-serif;  //果壳</span><br><span class="line">font-family: Tahoma,Verdana,STHeiTi,simsun,sans-serif;  //人人</span><br><span class="line">font: <span class="number">12</span>px <span class="string">"宋体"</span>,<span class="string">"Arial Narrow"</span>,Helvetica;  //腾讯</span><br><span class="line">font: <span class="number">12</span>px/<span class="number">1.5</span> tahoma,arial,宋体;   //淘宝</span><br><span class="line">font-family: arial;       //百度</span><br><span class="line">font-family: <span class="string">"Microsoft YaHei"</span>,<span class="string">"微软雅黑"</span>,helvetica,arial,verdana,tahoma,sans-serif; //优酷</span><br><span class="line">font-family: <span class="string">"Microsoft Yahei"</span>,STHeiti,sans-serif; //锤子</span><br><span class="line">font-family: <span class="string">"宋体"</span>,<span class="string">"Arial"</span>,HELVETICA;    //腾讯新闻</span><br><span class="line">font-family: Georgia, <span class="string">"Times New Roman"</span>, <span class="string">"Microsoft YaHei"</span>, <span class="string">"微软雅黑"</span>, STXihei, <span class="string">"华文细黑"</span>, serif;</span><br></pre></td></tr></table></figure></p>
             <div class="post-more-link text-center">
               <a class="btn" href="/2014/11/19/网页字体选置指南/#more">
-                閱讀全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -231,14 +376,14 @@
       <div class="post-meta">
         <span class="post-time">
           
-            發表於 2014-11-18
+            Posted on 2014-11-18
           
         </span>
 
         
           
             <span class="post-category">
-              &nbsp; | &nbsp; 分類於
+              &nbsp; | &nbsp; In
               
                 <a href="/categories/前端/">前端</a>
 
@@ -327,14 +472,14 @@
       <div class="post-meta">
         <span class="post-time">
           
-            發表於 2014-11-17
+            Posted on 2014-11-17
           
         </span>
 
         
           
             <span class="post-category">
-              &nbsp; | &nbsp; 分類於
+              &nbsp; | &nbsp; In
               
                 <a href="/categories/wordpress/">wordpress</a>
 
@@ -374,7 +519,7 @@ Allow from all      //修改前为：Allow from <span class="number">127.0</span
 </code></pre>
             <div class="post-more-link text-center">
               <a class="btn" href="/2014/11/17/WAMP实现局域网访问/#more">
-                閱讀全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -428,14 +573,14 @@ Allow from all      //修改前为：Allow from <span class="number">127.0</span
       <div class="post-meta">
         <span class="post-time">
           
-            發表於 2014-11-16
+            Posted on 2014-11-16
           
         </span>
 
         
           
             <span class="post-category">
-              &nbsp; | &nbsp; 分類於
+              &nbsp; | &nbsp; In
               
                 <a href="/categories/Blog/">Blog</a>
 
@@ -471,7 +616,7 @@ Allow from all      //修改前为：Allow from <span class="number">127.0</span
             <h3 id="主要效果">主要效果</h3><p>之前看到一些博文有内容导航，感觉很是实用，便做了一个简单的基于h2、h3的文章导读。具体功能有：<br>1、能够根据内容的h2、h3标题生成概要<br>2、点击导航目录，会定位到相应的内容区域<br>3、滚动页面查看内容时，导航目录会实时显示所在的位置<br>具体效果可查看<a href="http://yichao.me/articleDirectory/">Demo</a><br>
             <div class="post-more-link text-center">
               <a class="btn" href="/2014/11/16/博文目录导航/#more">
-                閱讀全文 &raquo;
+                Read more &raquo;
               </a>
             </div>
           
@@ -486,104 +631,6 @@ Allow from all      //修改前为：Allow from <span class="number">127.0</span
             
               <a href="/tags/blog/">
                 #blog
-              </a>
-            
-          </div>
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2014/11/09/some web api/">
-                Some web API
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            發表於 2014-11-09
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分類於
-              
-                <a href="/categories/前端杂烩/">前端杂烩</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2014/11/09/some web api/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/09/some web api/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <h3 id="前言">前言</h3><p>搭建web的过程中，可能需要一些常见的应用，譬如地图、天气、搜索等等。而在这时，一些第三方API便让我们能方便地实现所需的功能。国内的API可参照<a href="http://apistore.baidu.com/">BaiduAPIStore</a>或<a href="http://www.devstore.cn/">DevStore</a>。下面就结合实例，列举二三。</p>
-<h3 id="地图"><a href="http://yichao.me/web-api/">地图</a></h3><p>常用的有以下一些，考虑Google容易被墙，推荐使用百度地图。百度地图的API比较齐全，文档介绍也比较详尽，易上手。最喜欢百度的卫星地图，比较清晰，没有其他地图的灰蒙之感。<br><a href="http://code.google.com/apis/maps">谷歌地图</a>、<a href="http://www.microsoft.com/maps/developers/web.aspx">必应地图</a>、<a href="http://wiki.openstreetmap.org/wiki/API">OpenStreetMap</a>、<a href="http://openapi.baidu.com/map">百度地图</a>、<a href="http://open.mapbar.com">图吧</a>、<a href="http://api.51ditu.com">我要地图</a>、<a href="http://map.sogou.com/api">搜狗地图</a>、<a href="http://code.autonavi.com/android/faq">高德地图</a><br>
-            <div class="post-more-link text-center">
-              <a class="btn" href="/2014/11/09/some web api/#more">
-                閱讀全文 &raquo;
-              </a>
-            </div>
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-          <div class="post-tags">
-            
-              <a href="/tags/API/">
-                #API
               </a>
             
           </div>
@@ -634,22 +681,22 @@ Allow from all      //修改前为：Allow from <span class="number">127.0</span
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">38</span>
-            <span class="site-state-item-name">文章</span>
+            <span class="site-state-item-count">39</span>
+            <span class="site-state-item-name">posts</span>
           </a>
         </div>
 
         <div class="site-state-item site-state-categories">
           <a href="/categories">
             <span class="site-state-item-count">11</span>
-            <span class="site-state-item-name">分類</span>
+            <span class="site-state-item-name">categories</span>
           </a>
         </div>
 
         <div class="site-state-item site-state-tags">
           <a href="/tags">
             <span class="site-state-item-count">28</span>
-            <span class="site-state-item-name">標籤</span>
+            <span class="site-state-item-name">tags</span>
           </a>
         </div>
 
@@ -688,11 +735,11 @@ Allow from all      //修改前为：Allow from <span class="number">127.0</span
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主題 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
