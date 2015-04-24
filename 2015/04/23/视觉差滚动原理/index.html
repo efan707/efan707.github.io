@@ -18,9 +18,19 @@
 
 
 
-	<meta name="keywords" content="wamp," />
 
-  <title> WAMP实现局域网访问 // Efan’s Notes </title>
+    <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+    <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.1" />
+
+
+
+
+  <title> 让视差滚动起来 // Efan’s Notes </title>
 </head>
 
 <body>
@@ -110,7 +120,7 @@
           
           
             
-              WAMP实现局域网访问
+              让视差滚动起来
             
           
         </h1>
@@ -119,7 +129,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            發表於 2014-11-17
+            發表於 2015-04-23
           
         </span>
 
@@ -128,7 +138,7 @@
             <span class="post-category">
               &nbsp; | &nbsp; 分類於
               
-                <a href="/categories/wordpress/">wordpress</a>
+                <a href="/categories/前端/">前端</a>
 
                 
                 
@@ -142,8 +152,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2014/11/17/WAMP实现局域网访问/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/17/WAMP实现局域网访问/"></span>
+            <a href="/2015/04/23/视觉差滚动原理/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/23/视觉差滚动原理/"></span>
             </a>
           </span>
           
@@ -158,13 +168,13 @@
         
 
         
-          <p>基于WAMP的wordpress站点要想实现局域网内访问，需要作如下设置：<br>1、首先修改WAMP的httpd.conf文件<br><img src="/imgs/wamp.png" alt="conf文件"><br>其中相应内容作如下修改：</p>
-<pre><code class="bash">Order Deny,Allow
-Deny from none      //修改前为：Deny from all 
-Allow from all      //修改前为：Allow from <span class="number">127.0</span>.<span class="number">0.1</span>
-</code></pre>
+          <p>视差效果，原本是一个天文学术语，当我们观察星空时，离我们远的星星移动速度较慢，离我们近的星星移动速度则较快。视差滚动(Parallax Scrolling)一名正是来源于此，是指让多层背景以不同的速度移动，形成立体的运动效果，带来非常出色的视觉体验。视差滚动的例子一搜一箩筐，下面主要就视差滚动的几种方法或原理做一简要说明。</p>
+<h3 id="背景切换">背景切换</h3><p>此种方法比较简单，即设置区域块的背景为fixed即可。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-attachment: fixed || scroll || <span class="built_in">local</span></span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<p>2、此时局域网访问，会丢失样式以及其他相关内容，显示如下：<br><img src="/imgs/wampWrong.png" alt="访问"><br>3、登陆wordpress后台，设置常规里的wordpress地址以及站点地址为本机Ip，具体如下所示：<br><img src="/imgs/set.png" alt="设置"><br>4、再打开<a href="http://172.18.97.245" target="_blank" rel="external">http://172.18.97.245</a>  便可正常访问。</p>
+<p>举一栗子，代码如下。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">------------------HTML--------------------</span><br><span class="line">&lt;div class=<span class="string">"test box1"</span>&gt;</span><br><span class="line">	&lt;h2&gt;人生如梦&lt;/h2&gt;</span><br><span class="line">	&lt;p&gt;山无数，烟万缕。憔悴煞玉堂人物，倚篷窗一身儿活受苦。恨不得随大江东去。&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=<span class="string">"test box2"</span>&gt;</span><br><span class="line">	&lt;h2&gt;蝶恋花&lt;/h2&gt;</span><br><span class="line">	&lt;p&gt;挺挺双清临净练。羽佩飞来，颇觉游情倦。&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=<span class="string">"test box3"</span>&gt;</span><br><span class="line">	&lt;h2&gt;满江红&lt;/h2&gt;</span><br><span class="line">	&lt;p&gt;凤鹤翩跹，记昨梦、天锡九龄。从头数，再周甲子，屈指天星。&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">------------------CSS--------------------</span><br><span class="line">html,body&#123;</span><br><span class="line">  height:<span class="number">100</span>%;</span><br><span class="line">  margin: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">.test&#123;</span><br><span class="line">  height: <span class="number">2000</span>px;</span><br><span class="line">  width: <span class="number">100</span>%;</span><br><span class="line">  background: red no-repeat fixed top left;</span><br><span class="line">  background-size: cover;</span><br><span class="line">  font: normal <span class="number">80</span>px <span class="string">"微软雅黑"</span>, sans-serif ;</span><br><span class="line">  text-align: center;</span><br><span class="line">  color: white;</span><br><span class="line">  padding-top: <span class="number">300</span>px;</span><br><span class="line">&#125;</span><br><span class="line">.box1&#123;</span><br><span class="line">    background-image: url(img/<span class="number">1</span>.jpg);&#125;</span><br><span class="line">.box2&#123;</span><br><span class="line">    background-image: url(img/<span class="number">2</span>.jpg);&#125;</span><br><span class="line">.box3&#123;</span><br><span class="line">    background-image: url(img/<span class="number">3</span>.jpg);&#125;</span><br></pre></td></tr></table></figure></p>
+<p>效果请参照<span style="background-color:#0ddddd;color:white;"><a href="http://yichao.me/parallax/" target="_blank" rel="external">DEMO</a></span></p>
+<h3 id="元素动画">元素动画</h3><p>为了让每一section的表现更加生动丰富，可设定当页面滚动到本区域时，区域内的元素进行相应的动画，与PPT每页动画类似。<br>动画方式可以是JS动画，也可以是CSS3动画（通过给元素增加class名）。<br>元素不同速度的滚动，可参照以下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element1.style.top = old_top1+scrollTop*.<span class="number">9</span>+<span class="string">'px'</span>; //old_top1为起始top值</span><br><span class="line">element2.style.top = old_top2+scrollTop*.<span class="number">7</span>+<span class="string">'px'</span>;</span><br><span class="line">element3.style.top = old_top3+scrollTop*.<span class="number">3</span>+<span class="string">'px'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>当页面以速度V向下滚动时，element1以0.9V的速度向下运动，相对于页面即以0.1V的速度向上运动；同理，element2相对于页面以0.3V的速度向上运动；element3相对于页面以0.7V的速度向上运动。所以，当页面向下滚动时，三个定位元素会以不同的速度向上运动（相对于页面），形成视差滚动。<br>对于CSS3动画，可通过添加class来触发，如滚动到某页面时，将其区域内的元素#element增加className为.animation的类，即可触发相应的动画，代码如下（针对于chrome，其他浏览器加相应的前缀）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#element  .animation&#123;</span></span><br><span class="line">   -webkit-animation: parallax <span class="number">5</span>s linear <span class="number">1</span>s infinite alternate; &#125;</span><br><span class="line">@-webkit-keyframes parallax&#123;</span><br><span class="line">  <span class="number">0</span>%&#123;</span><br><span class="line">    background-color: <span class="comment">#782313;</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="number">50</span>%&#123;</span><br><span class="line">    background-color: <span class="comment">#999999;</span></span><br><span class="line">    -webkit-transform: rotateX(<span class="number">40</span>deg) translateX(<span class="number">200</span>px);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="number">100</span>%&#123;</span><br><span class="line">    background-color: <span class="comment">#0ddddd;</span></span><br><span class="line">    -webkit-transform: rotateX(<span class="number">40</span>deg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
         
       </div>
@@ -173,26 +183,16 @@ Allow from all      //修改前为：Allow from <span class="number">127.0</span
     
       <div class="post-footer">
         
-          <div class="post-tags">
-            
-              <a href="/tags/wamp/">
-                #wamp
-              </a>
-            
-          </div>
-        
 
         
           <div class="post-nav">
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2014/11/18/Doctype、Meta和CSSReset/">DOCTYPE声明/META标签/CSSreset</a>
-              
             </div>
 
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2014/11/16/博文目录导航/">博文导航</a>
+                <a href="/2015/04/21/CSS3 之选择器/">CSS选择器</a>
               
             </div>
           </div>
@@ -209,8 +209,8 @@ Allow from all      //修改前为：Allow from <span class="number">127.0</span
   
     <div class="comments" id="comments">
       
-        <div class="ds-thread" data-thread-key="2014/11/17/WAMP实现局域网访问/"
-             data-title="WAMP实现局域网访问" data-url="http://yoursite.com/2014/11/17/WAMP实现局域网访问/">
+        <div class="ds-thread" data-thread-key="2015/04/23/视觉差滚动原理/"
+             data-title="让视差滚动起来" data-url="http://yoursite.com/2015/04/23/视觉差滚动原理/">
         </div>
 
       
@@ -292,7 +292,7 @@ Allow from all      //修改前为：Allow from <span class="number">127.0</span
         <div class="post-toc">
           
           
-            <p class="post-toc-empty">此文章未包含目錄</p>
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景切换"><span class="nav-number">1.</span> <span class="nav-text">背景切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元素动画"><span class="nav-number">2.</span> <span class="nav-text">元素动画</span></a></li></ol></div>
           
         </div>
         <div class="post-toc-indicator-bottom post-toc-indicator"></div>
