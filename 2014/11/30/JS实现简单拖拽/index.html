@@ -2,11 +2,12 @@
 <html class="theme-next use-motion theme-next-hexo-theme-next">
 <head>
   
-
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
+<link rel="stylesheet" type="text/css" href="/my.css">
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript" src="/my.js"></script>
 
 
 
@@ -119,16 +120,16 @@
       <div class="post-meta">
         <span class="post-time">
           
-            發表於 2014-11-30
+            日期: 2014-11-30
           
         </span>
 
         
           
             <span class="post-category">
-              &nbsp; | &nbsp; 分類於
+              &nbsp; | &nbsp; 分类:
               
-                <a href="/categories/JS/">JS</a>
+                <a style="text-decoration:none;" href="/categories/JS/">JS</a>
 
                 
                 
@@ -248,8 +249,11 @@
 
     <div class="site-overview">
       <div class="site-author motion-element">
-        <img class="site-author-image" src="/images/default_avatar.jpg" alt="efan" />
+        <img class="site-author-image" src="/images/touxiang.png" alt="efan" />
         <p class="site-author-name">efan</p>
+        <p style="color:gray;font-size:14px;">凡心所向  素履所往</p>
+
+
       </div>
       <p class="site-description motion-element"></p>
       <div class="site-state motion-element">
@@ -313,22 +317,12 @@
   
   &copy; &nbsp; 
   2015
-  <span class="with-love">
-    <i class="icon-heart"></i>
-  </span>
-  <span class="author">efan</span>
+  
+  <span class="author">efan</span> | Powered By Hexo
 </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
-</div>
 
-<div class="theme-info">
-  主題 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+
 
 
 
@@ -820,7 +814,7 @@
         var currentTarget = $('.' + activePanelClassName);
         var target = $('.' + item.data('target'));
 
-        currentTarget.velocity('transition.slideUpOut', 200, function () {
+      currentTarget.velocity('transition.slideUpOut', 200, function () {
           target
             .velocity('stop')
             .velocity('transition.slideDownIn', 200)
@@ -829,7 +823,7 @@
 
         item.siblings().removeClass(activeTabClassName);
         item.addClass(activeTabClassName);
-      });
+      });  
 
       $('.post-toc a').on('click', function (e) {
         e.preventDefault();
@@ -841,12 +835,12 @@
       });
 
       // Expand sidebar on post detail page by default, when post has a toc.
-      var $tocContent = $('.post-toc-content');
-      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0 && isDesktop()) {
+     var $tocContent = $('.post-toc-content');
+     /*  if ($tocContent.length > 0 && $tocContent.html().trim().length > 0 && isDesktop()) {
         setTimeout(function () {
           $('.sidebar-toggle').trigger('click');
         }, 800);
-      }
+      }  */
     });
   </script>
 
