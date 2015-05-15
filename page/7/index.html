@@ -124,6 +124,107 @@
           
           
             
+              <a class="post-title-link" href="/2014/11/17/WAMP实现局域网访问/">
+                WAMP实现局域网访问
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2014-11-17
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/wordpress/">wordpress</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2014/11/17/WAMP实现局域网访问/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/17/WAMP实现局域网访问/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <p>基于WAMP的wordpress站点要想实现局域网内访问，需要作如下设置：<br>1、首先修改WAMP的httpd.conf文件<br><img src="/imgs/wamp.png" alt="conf文件"><br>其中相应内容作如下修改：</p>
+<pre><code class="bash">Order Deny,Allow
+Deny from none      //修改前为：Deny from all 
+Allow from all      //修改前为：Allow from <span class="number">127.0</span>.<span class="number">0.1</span>
+</code></pre>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2014/11/17/WAMP实现局域网访问/#more">
+                Read More
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/wamp/">
+                #wamp
+              </a>
+            
+          </div>
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2014/11/16/博文目录导航/">
                 博文导航
               </a>
@@ -552,118 +653,12 @@ var myCookie=getCookie(<span class="string">"cookieName"</span>);
 
 
   
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2014/11/01/Gh-pages分支/">
-                Gh-pages分支
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            日期: 2014-11-01
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分类:
-              
-                <a style="text-decoration:none;" href="/categories/Github/">Github</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2014/11/01/Gh-pages分支/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/01/Gh-pages分支/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <h3 id="前言">前言</h3><p>之前用<a href="http://yichao.me/2014/10/26/%EF%BC%88Github+Hexo%EF%BC%89%E5%8D%9A%E5%AE%A2%E8%B5%B0%E8%B5%B7%E6%9D%A5/">Github-pages+Hexo</a>搭建了博客，再绑定自己的域名，各种自在。近几日，闲来无事，想做一些web项目，但苦于没有很满意的平台。苦寻之，原来近在眼前——Github利用gh-pages分支可以很快创建静态项目主页。相比较什么Sae/Jae/Bae而言，它速度快、限制少，还可以关联自己的博客域名（绑定efan707.github.io的yichao.me），只能说没有更好。</p>
-<h3 id="Hello_world">Hello world</h3><p>GitHub会为每个账号分配一个二级域名[user-id].github.io作为用户的Github-pages地址。其实，用户还可以利用gh-pages分支来创建项目主页，而项目主页的访问地址为：[user-id].github.io/[project-name]。如果博客绑定了独立域名，还可以通过——[yourDomainName]/[project-name]来访问。下面就以HelloWorld为例，讲解下gh-pages的用法。<br>1、打开Github，创建一名为<a href="https://github.com/efan707/HelloWorld">HelloWorld</a>的repository。<br>2、本地git克隆HelloWorld.git。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@github.com:efan707/HelloWorld.git</span><br></pre></td></tr></table></figure></p>
-<p>3、将静态网页文件(主页文件名为index.html)拷贝到HelloWorld文件夹下。<br>4、使用git命令创建分支gh-pages<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch gh-pages</span><br></pre></td></tr></table></figure></p>
-<p>5、切换分支到gb-pages并将HelloWorld文件夹中的内容（文件和文件夹）push到远程。</p>
-<pre><code class="bash">$ git checkout gh-pages
-$ git add index.html
-$ git commit -m <span class="string">"push index"</span>
-$ git push -u origin gh-pages
-</code></pre>
-<p>完成以上步骤后，便成功创建了一个简单的项目主页，地址为<a href="http://yichao.me/HelloWorld/">http://yichao.me/HelloWorld/</a><br>
-            <div class="post-more-link text-center">
-              <a class="btn" href="/2014/11/01/Gh-pages分支/#more">
-                Read More
-              </a>
-            </div>
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-          <div class="post-tags">
-            
-              <a href="/tags/web/">
-                #web
-              </a>
-            
-          </div>
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
 
           </div>
 
           
             <div class="pagination">
-              <a class="extend prev" rel="prev" href="/page/6/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/">&raquo;</a>
+              <a class="extend prev" rel="prev" href="/page/6/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/">&raquo;</a>
             </div>
           
         </div>
@@ -694,7 +689,7 @@ $ git push -u origin gh-pages
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">40</span>
+            <span class="site-state-item-count">41</span>
             <span class="site-state-item-name">文章</span>
           </a>
         </div>
