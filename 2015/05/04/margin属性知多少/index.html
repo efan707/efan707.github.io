@@ -1,0 +1,905 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-hexo-theme-next">
+<head>
+  
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<link rel="stylesheet" type="text/css" href="/my.css">
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript" src="/my.js"></script>
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.1"/>
+
+
+
+
+
+    <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+    <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.1" />
+
+
+
+
+  <title> margin属性知多少 // Efan’s Notes </title>
+</head>
+
+<body>
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Efan’s Notes</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+
+  <ul id="menu" class="menu">
+    
+    
+      
+      <li class="menu-item menu-item-home">
+        <a href="/">
+          <i class="menu-item-icon icon-home"></i> <br />
+          首頁
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-categories">
+        <a href="/categories">
+          <i class="menu-item-icon icon-categories"></i> <br />
+          分類
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-archives">
+        <a href="/archives">
+          <i class="menu-item-icon icon-archives"></i> <br />
+          歸檔
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-tags">
+        <a href="/tags">
+          <i class="menu-item-icon icon-tags"></i> <br />
+          標籤
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-about">
+        <a href="/about">
+          <i class="menu-item-icon icon-about"></i> <br />
+          關於
+        </a>
+      </li>
+    
+  </ul>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+            
+          
+
+          <div id="posts" class="posts-expand">
+            
+  
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              margin属性知多少
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2015-05-04
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/05/04/margin属性知多少/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/05/04/margin属性知多少/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          <p>每个CSS属性都值得深深玩味，今天就瞧一瞧margin属性的各方各面。</p>
+<h3 id="margin简介">margin简介</h3><p>margin为外边距，具体如下图所示：<br><img src="/imgs/margin/2.gif" alt="margin"><br>其中，margin-left、margin-top基于的是相对元素的边，margin-right、margin-bottom基于的是自己的右边框和下边框。<br>margin大有用途，主要是布局方面，可从文章《<a href="http://127.0.0.1:4000/2015/04/18/%E5%87%A0%E7%A7%8D%E5%B8%83%E5%B1%80%E4%B9%8B%E9%81%93/" target="_blank" rel="external">几种布局之道</a>》窥知一二。<br><a id="more"></a></p>
+<hr>
+<h3 id="margin写法">margin写法</h3><p>margin的写法可参照W3C标准<a href="http://dev.w3.org/csswg/css-box/#the-margin-properties" target="_blank" rel="external">The margin properties</a>中描述，截图如下：</p>
+<p><div style="width:80%;"><img src="/imgs/margin/3.png" alt="margin"></div><br>这里有几点需要说明：</p>
+<ol>
+<li>在水平书写模式下，使用百分比基于的都是containing block的宽；当writing-mode为垂直模式时，基于的是包含元素的高度。至于为啥，请围观《<a href="http://www.zhihu.com/question/20983035" target="_blank" rel="external">CSS中margin-top/bottom(padding-top/bottom)百分比为何以最近的块级祖先元素的宽度而不是高度作计算？</a>》</li>
+<li><p>关于auto的实际取值，<a href="http://dev.w3.org/csswg/css-box/#the-margin-properties" target="_blank" rel="external">The margin properties</a>中是这样规定的。</p>
+<blockquote>
+<p>On the A edge and C edge, the used value of ‘auto’ is 0. On the B edge and D edge, the used value depends on the available space, as defined in “Calculating widths, heights and margins.”</p>
+</blockquote>
+<p><img src="/imgs/margin/4.png" alt="margin"><br>就是说，A/C方向margin的auto值为0，B/D方向margin的auto值基于所剩下的可用空间。这也就解释了正常情况下（对应情况1）为啥margin：auto与margin：0 auto 有一样的效果。<br>对于B/D方向的margin情况，如果两者均声明为auto，则平分所能利用空间，例如水平居中margin：0 auto;<br>对于只声明B/D中一者方向的margin为auto，则此时auto为所能利用全部空间。如下图右对齐的实现方式：<br><img src="/imgs/margin/5.png" alt="margin"></p>
+</li>
+</ol>
+<hr>
+<h3 id="margin重叠">margin重叠</h3><p>关于margin属性，老生常谈的就是它的重叠。如下代码，box1的下边距与box2的上边距重叠，两者的垂直间距为30px，而不是60px。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">------------------HTML--------------------------</span><br><span class="line">&lt;div class=<span class="string">"box1"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=<span class="string">"box2"</span>&gt;&lt;/div&gt;</span><br><span class="line">------------------CSS----------------------------</span><br><span class="line">.box1,.box2&#123;</span><br><span class="line">  height:<span class="number">300</span>px;</span><br><span class="line">  width:<span class="number">300</span>px;</span><br><span class="line">  margin:<span class="number">30</span>px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>关于重叠，可参照CSS2.1中的<a href="http://www.w3.org/TR/CSS21/box.html#collapsing-margins" target="_blank" rel="external">Collapsing margins</a>一节，有两点需要注意：</p>
+<ol>
+<li>正常情况下重叠发生在垂直外边距上，当书写模式切换到垂直模式时，margin 重叠发生在水平方向上。</li>
+<li>重叠后取其中最大的那个margin值作为最终值；如果出现负边距，则在最大的正边距中减去绝对值最大的负边距；如果没有正边距，则从零中减去绝对值最大的负边距。</li>
+</ol>
+<p>关于为啥要有重叠，CSS1 <a href="http://www.w3.org/TR/CSS1/#vertical-formatting" target="_blank" rel="external">Vertical formatting</a>小节中如是说：</p>
+<blockquote>
+<p>In most cases, after collapsing the vertical margins the result is visually more pleasing and closer to what the designer expects.</p>
+</blockquote>
+<hr>
+<h3 id="margin不重叠条件">margin不重叠条件</h3><p>根据CSS2.1中的<a href="http://www.w3.org/TR/CSS21/box.html#collapsing-margins" target="_blank" rel="external">Collapsing margins</a>一节，margin在以下条件时，不发生重叠。</p>
+<ul>
+<li>浮动元素不与其他元素 margin 重叠。</li>
+<li>定义了属性overflow且值不为visible（即创建了新的块级格式化上下文）的块元素，不与它的子元素发生margin 重叠。</li>
+<li>绝对定位元素的 margin 不与任何 margin 发生重叠。</li>
+<li>根元素的 margin 不与其它任何 margin 发生重叠。</li>
+</ul>
+<p><a href="http://www.w3.org/TR/CSS21/box" target="_blank" rel="external">Collapsing margins</a>标准英文说明中，流内（in-flow）元素是指「normal flow(普通流)元素」，流外(out-of-flow)元素是指浮动和绝对定位的元素以及根元素。所以为了使得边缘不重叠，可利用上述条件之一即可。</p>
+<hr>
+<h3 id="margin之bug处理">margin之bug处理</h3><p>好吧，又是IE下的各种bug，IE真的是个特立独行的孩子。下面对各种bug进行罗列：</p>
+<p style="color:#0099ff; display:inline;">1、IE6浮动双倍margin bug</p><br><p style="color:#000066;display:inline;">描述：</p>当给父元素内第一个左浮动元素设置margin-left或第一个右浮动元素设置margin-right时margin加倍。<br><p style="color:#000066;display:inline;">注意：</p>之所以是第一个左/右浮动元素，是因为它们margin-left/margin-right相对的是父元素，而中间浮动元素相对的是其他兄弟元素，相对于兄弟元素时不发生此bug；当书写模式为垂直模式，float:right 时margin-bottom会double，float:left 时margin-top、margin-bottom均会double，IE就是这么神奇！<br><p style="color:#000066;display:inline;">解决之道：</p>在double margin 的方向上设置负一倍的margin值，此方法耦合性低；是给浮动元素加上display:inline，此方法灵活。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">------------------负margin方法--------------------------</span><br><span class="line"><span class="comment">#demo p&#123;</span></span><br><span class="line">    <span class="built_in">float</span>:left;</span><br><span class="line">    margin-left:<span class="number">10</span>px;</span><br><span class="line">    _margin-left:<span class="number">5</span>px;   //hack <span class="keyword">for</span> IE</span><br><span class="line">&#125;</span><br><span class="line">原理：抵消多出的一倍margin。</span><br><span class="line">-----------------display:inline方法----------------------------</span><br><span class="line"><span class="comment">#demo p&#123;</span></span><br><span class="line">    _display:inline;   //hack <span class="keyword">for</span> IE</span><br><span class="line">    <span class="built_in">float</span>:left;</span><br><span class="line">    margin-left:<span class="number">10</span>px;</span><br><span class="line">&#125;</span><br><span class="line">原理：inline元素或inline-block元素是不存在双边距问题的，而<span class="built_in">float</span>:left可以触发IE的haslayout，</span><br><span class="line">inline元素表现的如同inline-block，可以设置宽高以及垂直margin和padding等属性。</span><br></pre></td></tr></table></figure><br><br>除了以上bug外，还有如下一些bug，在此就不展开描述，后续会对浏览器兼容性问题进行专门细致的研究。<br><p style="color:#0099ff; display:inline;">2、<a href="http://blog.doyoe.com/2013/12/17/css/margin%E7%B3%BB%E5%88%97%E4%B9%8Bbug%E5%B7%A1%E6%BC%94%EF%BC%88%E4%BA%8C%EF%BC%89/" target="_blank" rel="external">IE6/7 clear引发的margin-top bug</a></p><br><p style="color:#0099ff; display:inline;">3、<a href="http://www.hicss.net/do-not-tell-me-you-understand-margin/" target="_blank" rel="external">IE8按钮margin auto居中失效Bug</a></p><br><p style="color:#0099ff; display:inline;">4、<a href="http://www.hicss.net/do-not-tell-me-you-understand-margin/" target="_blank" rel="external">IE6/7下margin与absolute元素重叠bug</a></p><br><p style="color:#0099ff; display:inline;">5、<a href="http://www.hicss.net/do-not-tell-me-you-understand-margin/" target="_blank" rel="external">IE6/7/8下auto margin居中bug</a></p><br><p style="color:#0099ff; display:inline;">6、<a href="http://www.hicss.net/do-not-tell-me-you-understand-margin/" target="_blank" rel="external">IE8下input[button | submit] 设置margin:auto无法居中</a></p><br><p style="color:#0099ff; display:inline;">7、<a href="http://www.hicss.net/do-not-tell-me-you-understand-margin/" target="_blank" rel="external">IE8百分比padding垂直margin bug</a></p>
+
+
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+
+        
+          <div class="post-nav">
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2015/05/14/锚点之用/">锚点之用</a>
+              
+            </div>
+
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2015/05/01/扯扯inline-block/">扯扯display:inline-block</a>
+              
+            </div>
+          </div>
+        
+
+        
+        
+      </div>
+    
+  </div>
+
+
+
+  
+    <div class="comments" id="comments">
+      
+        <div class="ds-thread" data-thread-key="2015/05/04/margin属性知多少/"
+             data-title="margin属性知多少" data-url="http://yoursite.com/2015/05/04/margin属性知多少/">
+        </div>
+
+      
+    </div>
+  
+
+          </div>
+
+          
+        </div>
+
+        
+<div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+
+    
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview">
+          本站概覽
+        </li>
+      </ul>
+    
+
+    <div class="site-overview">
+      <div class="site-author motion-element">
+        <img class="site-author-image" src="/images/touxiang.png" alt="efan" />
+        <p class="site-author-name">efan</p>
+        <p style="color:gray;font-size:14px;">凡心所向  素履所往</p>
+
+
+      </div>
+      <p class="site-description motion-element"></p>
+      <div class="site-state motion-element">
+        <div class="site-state-item site-state-posts">
+          <a href="/archives">
+            <span class="site-state-item-count">43</span>
+            <span class="site-state-item-name">文章</span>
+          </a>
+        </div>
+
+        <div class="site-state-item site-state-categories">
+          <a href="/categories">
+            <span class="site-state-item-count">11</span>
+            <span class="site-state-item-name">分類</span>
+          </a>
+        </div>
+
+        <div class="site-state-item site-state-tags">
+          <a href="/tags">
+            <span class="site-state-item-count">28</span>
+            <span class="site-state-item-name">標籤</span>
+          </a>
+        </div>
+
+      </div>
+
+      
+
+      <div class="links-of-author motion-element">
+        
+      </div>
+
+      
+      
+
+    </div>
+
+    
+      <div class="post-toc-wrap sidebar-panel-active">
+        <div class="post-toc-indicator-top post-toc-indicator"></div>
+        <div class="post-toc">
+          
+          
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#margin简介"><span class="nav-number">1.</span> <span class="nav-text">margin简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#margin写法"><span class="nav-number">2.</span> <span class="nav-text">margin写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#margin重叠"><span class="nav-number">3.</span> <span class="nav-text">margin重叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#margin不重叠条件"><span class="nav-number">4.</span> <span class="nav-text">margin不重叠条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#margin之bug处理"><span class="nav-number">5.</span> <span class="nav-text">margin之bug处理</span></a></li></ol></div>
+          
+        </div>
+        <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+      </div>
+    
+
+  </div>
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp; 
+  2015
+  
+  <span class="author">efan</span> | Powered By Hexo
+</div>
+
+
+
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.content img').each(function () {
+        var $image = $(this);
+        var $imageWrapLink = $image.parent('a');
+
+        if ($imageWrapLink.size() < 1) {
+          $imageWrapLink = $image.wrap('<a href="' + this.getAttribute('src') + '"></a>').parent('a');
+        }
+        $imageWrapLink.addClass('fancybox');
+      });
+    });
+    $('.fancybox').fancybox({
+      helpers: {
+        overlay: {
+          locked: false
+        }
+      }
+    });
+  </script>
+
+
+  <script type="text/javascript">
+  function hasMobileUA () {
+    var nav = window.navigator;
+    var ua = nav.userAgent;
+    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g;
+
+    return pa.test(ua);
+  }
+
+  function isDesktop () {
+    return screen.width > 991 && !hasMobileUA();
+  }
+
+  function isTablet () {
+    return screen.width < 992 && screen.width > 767 && hasMobileUA();
+  }
+
+  function isMobile () {
+    return screen.width < 767 && hasMobileUA();
+  }
+
+  function escapeSelector (selector) {
+    return selector.replace(/[!"$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, "\\$&")
+  }
+</script>
+
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" id="motion.global">
+  $(document).ready(function () {
+    var body = $('body');
+    var isSidebarVisible = false;
+    var sidebarToggle = $('.sidebar-toggle');
+    var sidebarToggleLine1st = $('.sidebar-toggle-line-first')
+    var sidebarToggleLine2nd = $('.sidebar-toggle-line-middle');
+    var sidebarToggleLine3rd = $('.sidebar-toggle-line-last');
+    var sidebar = $('.sidebar');
+
+    var SIDEBAR_WIDTH = '320px';
+    var SIDEBAR_DISPLAY_DURATION = 300;
+
+    var sidebarToogleLineStatusInit = {width: '100%', opacity: 1, left: 0, rotateZ: 0, top: 0};
+
+    var sidebarToggleLine1stStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine1stStatusArrow = {width: '50%', rotateZ: '-45deg', top: '2px'};
+    var sidebarToogleLine1stStatusClose = {width: '100%', rotateZ: '-45deg', top: '5px'};
+
+    var sidebarToggleLine2ndStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine2ndStatusArrow = {width: '90%'};
+    var sidebarToogleLine2ndStatusClose = {opacity: 0};
+
+    var sidebarToggleLine3rdStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine3rdStatusArrow = {width: '50%', rotateZ: '45deg', top: '-2px'};
+    var sidebarToogleLine3rdStatusClose = {width: '100%', rotateZ: '45deg', top: '-5px'};
+
+    LogoAndMenuMotion();
+    sidebatToggleMotion();
+    postsListMotion();
+    backToTopMotion();
+
+
+    $(document)
+      .on('sidebar.isShowing', function () {
+        isDesktop() && body.velocity(
+          {paddingRight: SIDEBAR_WIDTH},
+          SIDEBAR_DISPLAY_DURATION
+        );
+        sidebarContentMotion();
+      })
+      .on('sidebar.isHiding', function () {});
+
+    function LogoAndMenuMotion() {
+      $.Velocity.RunSequence([
+        { e: $('.brand'), p: { opacity: 1 }, o: { duration: 100 } },
+        { e: $('.logo'), p: { opacity: 1, top: 0 }, o: { duration: 50} },
+        
+        { e: $('.logo-line-before i'), p: { translateX: "100%" }, o: { duration: 500, sequenceQueue: false } },
+        { e: $('.logo-line-after i'), p: { translateX: "-100%" }, o: { duration: 500, sequenceQueue: false } },
+        
+        { e: $('.site-title'), p: { opacity: 1, top: 0 }, o: { duration: 200 } }
+      ]);
+      $('.menu-item').velocity('transition.slideDownIn', {display: null});
+    }
+
+
+    function backToTopMotion () {
+      var b2top = $('.back-to-top');
+      b2top.on('click', function () {
+        body.velocity('scroll');
+      });
+    }
+
+    function sidebarShowMotion () {
+
+      sidebarToggleLine1st.velocity(sidebarToogleLine1stStatusClose);
+      sidebarToggleLine2nd.velocity(sidebarToogleLine2ndStatusClose);
+      sidebarToggleLine3rd.velocity(sidebarToogleLine3rdStatusClose);
+
+      sidebar.velocity({width: SIDEBAR_WIDTH}, {
+        display: 'block',
+        duration: SIDEBAR_DISPLAY_DURATION,
+        complete: function () {
+          sidebar.addClass('sidebar-active');
+          sidebar.trigger('sidebar.didShow');
+        }
+      });
+      sidebar.trigger('sidebar.isShowing');
+    }
+
+    function sidebarHideMotion () {
+      isDesktop() && body.velocity({paddingRight: 0});
+      sidebar.velocity('reverse');
+
+      sidebarToggleLine1st.velocity(sidebarToggleLine1stStatusInit);
+      sidebarToggleLine2nd.velocity(sidebarToggleLine2ndStatusInit);
+      sidebarToggleLine3rd.velocity(sidebarToggleLine3rdStatusInit);
+
+      sidebar.removeClass('sidebar-active');
+      sidebar.trigger('sidebar.isHiding');
+    };
+
+    function sidebarContentMotion () {
+      $('.sidebar .motion-element').velocity(
+        'transition.slideRightIn',
+        {stagger: 50, drag: true}
+      );
+    }
+
+    function postsListMotion () {
+      var postMotionOptions = window.postMotionOptions || {stagger: 300, drag: true};
+      $('.post').velocity('transition.slideDownIn', postMotionOptions);
+    }
+
+    function sidebatToggleMotion () {
+      sidebarToggle.on('click', function () {
+        isSidebarVisible ? sidebarHideMotion() : sidebarShowMotion();
+        isSidebarVisible = !isSidebarVisible;
+      });
+
+      sidebarToggle.hover(function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusArrow);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusArrow);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusArrow);
+      }, function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusInit);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusInit);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusInit);
+      });
+    }
+  });
+
+</script>
+
+
+
+
+
+  
+  
+<script type="text/javascript" id="bootstrap.scrollspy.custom">
+  /* ========================================================================
+  * Bootstrap: scrollspy.js v3.3.2
+  * http://getbootstrap.com/javascript/#scrollspy
+  * ========================================================================
+  * Copyright 2011-2015 Twitter, Inc.
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  * ======================================================================== */
+
+  /**
+   * Custom by iissnan
+   *
+   * - Add a `clear.bs.scrollspy` event.
+   * - Esacpe targets selector.
+   */
+
+
+  +function ($) {
+    'use strict';
+
+    // SCROLLSPY CLASS DEFINITION
+    // ==========================
+
+    function ScrollSpy(element, options) {
+      this.$body          = $(document.body)
+      this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
+      this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
+      this.selector       = (this.options.target || '') + ' .nav li > a'
+      this.offsets        = []
+      this.targets        = []
+      this.activeTarget   = null
+      this.scrollHeight   = 0
+
+      this.$scrollElement.on('scroll.bs.scrollspy', $.proxy(this.process, this))
+      this.refresh()
+      this.process()
+    }
+
+    ScrollSpy.VERSION  = '3.3.2'
+
+    ScrollSpy.DEFAULTS = {
+      offset: 10
+    }
+
+    ScrollSpy.prototype.getScrollHeight = function () {
+      return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
+    }
+
+    ScrollSpy.prototype.refresh = function () {
+      var that          = this
+      var offsetMethod  = 'offset'
+      var offsetBase    = 0
+
+      this.offsets      = []
+      this.targets      = []
+      this.scrollHeight = this.getScrollHeight()
+
+      if (!$.isWindow(this.$scrollElement[0])) {
+        offsetMethod = 'position'
+        offsetBase   = this.$scrollElement.scrollTop()
+      }
+
+      this.$body
+        .find(this.selector)
+        .map(function () {
+          var $el   = $(this)
+          var href  = $el.data('target') || $el.attr('href')
+          var $href = /^#./.test(href) && $(escapeSelector(href)) // Need to escape selector.
+
+          return ($href
+            && $href.length
+            && $href.is(':visible')
+            && [[$href[offsetMethod]().top + offsetBase, href]]) || null
+        })
+        .sort(function (a, b) { return a[0] - b[0] })
+        .each(function () {
+          that.offsets.push(this[0])
+          that.targets.push(this[1])
+        })
+
+
+    }
+
+    ScrollSpy.prototype.process = function () {
+      var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
+      var scrollHeight = this.getScrollHeight()
+      var maxScroll    = this.options.offset + scrollHeight - this.$scrollElement.height()
+      var offsets      = this.offsets
+      var targets      = this.targets
+      var activeTarget = this.activeTarget
+      var i
+
+      if (this.scrollHeight != scrollHeight) {
+        this.refresh()
+      }
+
+      if (scrollTop >= maxScroll) {
+        return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
+      }
+
+      if (activeTarget && scrollTop < offsets[0]) {
+        $(this.selector).trigger('clear.bs.scrollspy')  // Add a custom event.
+        this.activeTarget = null
+        return this.clear()
+      }
+
+      for (i = offsets.length; i--;) {
+        activeTarget != targets[i]
+          && scrollTop >= offsets[i]
+          && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
+          && this.activate(targets[i])
+      }
+    }
+
+    ScrollSpy.prototype.activate = function (target) {
+      this.activeTarget = target
+
+      this.clear()
+
+      var selector = this.selector +
+        '[data-target="' + target + '"],' +
+        this.selector + '[href="' + target + '"]'
+
+      var active = $(selector)
+        .parents('li')
+        .addClass('active')
+
+      if (active.parent('.dropdown-menu').length) {
+        active = active
+          .closest('li.dropdown')
+          .addClass('active')
+      }
+
+      active.trigger('activate.bs.scrollspy')
+    }
+
+    ScrollSpy.prototype.clear = function () {
+      $(this.selector)
+        .parentsUntil(this.options.target, '.active')
+        .removeClass('active')
+    }
+
+
+    // SCROLLSPY PLUGIN DEFINITION
+    // ===========================
+
+    function Plugin(option) {
+      return this.each(function () {
+        var $this   = $(this)
+        var data    = $this.data('bs.scrollspy')
+        var options = typeof option == 'object' && option
+
+        if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)))
+        if (typeof option == 'string') data[option]()
+      })
+    }
+
+    var old = $.fn.scrollspy
+
+    $.fn.scrollspy             = Plugin
+    $.fn.scrollspy.Constructor = ScrollSpy
+
+
+    // SCROLLSPY NO CONFLICT
+    // =====================
+
+    $.fn.scrollspy.noConflict = function () {
+      $.fn.scrollspy = old
+      return this
+    }
+
+
+    // SCROLLSPY DATA-API
+    // ==================
+
+    $(window).on('load.bs.scrollspy.data-api', function () {
+      $('[data-spy="scroll"]').each(function () {
+        var $spy = $(this)
+        Plugin.call($spy, $spy.data())
+      })
+    })
+
+  }(jQuery);
+</script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+      currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });  
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+     var $tocContent = $('.post-toc-content');
+     /*  if ($tocContent.length > 0 && $tocContent.html().trim().length > 0 && isDesktop()) {
+        setTimeout(function () {
+          $('.sidebar-toggle').trigger('click');
+        }, 800);
+      }  */
+    });
+  </script>
+
+
+
+
+  
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"efan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+  
+</body>
+</html>
