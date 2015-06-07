@@ -124,7 +124,96 @@
           
           
             
-              <a class="post-title-link" href="/2015/06/01/Media Query与响应式设计/">
+              <a class="post-title-link" href="/2015/06/02/移动开发与viewport/">
+                移动开发与viewport
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2015-06-02
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/02/移动开发与viewport/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/02/移动开发与viewport/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <p>我们在电脑端开发设置CSS时，一般1像素对应电脑屏幕上的1物理像素。但是对于移动端，却非如此。以iphone 6 plus为例，其屏幕参数如下所示：<br><img src="/imgs/viewport/1.png" alt="viewport"><br>在电脑端可将字体大小设置为12px，对应电脑屏幕上的12px物理像素，如淘宝：<br><img src="/imgs/viewport/2.png" alt="viewport"><br>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2015/06/02/移动开发与viewport/#more">
+                Read More
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/06/01/Media Query媒体查询/">
                 Media Query——媒体查询
               </a>
             
@@ -158,8 +247,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/01/Media Query与响应式设计/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/01/Media Query与响应式设计/"></span>
+            <a href="/2015/06/01/Media Query媒体查询/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/01/Media Query媒体查询/"></span>
             </a>
           </span>
           
@@ -177,7 +266,7 @@
           
             <p>为了让页面在不同尺寸的终端显示不一样的效果，CSS3中引入了Media Query模块。Media Query能在不同的条件下使用不同的样式，兼容性如下图所示：<br><img src="/imgs/@media/1.png" alt="@meida"><br>Media Query使用方法如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@media 媒体类型 and (媒体特性) &#123;CSS样式&#125;</span><br></pre></td></tr></table></figure></p>
             <div class="post-more-link text-center">
-              <a class="btn" href="/2015/06/01/Media Query与响应式设计/#more">
+              <a class="btn" href="/2015/06/01/Media Query媒体查询/#more">
                 Read More
               </a>
             </div>
@@ -480,96 +569,6 @@
 
 
   
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/04/23/视觉差滚动原理/">
-                让视差滚动起来
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            日期: 2015-04-23
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分类:
-              
-                <a style="text-decoration:none;" href="/categories/前端/">前端</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/04/23/视觉差滚动原理/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/23/视觉差滚动原理/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <p>视差效果，原本是一个天文学术语，当我们观察星空时，离我们远的星星移动速度较慢，离我们近的星星移动速度则较快。视差滚动(Parallax Scrolling)一名正是来源于此，是指让多层背景以不同的速度移动，形成立体的运动效果，带来非常出色的视觉体验。视差滚动的例子一搜一箩筐，下面主要就视差滚动的几种方法或原理做一简要说明。</p>
-<h3 id="背景切换">背景切换</h3><p>此种方法比较简单，即设置区域块的背景为fixed即可。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background-attachment: fixed || scroll || <span class="built_in">local</span></span><br></pre></td></tr></table></figure></p>
-            <div class="post-more-link text-center">
-              <a class="btn" href="/2015/04/23/视觉差滚动原理/#more">
-                Read More
-              </a>
-            </div>
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
 
           </div>
 
@@ -606,7 +605,7 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">44</span>
+            <span class="site-state-item-count">45</span>
             <span class="site-state-item-name">文章</span>
           </a>
         </div>

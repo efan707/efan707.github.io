@@ -153,8 +153,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/01/Media Query与响应式设计/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/01/Media Query与响应式设计/"></span>
+            <a href="/2015/06/01/Media Query媒体查询/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/01/Media Query媒体查询/"></span>
             </a>
           </span>
           
@@ -297,6 +297,8 @@
 <p>5、only关键字</p>
 <p></p><p style="text-indent: 2em;">通过“only”关键字可以将样式应用在某种特定媒体类型的设备上。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">------------------形式----------------------------</span><br><span class="line">@media only 媒体类型 and (媒体特性) &#123;//CSS样式&#125;</span><br><span class="line">------------------例子----------------------------</span><br><span class="line">@media only screen and (max-device-width:<span class="number">240</span>px) &#123;</span><br><span class="line">    body&#123;</span><br><span class="line">       background-color:red;</span><br><span class="line">        &#125;</span><br><span class="line">  &#125;</span><br><span class="line">//样式只被应用在屏幕宽度不大于<span class="number">240</span>px的设备上。</span><br></pre></td></tr></table></figure><p></p>
 <h3 id="设置断点">设置断点</h3><p>断点简单的描述就是设备宽度的临界点。在Responsive设计中，常见的断点有六种，我们今后的Medial Queries条件判断就可以根据这六个断点来定。<br><img src="/imgs/@media/2.gif" alt="@meida"><br>当然，我们也可以根据自己的需求添加或修改断点，视具体应用而定。</p>
+<h3 id="Media_queries兼容IE">Media queries兼容IE</h3><p>IE6-8不支持Medial Queries，所以为了兼容性，需要加上以下脚本。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--[<span class="keyword">if</span> lt IE <span class="number">9</span>]&gt;</span><br><span class="line">    &lt;script src=<span class="string">"http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"</span>&gt;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;![endif]--&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="@media与IE">@media与IE</h3><p>通过@media还可以匹配各IE版本，具体如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@media screen\<span class="number">9</span>&#123;...&#125;只对IE6/<span class="number">7</span>生效</span><br><span class="line">@media \<span class="number">0</span>screen &#123;...&#125;只对IE8有效</span><br><span class="line">@media \<span class="number">0</span>screen\,screen\<span class="number">9</span>&#123;...&#125;只对IE6/<span class="number">7</span>/<span class="number">8</span>有效</span><br><span class="line">@media screen\<span class="number">0</span> &#123;...&#125; 只对IE8/<span class="number">9</span>/<span class="number">10</span>有效</span><br><span class="line">@media screen and (min-width:<span class="number">0</span>\<span class="number">0</span>)&#123;...&#125; 只对IE9/<span class="number">10</span>有效</span><br></pre></td></tr></table></figure></p>
 
         
       </div>
@@ -309,6 +311,8 @@
         
           <div class="post-nav">
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2015/06/02/移动开发与viewport/">移动开发与viewport</a>
               
             </div>
 
@@ -331,8 +335,8 @@
   
     <div class="comments" id="comments">
       
-        <div class="ds-thread" data-thread-key="2015/06/01/Media Query与响应式设计/"
-             data-title="Media Query——媒体查询" data-url="http://yoursite.com/2015/06/01/Media Query与响应式设计/">
+        <div class="ds-thread" data-thread-key="2015/06/01/Media Query媒体查询/"
+             data-title="Media Query——媒体查询" data-url="http://yoursite.com/2015/06/01/Media Query媒体查询/">
         </div>
 
       
@@ -379,7 +383,7 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">44</span>
+            <span class="site-state-item-count">45</span>
             <span class="site-state-item-name">文章</span>
           </a>
         </div>
@@ -417,7 +421,7 @@
         <div class="post-toc">
           
           
-            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Media_Type(媒体类型)"><span class="nav-number">1.</span> <span class="nav-text">Media Type(媒体类型)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#媒体类型的引用"><span class="nav-number">2.</span> <span class="nav-text">媒体类型的引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#媒体特性"><span class="nav-number">3.</span> <span class="nav-text">媒体特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Media_Query使用方法"><span class="nav-number">4.</span> <span class="nav-text">Media Query使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置断点"><span class="nav-number">5.</span> <span class="nav-text">设置断点</span></a></li></ol></div>
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Media_Type(媒体类型)"><span class="nav-number">1.</span> <span class="nav-text">Media Type(媒体类型)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#媒体类型的引用"><span class="nav-number">2.</span> <span class="nav-text">媒体类型的引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#媒体特性"><span class="nav-number">3.</span> <span class="nav-text">媒体特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Media_Query使用方法"><span class="nav-number">4.</span> <span class="nav-text">Media Query使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置断点"><span class="nav-number">5.</span> <span class="nav-text">设置断点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Media_queries兼容IE"><span class="nav-number">6.</span> <span class="nav-text">Media queries兼容IE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#@media与IE"><span class="nav-number">7.</span> <span class="nav-text">@media与IE</span></a></li></ol></div>
           
         </div>
         <div class="post-toc-indicator-bottom post-toc-indicator"></div>
