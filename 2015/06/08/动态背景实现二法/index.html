@@ -31,7 +31,7 @@
 
 
 
-  <title> 滚动条样式DIY // Efan’s Notes </title>
+  <title> 动态背景实现二法 // Efan’s Notes </title>
 </head>
 
 <body>
@@ -121,7 +121,7 @@
           
           
             
-              滚动条样式DIY
+              动态背景实现二法
             
           
         </h1>
@@ -130,7 +130,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            日期: 2015-06-06
+            日期: 2015-06-08
           
         </span>
 
@@ -153,8 +153,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/06/滚动条样式DIY/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/06/滚动条样式DIY/"></span>
+            <a href="/2015/06/08/动态背景实现二法/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/08/动态背景实现二法/"></span>
             </a>
           </span>
           
@@ -169,17 +169,14 @@
         
 
         
-          <p>千篇一律的滚动条样式让人乏味，所以如果能DIY，便是最好不过。现如今可以对某些内核浏览器的滚动条进行某些方面的设置，下面就进行一一分析。</p>
-<h3 id="隐藏滚动条">隐藏滚动条</h3><p>有时候我们需要将滚动条进行隐藏，具体设置如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">--------------隐藏横向和纵向滚动条---------------</span><br><span class="line">html,body&#123;       </span><br><span class="line">  overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line">----------------隐藏横向滚动条-------------</span><br><span class="line">html,body&#123;       </span><br><span class="line">  overflow-x: hidden;</span><br><span class="line">&#125;</span><br><span class="line">----------------隐藏纵向滚动条-------------</span><br><span class="line">html,body&#123;       </span><br><span class="line">  overflow-y: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+          <p>动态背景使得页面更为活泼和生动，其“动”的元素有很多，本文主要说明下背景图片的动态实现。<br>背景动态是基于background-position属性的，通过不断改变背景图片的位置，实现背景动态的效果。<br>首先需要引入背景图片，并且需要repeat(本例以水平方向上背景动态移动为例)。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: <span class="comment">#9fddea url(../images/clouds.png) repeat-x scroll 0 0;</span></span><br></pre></td></tr></table></figure></p>
+<p>当背景图片不断向右移动时，便会有一种即视的动态感。控制移动可通过JS或CSS3。</p>
+<h3 id="基于JS的背景滚动">基于JS的背景滚动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var xpos = <span class="number">0</span>;    //初始background-position为(<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">scrollBg</span></span>()&#123;</span><br><span class="line">	xpos++;    </span><br><span class="line">	$(<span class="string">'#container'</span>).css(<span class="string">'background-position'</span>,xpos); //移动后的背景位置为(xpos,<span class="number">0</span>)</span><br><span class="line">	<span class="keyword">if</span> (xpos&gt;<span class="number">1600</span>) &#123;</span><br><span class="line">            xpos=<span class="number">0</span>;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">set</span>Interval(scrollBg,<span class="number">100</span>);  //<span class="number">100</span>ms移动一次</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>上述的方法虽能去掉滚动条，但是同时也使得页面不能进行滚动。对于wekit内核的浏览器，提供了下述方法使得隐藏滚动条的同时也可进行滚动操作。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">::-webkit-scrollbar&#123;</span><br><span class="line">  height: <span class="number">0</span>;</span><br><span class="line">  width: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="IE滚动条样式">IE滚动条样式</h3><p>IE很多时候都表现的“与众不同”，在滚动条设置上也不例外，它有着自己的一套规则用于设置滚动条的样式，具体如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">body,html</span><br><span class="line">&#123; </span><br><span class="line">  scrollbar-face-color: green;       //滚动条的颜色</span><br><span class="line">  scrollbar-shadow-color: blue;      //滚动条阴影的颜色</span><br><span class="line">  scrollbar-highlight-color: black;  //滚动条高亮颜色</span><br><span class="line">  scrollbar-<span class="number">3</span>dlight-color: red;      //滚动条亮边的颜色</span><br><span class="line">  scrollbar-darkshadow-color: brown; //滚动条外阴影的颜色</span><br><span class="line">  scrollbar-track-color: yellow;     //滚动条背景颜色</span><br><span class="line">  scrollbar-arrow-color: white;      //三角箭头颜色 </span><br><span class="line">  scrollbar-base-color:color;        //滚动条的基色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>具体如下图所示：<br><img src="/imgs/scrollbar/1.gif" alt="scrollbar"></p>
-<h3 id="webkit内核浏览器">webkit内核浏览器</h3><p>很多年前谷歌浏览器就已经开始支持对滚动条的CSS美化。这些Webkit浏览器专属的CSS属性需要使用-webkit-浏览器引擎前缀。谷歌提供了一堆伪元素、伪类，以供我们对滚动条进行随心所欲的设计，主要如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---------------伪元素--------------------------------</span><br><span class="line">::-webkit-scrollbar&#123;/* <span class="number">1</span> */&#125;              //滚动条整体部分</span><br><span class="line">::-webkit-scrollbar-button&#123;/* <span class="number">2</span> */&#125;       //滚动条两端的按钮</span><br><span class="line">::-webkit-scrollbar-track&#123;/* <span class="number">3</span> */&#125;        //外层轨道</span><br><span class="line">::-webkit-scrollbar-track-piece&#123;/* <span class="number">4</span> */&#125;  //内层滚动槽</span><br><span class="line">::-webkit-scrollbar-thumb&#123;/* <span class="number">5</span> */&#125;        //滑动模块</span><br><span class="line">::-webkit-scrollbar-corner&#123;/* <span class="number">6</span> */&#125;       //边角</span><br><span class="line">::-webkit-resizer&#123;/* <span class="number">7</span> */&#125;                //定义右下角拖动块的样式</span><br></pre></td></tr></table></figure></p>
-<p>具体如下图所示：<br><img src="/imgs/scrollbar/2.png" alt="scrollbar"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">----------------伪类------------------------------</span><br><span class="line">:horizontal     //水平方向的滚动条</span><br><span class="line">:vertical       //竖直方向的滚动条</span><br><span class="line">还有:decrement、:increment、:start、:end、:double-button  </span><br><span class="line">:single-button、:no-button、:corner-present、:window-inactive </span><br><span class="line">另外:enabled、:disabled、:hover 和 :active 等伪类同样可以用于滚动条中。</span><br></pre></td></tr></table></figure></p>
-<p>下面举一例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">::-webkit-scrollbar</span><br><span class="line">&#123;</span><br><span class="line">    width: <span class="number">16</span>px;</span><br><span class="line">    height: <span class="number">16</span>px;</span><br><span class="line">&#125;</span><br><span class="line">::-webkit-scrollbar-track-piece</span><br><span class="line">&#123;</span><br><span class="line">    background-color: green;</span><br><span class="line">    -webkit-border-radius: <span class="number">6</span>px;</span><br><span class="line">&#125;</span><br><span class="line">::-webkit-scrollbar-thumb:vertical</span><br><span class="line">&#123;</span><br><span class="line">    height: <span class="number">5</span>px;</span><br><span class="line">    background-color: blue;</span><br><span class="line">    -webkit-border-radius: <span class="number">6</span>px;</span><br><span class="line">&#125;</span><br><span class="line">::-webkit-scrollbar-thumb:horizontal</span><br><span class="line">&#123;</span><br><span class="line">    width: <span class="number">5</span>px;</span><br><span class="line">    background-color: yellow;</span><br><span class="line">    -webkit-border-radius: <span class="number">6</span>px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>滚动条如下图所示：<br><img src="/imgs/scrollbar/3.png" alt="scrollbar"><br>更多的实例请参照<a href="http://trac.webkit.org/export/41842/trunk/LayoutTests/scrollbars/overflow-scrollbar-combinations.html" target="_blank" rel="external">webkit官方滚动条样式设置实例</a>。其具体实现代码，可右键查询。</p>
-<h3 id="兼容其他浏览器">兼容其他浏览器</h3><p>IE以及webkit内核浏览器对于滚动条样式有着自己的设计规则，而其他浏览器，如需要修改滚动条样式，则需要借助javascript插件。如jScrollPane、malihu-custom-scrollbar-plugin等，具体不再展开。</p>
+<p>优点：兼容性好。<br>缺点：资源消耗大，比较卡顿。</p>
+<h3 id="基于CSS3的背景移动">基于CSS3的背景移动</h3><p>CSS3提供了很好的动画功能，利用animation可实现背景动态移动。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#container&#123;</span></span><br><span class="line">  background: <span class="comment">#9fddea url(../images/clouds.png) repeat-x  scroll 0 0;</span></span><br><span class="line">  animation: bgmove <span class="number">30</span>s linear  infinite;</span><br><span class="line">  -moz-animation: bgmove <span class="number">30</span>s linear  infinite;  /* Firefox5 */</span><br><span class="line">  -webkit-animation: bgmove <span class="number">30</span>s linear  infinite; /* Safari4 和 Chrome4 */</span><br><span class="line">  -o-animation: bgmove <span class="number">30</span>s linear  infinite; /* Opera12 */</span><br><span class="line">  -ms-animation: bgmove <span class="number">30</span>s linear  infinite; /* IE10 */</span><br><span class="line">&#125;</span><br><span class="line">@keyframes bgmove&#123;</span><br><span class="line">     <span class="number">0</span>% &#123;</span><br><span class="line">        background-position: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="number">100</span>% &#123;</span><br><span class="line">        background-position:<span class="number">1600</span>px <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">@-webkit-keyframes bgmove&#123;</span><br><span class="line">  <span class="number">0</span>% &#123;</span><br><span class="line">      background-position: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line"> <span class="number">100</span>% &#123;</span><br><span class="line">      background-position:<span class="number">1600</span>px <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">@-o-keyframes bgmove&#123;</span><br><span class="line">     <span class="number">0</span>% &#123;</span><br><span class="line">        background-position: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="number">100</span>% &#123;</span><br><span class="line">        background-position:<span class="number">1600</span>px <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">@-ms-keyframes bgmove&#123;</span><br><span class="line">     <span class="number">0</span>% &#123;</span><br><span class="line">        background-position: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="number">100</span>% &#123;</span><br><span class="line">        background-position:<span class="number">1600</span>px <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">@-moz-keyframes bgmove&#123;</span><br><span class="line">     <span class="number">0</span>% &#123;</span><br><span class="line">        background-position: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="number">100</span>% &#123;</span><br><span class="line">        background-position:<span class="number">1600</span>px <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>优点：资源消耗较少，比较流畅。<br>缺点：兼容性问题。</p>
+<h3 id="延伸思考">延伸思考</h3><p>有几点需要进一步思考：<br>1、图片位置一直增加，向着无限远的地方而去，如果不归位，会不会因repeat太多而导致资源消耗殆尽？<br>2、如果图片移动到一定位置后归位，那么这个距离是多少才不会使得归位之时有搓顿感？<br>3、利用canvas实现更酷的动态背景，需要进一步探索。</p>
 
         
       </div>
@@ -193,13 +190,11 @@
           <div class="post-nav">
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2015/06/08/动态背景实现二法/">动态背景实现二法</a>
-              
             </div>
 
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2015/06/04/文件路径相关/">文件路径相关</a>
+                <a href="/2015/06/06/滚动条样式DIY/">滚动条样式DIY</a>
               
             </div>
           </div>
@@ -216,8 +211,8 @@
   
     <div class="comments" id="comments">
       
-        <div class="ds-thread" data-thread-key="2015/06/06/滚动条样式DIY/"
-             data-title="滚动条样式DIY" data-url="http://yoursite.com/2015/06/06/滚动条样式DIY/">
+        <div class="ds-thread" data-thread-key="2015/06/08/动态背景实现二法/"
+             data-title="动态背景实现二法" data-url="http://yoursite.com/2015/06/08/动态背景实现二法/">
         </div>
 
       
@@ -302,7 +297,7 @@
         <div class="post-toc">
           
           
-            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#隐藏滚动条"><span class="nav-number">1.</span> <span class="nav-text">隐藏滚动条</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE滚动条样式"><span class="nav-number">2.</span> <span class="nav-text">IE滚动条样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webkit内核浏览器"><span class="nav-number">3.</span> <span class="nav-text">webkit内核浏览器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容其他浏览器"><span class="nav-number">4.</span> <span class="nav-text">兼容其他浏览器</span></a></li></ol></div>
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于JS的背景滚动"><span class="nav-number">1.</span> <span class="nav-text">基于JS的背景滚动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于CSS3的背景移动"><span class="nav-number">2.</span> <span class="nav-text">基于CSS3的背景移动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延伸思考"><span class="nav-number">3.</span> <span class="nav-text">延伸思考</span></a></li></ol></div>
           
         </div>
         <div class="post-toc-indicator-bottom post-toc-indicator"></div>
