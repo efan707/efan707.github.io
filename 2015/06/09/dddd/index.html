@@ -31,7 +31,7 @@
 
 
 
-  <title> ffff // Efan’s Notes </title>
+  <title> dddd // Efan’s Notes </title>
 </head>
 
 <body>
@@ -121,7 +121,7 @@
           
           
             
-              ffff
+              dddd
             
           
         </h1>
@@ -130,7 +130,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            日期: 2015-06-10
+            日期: 2015-06-09
           
         </span>
 
@@ -153,8 +153,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/10/动态背景实现二法 - 副本/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/10/动态背景实现二法 - 副本/"></span>
+            <a href="/2015/06/09/dddd/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/09/dddd/"></span>
             </a>
           </span>
           
@@ -169,14 +169,22 @@
         
 
         
-          <p>动态背景使得页面更为活泼和生动，其“动”的元素有很多，本文主要说明下背景图片的动态实现。<br>背景动态是基于background-position属性的，通过不断改变背景图片的位置，实现背景动态的效果。<br>首先需要引入背景图片，并且需要repeat(本例以水平方向上背景动态移动为例)。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: <span class="comment">#9fddea url(../images/clouds.png) repeat-x scroll 0 0;</span></span><br></pre></td></tr></table></figure></p>
-<p>当背景图片不断向右移动时，便会有一种即视的动态感。控制移动可通过JS或CSS3。</p>
-<h3 id="基于JS的背景滚动">基于JS的背景滚动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var xpos = <span class="number">0</span>;    //初始background-position为(<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">scrollBg</span></span>()&#123;</span><br><span class="line">	xpos++;    </span><br><span class="line">	$(<span class="string">'#container'</span>).css(<span class="string">'background-position'</span>,xpos); //移动后的背景位置为(xpos,<span class="number">0</span>)</span><br><span class="line">	<span class="keyword">if</span> (xpos&gt;<span class="number">1600</span>) &#123;</span><br><span class="line">            xpos=<span class="number">0</span>;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">set</span>Interval(scrollBg,<span class="number">100</span>);  //<span class="number">100</span>ms移动一次</span><br></pre></td></tr></table></figure>
+          <p>随着html5的发展，flash的地位岌岌可危，但是瘦死的骆驼比马大，所以我们经常在网页上还可以看见各式各样的flash，下面就网页中如何插入flash作一说明。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;object classid=clsid:D27CDB6E-AE6D-<span class="number">11</span>cf-<span class="number">96</span>B8-<span class="number">444553540000</span> codebase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab<span class="comment">#version=4,0,2,0 height=600 width=1200&gt;</span></span><br><span class="line">&lt;param name=<span class="string">"movie"</span> value=<span class="string">"images/bluefly.swf"</span>&gt;</span><br><span class="line">&lt;param name=<span class="string">"quality"</span> value=<span class="string">"high"</span>&gt;</span><br><span class="line">&lt;param name=<span class="string">"wmode"</span> value=<span class="string">"transparent"</span>&gt;</span><br><span class="line">&lt;embed src=<span class="string">"images/bluefly.swf"</span> quality=high pluginspage=<span class="string">"http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"</span> <span class="built_in">type</span>=<span class="string">"application/x-shockwave-flash"</span> width=<span class="string">"1200"</span> height=<span class="string">"600"</span> wmode=<span class="string">"transparent"</span>&gt;</span><br><span class="line">&lt;/embed&gt;</span><br><span class="line">&lt;/object&gt;</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<p>优点：兼容性好。<br>缺点：资源消耗大，比较卡顿。</p>
-<h3 id="基于CSS3的背景移动">基于CSS3的背景移动</h3><p>CSS3提供了很好的动画功能，利用animation可实现背景动态移动。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#container&#123;</span></span><br><span class="line">  background: <span class="comment">#9fddea url(../images/clouds.png) repeat-x  scroll 0 0;</span></span><br><span class="line">  animation: bgmove <span class="number">30</span>s linear  infinite;</span><br><span class="line">  -moz-animation: bgmove <span class="number">30</span>s linear  infinite;  /* Firefox5 */</span><br><span class="line">  -webkit-animation: bgmove <span class="number">30</span>s linear  infinite; /* Safari4 和 Chrome4 */</span><br><span class="line">  -o-animation: bgmove <span class="number">30</span>s linear  infinite; /* Opera12 */</span><br><span class="line">  -ms-animation: bgmove <span class="number">30</span>s linear  infinite; /* IE10 */</span><br><span class="line">&#125;</span><br><span class="line">@keyframes bgmove&#123;</span><br><span class="line">     <span class="number">0</span>% &#123;</span><br><span class="line">        background-position: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="number">100</span>% &#123;</span><br><span class="line">        background-position:<span class="number">1600</span>px <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">@-webkit-keyframes bgmove&#123;</span><br><span class="line">  <span class="number">0</span>% &#123;</span><br><span class="line">      background-position: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line"> <span class="number">100</span>% &#123;</span><br><span class="line">      background-position:<span class="number">1600</span>px <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">@-o-keyframes bgmove&#123;</span><br><span class="line">     <span class="number">0</span>% &#123;</span><br><span class="line">        background-position: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="number">100</span>% &#123;</span><br><span class="line">        background-position:<span class="number">1600</span>px <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">@-ms-keyframes bgmove&#123;</span><br><span class="line">     <span class="number">0</span>% &#123;</span><br><span class="line">        background-position: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="number">100</span>% &#123;</span><br><span class="line">        background-position:<span class="number">1600</span>px <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">@-moz-keyframes bgmove&#123;</span><br><span class="line">     <span class="number">0</span>% &#123;</span><br><span class="line">        background-position: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="number">100</span>% &#123;</span><br><span class="line">        background-position:<span class="number">1600</span>px <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
-<p>优点：资源消耗较少，比较流畅。<br>缺点：兼容性问题。</p>
-<h3 id="延伸思考">延伸思考</h3><p>有几点需要进一步思考：<br>1、图片位置一直增加，向着无限远的地方而去，如果不归位，会不会因repeat太多而导致资源消耗殆尽？<br>2、如果图片移动到一定位置后归位，那么这个距离是多少才不会使得归位之时有搓顿感？<br>3、利用canvas实现更酷的动态背景，需要进一步探索。</p>
+<p>object 标签是用于windows IE3.0及以后浏览器或者其它支持Activex控件的浏览器。embed标签是用于Netscape Navigator2.0及以后的浏览器或其它支持Netscape插件的浏览器。为了确保大多数浏览器能正常显示flash，需要把embed标签嵌套放在object标签内。</p>
+<hr>
+<p>参数说明：</p>
+<p></p><p style="background-color:rgba(135,206,235,0.6);display:inline;">classid</p>和<p style="background-color:rgba(135,206,235,0.6);display:inline;">codebase</p>：object标签下，让没有安装flash player的用户自动下载播放器，可省略。<p></p>
+<p></p><p style="background-color:rgba(135,206,235,0.6);display:inline;">pluginspage</p>：embed标签下，告诉浏览器下载flash player的下载地址，可省略。<p></p>
+<p></p><p style="background-color:rgba(135,206,235,0.6);display:inline;">width</p>和<p style="background-color:rgba(135,206,235,0.6);display:inline;">height</p>：设置swf文件显示的宽高。<p></p>
+<p></p><p style="background-color:rgba(135,206,235,0.6);display:inline;">movie</p>：object标签时引入swf文件的地址。<p></p>
+<p></p><p style="background-color:rgba(135,206,235,0.6);display:inline;">src</p>：embed标签时引入swf文件的地址。<p></p>
+<p></p><p style="background-color:rgba(135,206,235,0.6);display:inline;">quality</p>：swf文件质量，可选low、high、autolow、autohigh、best中之一（autolow 刚开始着重于速度，但当需要时随时提升美观；autohigh 同时着重播放速度和美观，但需要时则牺牲美观来保证播放速度）。<p></p>
+<p></p><p style="background-color:rgba(135,206,235,0.6);display:inline;">wmode</p>：指定flash在浏览器中的透明，层叠及位置。值可选window、 opaque、transparent中之一。<br>除了上述一些常见的属性外，还有play、loop、align、menu等属性，在此就不展开。<p></p>
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,2,0" height="300" width="600"><br><param name="movie" value="/imgs/bluefly.swf"><br><param name="quality" value="high"><br><param name="wmode" value="transparent"><br><embed src="/imgs/bluefly.swf" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="600" height="300" wmode="transparent"><br><br></object>  
+
+
+
 
         
       </div>
@@ -211,8 +219,8 @@
   
     <div class="comments" id="comments">
       
-        <div class="ds-thread" data-thread-key="2015/06/10/动态背景实现二法 - 副本/"
-             data-title="ffff" data-url="http://yoursite.com/2015/06/10/动态背景实现二法 - 副本/">
+        <div class="ds-thread" data-thread-key="2015/06/09/dddd/"
+             data-title="dddd" data-url="http://yoursite.com/2015/06/09/dddd/">
         </div>
 
       
@@ -297,7 +305,7 @@
         <div class="post-toc">
           
           
-            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于JS的背景滚动"><span class="nav-number">1.</span> <span class="nav-text">基于JS的背景滚动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于CSS3的背景移动"><span class="nav-number">2.</span> <span class="nav-text">基于CSS3的背景移动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延伸思考"><span class="nav-number">3.</span> <span class="nav-text">延伸思考</span></a></li></ol></div>
+            <p class="post-toc-empty">此文章未包含目錄</p>
           
         </div>
         <div class="post-toc-indicator-bottom post-toc-indicator"></div>
