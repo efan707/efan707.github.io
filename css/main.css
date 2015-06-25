@@ -912,7 +912,7 @@ body {
   background: #222;
 }
 .header {
-  background: #fff;
+  background: #222;
 }
 .header-inner {
   position: relative;
@@ -1066,10 +1066,10 @@ body {
   max-width: 96px;
   height: auto;
   border-radius: 50%;
-  -ms-transition: all 0.8s;
-  -moz-transition: all 0.8s;
-  -webkit-transition: all 0.8s;
-  -o-transition: all 0.8s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
   padding: 2px;
 }
 .site-author-image:hover {
@@ -1154,7 +1154,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #70cc8c;
+  background: #f494b1;
 }
 .sidebar-nav {
   margin: 0;

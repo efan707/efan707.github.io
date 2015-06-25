@@ -19,9 +19,19 @@
 
 
 
-	<meta name="keywords" content="API," />
 
-  <title> Some web API // Efan’s Notes </title>
+    <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+    <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.1" />
+
+
+
+
+  <title> ffff // Efan’s Notes </title>
 </head>
 
 <body>
@@ -111,7 +121,7 @@
           
           
             
-              Some web API
+              ffff
             
           
         </h1>
@@ -120,7 +130,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            日期: 2014-11-09
+            日期: 2015-06-10
           
         </span>
 
@@ -129,7 +139,7 @@
             <span class="post-category">
               &nbsp; | &nbsp; 分类:
               
-                <a style="text-decoration:none;" href="/categories/前端杂烩/">前端杂烩</a>
+                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
 
                 
                 
@@ -143,8 +153,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2014/11/09/some web api/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/09/some web api/"></span>
+            <a href="/2015/06/10/动态背景实现二法 - 副本/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/10/动态背景实现二法 - 副本/"></span>
             </a>
           </span>
           
@@ -159,26 +169,14 @@
         
 
         
-          <h3 id="前言">前言</h3><p>搭建web的过程中，可能需要一些常见的应用，譬如地图、天气、搜索等等。而在这时，一些第三方API便让我们能方便地实现所需的功能。国内的API可参照<a href="http://apistore.baidu.com/" target="_blank" rel="external">BaiduAPIStore</a>或<a href="http://www.devstore.cn/" target="_blank" rel="external">DevStore</a>。下面就结合实例，列举二三。</p>
-<h3 id="地图"><a href="http://yichao.me/web-api/" target="_blank" rel="external">地图</a></h3><p>常用的有以下一些，考虑Google容易被墙，推荐使用百度地图。百度地图的API比较齐全，文档介绍也比较详尽，易上手。最喜欢百度的卫星地图，比较清晰，没有其他地图的灰蒙之感。<br><a href="http://code.google.com/apis/maps" target="_blank" rel="external">谷歌地图</a>、<a href="http://www.microsoft.com/maps/developers/web.aspx" target="_blank" rel="external">必应地图</a>、<a href="http://wiki.openstreetmap.org/wiki/API" target="_blank" rel="external">OpenStreetMap</a>、<a href="http://openapi.baidu.com/map" target="_blank" rel="external">百度地图</a>、<a href="http://open.mapbar.com" target="_blank" rel="external">图吧</a>、<a href="http://api.51ditu.com" target="_blank" rel="external">我要地图</a>、<a href="http://map.sogou.com/api" target="_blank" rel="external">搜狗地图</a>、<a href="http://code.autonavi.com/android/faq" target="_blank" rel="external">高德地图</a><br><a id="more"></a></p>
-<h3 id="搜索"><a href="http://yichao.me/web-api/" target="_blank" rel="external">搜索</a></h3><p>个人偏向不同，可能需要搜索的网站也各异。譬如我经常搜索网站为：谷歌、知乎、csdn、微博等。所以可自己设计一个包含各搜索平台的集合。如下所示：<br><img src="/imgs/search.png" alt="search"><br>主要Html代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"search"</span>&gt;</span><br><span class="line">         &lt;form id=<span class="string">"sform"</span> method=<span class="string">"get"</span> target=<span class="string">"_blank"</span> action=<span class="string">"http://www.baidu.com/s"</span>&gt;</span><br><span class="line">               &lt;ul id=<span class="string">"select"</span>&gt;</span><br><span class="line">                    &lt;li class=<span class="string">"selected"</span>&gt;百度&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;谷歌&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;百度&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;微博&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;知乎&lt;/li&gt;     </span><br><span class="line">                    &lt;li&gt;淘宝&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;亚马逊&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;美团&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;当当&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;维基&lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;知道&lt;/li&gt; </span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">                &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"wd"</span> id=<span class="string">"keyword"</span>/&gt;</span><br><span class="line">                &lt;input <span class="built_in">type</span>=<span class="string">"submit"</span> value=<span class="string">"百度一下"</span> id=<span class="string">"btn"</span>/&gt;</span><br><span class="line">           &lt;/form&gt;</span><br><span class="line">      &lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>决定你在哪个网站进行搜索的是两个属性：一是标签form里面的“action”；另一个是输入框里的“name”。下面就以百度为例，讲解如何获得这两个属性值。<br>1、打开<a href="http://www.baidu.com/" target="_blank" rel="external">百度</a>，随意输入一个关键词进行搜索，比如：haha<br>2、此时网址变为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http://www.baidu.com/s?ie=utf-<span class="number">8</span>&amp;f=<span class="number">8</span>&amp;rsv_bp=<span class="number">1</span>&amp;rsv_idx=<span class="number">2</span>&amp;ch=&amp;tn=baiduhome_pg&amp;</span><br><span class="line">bar=&amp;wd=haha&amp;rsv_spt=<span class="number">1</span>&amp;rsv_pq=d1ad4aee00168db8&amp;rsv_</span><br><span class="line">t=<span class="number">03</span>f3FJsw93zc2HLu1z4IHAg2PNDZ8NxD96ZvqzFGYZbZACACRPiL&amp;rsv_enter=<span class="number">1</span>&amp;inputT=<span class="number">1108</span></span><br></pre></td></tr></table></figure></p>
-<p>其中“？”之前的网址便为百度的action，而从网址中“wd=haha”便可知关键字属性name标识为wd<br>3、其他网站按以上步骤便可获得相应属性。<br>主要JS代码为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var actionArr=[<span class="string">"https://www.google.com.hk"</span>,<span class="string">'http://www.baidu.com/s'</span>,</span><br><span class="line">   <span class="string">'http://s.weibo.com/weibo/yy'</span>,<span class="string">'http://www.zhihu.com/search'</span>,</span><br><span class="line">   <span class="string">'http://s.taobao.com/search'</span>,<span class="string">'http://www.amazon.cn/s/ref=nb_sb_noss_2'</span>,</span><br><span class="line">   <span class="string">'http://zs.meituan.com/s'</span>,<span class="string">'http://search.dangdang.com/'</span>,</span><br><span class="line">   <span class="string">'http://zh.wikipedia.org/w/index.php'</span>,<span class="string">'http://zhidao.baidu.com/search'</span>];</span><br><span class="line">var keyArr=[<span class="string">'q'</span>,<span class="string">'wd'</span>,<span class="string">''</span>,<span class="string">'q'</span>,<span class="string">'q'</span>,<span class="string">'field-keywords'</span>,<span class="string">'w'</span>,<span class="string">'key'</span>,<span class="string">'search'</span>,<span class="string">'word'</span>];</span><br><span class="line"> $(<span class="string">"#search ul li"</span>).click(<span class="keyword">function</span>(event) &#123;</span><br><span class="line">   var pos=$(<span class="string">"#search ul li"</span>).index(this);</span><br><span class="line">   $(<span class="string">"#search .selected"</span>).text($(this).text());</span><br><span class="line">   var tex=$(this).text()+<span class="string">"一下"</span>;</span><br><span class="line">   $(<span class="string">"#search #btn"</span>).val(tex);</span><br><span class="line">   $(<span class="string">"#sform"</span>).attr(<span class="string">'action'</span>,<span class="function"><span class="title">function</span></span>()&#123;<span class="built_in">return</span> actionArr[pos-<span class="number">1</span>];&#125;);</span><br><span class="line">   $(<span class="string">"#sform #keyword"</span>).attr(<span class="string">'name'</span>,<span class="function"><span class="title">function</span></span>()&#123;<span class="built_in">return</span> keyArr[pos-<span class="number">1</span>];&#125;);</span><br><span class="line">   $(<span class="string">"#search ul"</span>).css(&#123; overflow: <span class="string">'hidden'</span>&#125;);</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure></p>
-<h3 id="天气"><a href="http://yichao.me/web-api/" target="_blank" rel="external">天气</a></h3><p>可以通过一些天气网站的API获得关于天气的JSON或XML数据，然后便可以通过JS来进行处理，关于网页中数据的处理会有篇幅进行专门说明。如果需要快捷开发的话，也可以借助类似<a href="http://www.thinkpage.cn/weather/widget.aspx" target="_blank" rel="external">心知天气插件</a>这样直接现成的货。<br><img src="/imgs/weather.png" alt="weather"><br>下面是一些天气接口：<br>1、金山用的JSON数据<br><a href="http://weather.123.duba.net/static/weather_info/101121301.html" target="_blank" rel="external">http://weather.123.duba.net/static/weather_info/101121301.html</a><br>2、小米用的JSON数据<br><a href="http://weatherapi.market.xiaomi.com/wtr-v2/weather?cityId=101121301" target="_blank" rel="external">http://weatherapi.market.xiaomi.com/wtr-v2/weather?cityId=101121301</a><br>3、中央天气预报<br><a href="http://weather.51wnl.com/weatherinfo/GetMoreWeather?cityCode=101040100&amp;weatherType=0" target="_blank" rel="external">http://weather.51wnl.com/weatherinfo/GetMoreWeather?cityCode=101040100&amp;weatherType=0</a><br><a href="http://weather.51wnl.com/weatherinfo/GetMoreWeather?cityCode=101040100&amp;weatherType=1" target="_blank" rel="external">http://weather.51wnl.com/weatherinfo/GetMoreWeather?cityCode=101040100&amp;weatherType=1</a><br>4、未知来源的数据接口<br><a href="http://wthrcdn.etouch.cn/weather_mini?city=北京" target="_blank" rel="external">http://wthrcdn.etouch.cn/weather_mini?city=北京</a><br>通过城市名字获得天气数据，json数据<br><a href="http://wthrcdn.etouch.cn/weather_mini?citykey=101010100" target="_blank" rel="external">http://wthrcdn.etouch.cn/weather_mini?citykey=101010100</a><br>通过城市id获得天气数据，json数据<br><a href="http://wthrcdn.etouch.cn/WeatherApi?citykey=101010100" target="_blank" rel="external">http://wthrcdn.etouch.cn/WeatherApi?citykey=101010100</a><br>通过城市id获得天气数据，xml文件数据,当错误时会有error节点<br><a href="http://wthrcdn.etouch.cn/WeatherApi?city=北京" target="_blank" rel="external">http://wthrcdn.etouch.cn/WeatherApi?city=北京</a><br>通过城市名字获得天气数据，xml文件数据<br>5、如果类似小米这样不带回调的，需先解决<a href="http://zhidao.baidu.com/link?url=2lCtbcc5dAh5TzoSSSss26l1sQC3-JOD88KOuzocVRiOHfBqMYY-stPgMmiYZgmfeSJDcd_MeGqskbTxu-LE6jcoeuZ5gBFnx_dTTajeDnq" target="_blank" rel="external">跨域问题</a>；带回调的，可利用JSONP进行如下处理。JS或Jquery的处理方式可参照<a href="http://www.shayiming.cn/01-30-325.html" target="_blank" rel="external">JSONP跨域获取天气信息</a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#test"</span>).click(<span class="keyword">function</span>(event) &#123;</span><br><span class="line">  $.ajax(&#123;</span><br><span class="line">      url: <span class="string">'http://weather.123.duba.net/static/weather_info/101121301.html'</span>, </span><br><span class="line">      dataType: <span class="string">"jsonp"</span>,</span><br><span class="line">      jsonp: <span class="string">"callback"</span>,</span><br><span class="line">      success: <span class="keyword">function</span> (data) &#123;</span><br><span class="line">         alert(data.weatherinfo.city);  //其中data便为返回的天气对象，可在此处进行数据处理</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;) </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<h3 id="音乐视频"><a href="http://yichao.me/web-api/" target="_blank" rel="external">音乐视频</a></h3><p><a href="https://github.com/zonyitoo/doubanfm-qt/wiki/%E8%B1%86%E7%93%A3FM-API" target="_blank" rel="external">豆瓣电台</a>、<a href="http://www.xiami.com/group/16505" target="_blank" rel="external">虾米</a>都是不错的选择。当然还可以直接利用虾米播播。<br><img src="/imgs/xiamibobo.png" alt="虾米播播"><br>视频的话，各大视频网站均有相应的分享项，很容易进行链接，具体可参照<a href="http://localhost:4000/2014/10/27/Markdown%20your%20blog/" target="_blank" rel="external">AddVideo</a>。</p>
-<h3 id="表单"><a href="http://yichao.me/web-api/" target="_blank" rel="external">表单</a></h3><p>第三方表单可利用<a href="http://www.wufoo.com/" target="_blank" rel="external">WuFoo</a>、<a href="https://jinshuju.net/" target="_blank" rel="external">金数据</a>、<a href="http://www.mikecrm.com/" target="_blank" rel="external">麦客</a>等等，具体使用请参照各自官网，不再赘述。</p>
-<h3 id="支付宝"><a href="http://yichao.me/web-api/" target="_blank" rel="external">支付宝</a></h3><p>废话不说，贴代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"apply"</span>&gt;</span><br><span class="line">   &lt;form action=<span class="string">"https://shenghuo.alipay.com/send/payment/fill.htm"</span> method=<span class="string">"POST"</span> target=<span class="string">"_blank"</span> </span><br><span class="line">   accept-charset=<span class="string">"GBK"</span>&gt; </span><br><span class="line">     &lt;input name=<span class="string">"optEmail"</span> <span class="built_in">type</span>=<span class="string">"hidden"</span> value=<span class="string">"fanych@mail2.sysu.edu.cn"</span> /&gt;   //转给的账户</span><br><span class="line">     &lt;input name=<span class="string">"payAmount"</span> <span class="built_in">type</span>=<span class="string">"hidden"</span> value=<span class="string">"5"</span> /&gt;    //转账金额 </span><br><span class="line">     &lt;input id=<span class="string">"title"</span> name=<span class="string">"title"</span> <span class="built_in">type</span>=<span class="string">"hidden"</span> value=<span class="string">"付款说明"</span> /&gt; </span><br><span class="line">     &lt;input name=<span class="string">"memo"</span> <span class="built_in">type</span>=<span class="string">"hidden"</span> value=<span class="string">"备注"</span> /&gt; </span><br><span class="line">     //可视图片，点击进入转账页</span><br><span class="line">     &lt;input name=<span class="string">"pay"</span> id=<span class="string">"img"</span> <span class="built_in">type</span>=<span class="string">"image"</span> value=<span class="string">"转账"</span> src=<span class="string">"./img/apply.png"</span> /&gt;   </span><br><span class="line">   &lt;/form&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="IP地址"><a href="http://yichao.me/web-api/" target="_blank" rel="external">IP地址</a></h3><p>提供IP数据的接口很多，下面以新浪的为例。<br>首先，在头部将接口数据引入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="built_in">type</span>=text/javascript src=<span class="string">"http://counter.sina.com.cn/ip"</span> charset=<span class="string">"gb2312"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p>然后，查看上面src网址所反馈的内容<br><img src="/imgs/ip.png" alt="IP"><br>最后，便可以以下面的方式对数据进行处理：</p>
-<pre><code class="bash">&lt;div id=<span class="string">"IP"</span>&gt;
-   &lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;
-       document.write(<span class="string">"您的IP地址为:"</span>+ILData[<span class="number">0</span>]);
-       document.write(<span class="string">'&lt;br&gt;'</span>+<span class="string">'&lt;br&gt;'</span>);
-       document.write(<span class="string">"来自:"</span>+ILData[<span class="number">1</span>]+ILData[<span class="number">2</span>]+ILData[<span class="number">3</span>]);
-   &lt;/script&gt;
-&lt;/div&gt;
-</code></pre>
-<p>具体显示如下：<br><img src="/imgs/ipShow.png" alt="IP地址"></p>
+          <p>动态背景使得页面更为活泼和生动，其“动”的元素有很多，本文主要说明下背景图片的动态实现。<br>背景动态是基于background-position属性的，通过不断改变背景图片的位置，实现背景动态的效果。<br>首先需要引入背景图片，并且需要repeat(本例以水平方向上背景动态移动为例)。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: <span class="comment">#9fddea url(../images/clouds.png) repeat-x scroll 0 0;</span></span><br></pre></td></tr></table></figure></p>
+<p>当背景图片不断向右移动时，便会有一种即视的动态感。控制移动可通过JS或CSS3。</p>
+<h3 id="基于JS的背景滚动">基于JS的背景滚动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var xpos = <span class="number">0</span>;    //初始background-position为(<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">scrollBg</span></span>()&#123;</span><br><span class="line">	xpos++;    </span><br><span class="line">	$(<span class="string">'#container'</span>).css(<span class="string">'background-position'</span>,xpos); //移动后的背景位置为(xpos,<span class="number">0</span>)</span><br><span class="line">	<span class="keyword">if</span> (xpos&gt;<span class="number">1600</span>) &#123;</span><br><span class="line">            xpos=<span class="number">0</span>;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">set</span>Interval(scrollBg,<span class="number">100</span>);  //<span class="number">100</span>ms移动一次</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>优点：兼容性好。<br>缺点：资源消耗大，比较卡顿。</p>
+<h3 id="基于CSS3的背景移动">基于CSS3的背景移动</h3><p>CSS3提供了很好的动画功能，利用animation可实现背景动态移动。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#container&#123;</span></span><br><span class="line">  background: <span class="comment">#9fddea url(../images/clouds.png) repeat-x  scroll 0 0;</span></span><br><span class="line">  animation: bgmove <span class="number">30</span>s linear  infinite;</span><br><span class="line">  -moz-animation: bgmove <span class="number">30</span>s linear  infinite;  /* Firefox5 */</span><br><span class="line">  -webkit-animation: bgmove <span class="number">30</span>s linear  infinite; /* Safari4 和 Chrome4 */</span><br><span class="line">  -o-animation: bgmove <span class="number">30</span>s linear  infinite; /* Opera12 */</span><br><span class="line">  -ms-animation: bgmove <span class="number">30</span>s linear  infinite; /* IE10 */</span><br><span class="line">&#125;</span><br><span class="line">@keyframes bgmove&#123;</span><br><span class="line">     <span class="number">0</span>% &#123;</span><br><span class="line">        background-position: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="number">100</span>% &#123;</span><br><span class="line">        background-position:<span class="number">1600</span>px <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">@-webkit-keyframes bgmove&#123;</span><br><span class="line">  <span class="number">0</span>% &#123;</span><br><span class="line">      background-position: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line"> <span class="number">100</span>% &#123;</span><br><span class="line">      background-position:<span class="number">1600</span>px <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">@-o-keyframes bgmove&#123;</span><br><span class="line">     <span class="number">0</span>% &#123;</span><br><span class="line">        background-position: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="number">100</span>% &#123;</span><br><span class="line">        background-position:<span class="number">1600</span>px <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">@-ms-keyframes bgmove&#123;</span><br><span class="line">     <span class="number">0</span>% &#123;</span><br><span class="line">        background-position: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="number">100</span>% &#123;</span><br><span class="line">        background-position:<span class="number">1600</span>px <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">@-moz-keyframes bgmove&#123;</span><br><span class="line">     <span class="number">0</span>% &#123;</span><br><span class="line">        background-position: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="number">100</span>% &#123;</span><br><span class="line">        background-position:<span class="number">1600</span>px <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>优点：资源消耗较少，比较流畅。<br>缺点：兼容性问题。</p>
+<h3 id="延伸思考">延伸思考</h3><p>有几点需要进一步思考：<br>1、图片位置一直增加，向着无限远的地方而去，如果不归位，会不会因repeat太多而导致资源消耗殆尽？<br>2、如果图片移动到一定位置后归位，那么这个距离是多少才不会使得归位之时有搓顿感？<br>3、利用canvas实现更酷的动态背景，需要进一步探索。</p>
 
         
       </div>
@@ -187,26 +185,16 @@
     
       <div class="post-footer">
         
-          <div class="post-tags">
-            
-              <a href="/tags/API/">
-                #API
-              </a>
-            
-          </div>
-        
 
         
           <div class="post-nav">
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2014/11/16/博文目录导航/">博文导航</a>
-              
             </div>
 
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2014/11/05/伪元素before&after/">:before & :after</a>
+                <a href="/2015/06/08/动态背景实现二法/">动态背景实现二法</a>
               
             </div>
           </div>
@@ -223,8 +211,8 @@
   
     <div class="comments" id="comments">
       
-        <div class="ds-thread" data-thread-key="2014/11/09/some web api/"
-             data-title="Some web API" data-url="http://yoursite.com/2014/11/09/some web api/">
+        <div class="ds-thread" data-thread-key="2015/06/10/动态背景实现二法 - 副本/"
+             data-title="ffff" data-url="http://yoursite.com/2015/06/10/动态背景实现二法 - 副本/">
         </div>
 
       
@@ -278,14 +266,14 @@
 
         <div class="site-state-item site-state-categories">
           <a href="/categories">
-            <span class="site-state-item-count">11</span>
+            <span class="site-state-item-count">10</span>
             <span class="site-state-item-name">分類</span>
           </a>
         </div>
 
         <div class="site-state-item site-state-tags">
           <a href="/tags">
-            <span class="site-state-item-count">28</span>
+            <span class="site-state-item-count">27</span>
             <span class="site-state-item-name">標籤</span>
           </a>
         </div>
@@ -309,7 +297,7 @@
         <div class="post-toc">
           
           
-            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#地图"><span class="nav-number">2.</span> <span class="nav-text">地图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索"><span class="nav-number">3.</span> <span class="nav-text">搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#天气"><span class="nav-number">4.</span> <span class="nav-text">天气</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#音乐视频"><span class="nav-number">5.</span> <span class="nav-text">音乐视频</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单"><span class="nav-number">6.</span> <span class="nav-text">表单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支付宝"><span class="nav-number">7.</span> <span class="nav-text">支付宝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP地址"><span class="nav-number">8.</span> <span class="nav-text">IP地址</span></a></li></ol></div>
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于JS的背景滚动"><span class="nav-number">1.</span> <span class="nav-text">基于JS的背景滚动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于CSS3的背景移动"><span class="nav-number">2.</span> <span class="nav-text">基于CSS3的背景移动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延伸思考"><span class="nav-number">3.</span> <span class="nav-text">延伸思考</span></a></li></ol></div>
           
         </div>
         <div class="post-toc-indicator-bottom post-toc-indicator"></div>
