@@ -1,0 +1,907 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-hexo-theme-next">
+<head>
+  
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<link rel="stylesheet" type="text/css" href="/my.css">
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript" src="/my.js"></script>
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.1"/>
+
+
+
+
+
+    <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+    <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.1" />
+
+
+
+
+  <title> opacity 和 rgba // Efan’s Notes </title>
+</head>
+
+<body>
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Efan’s Notes</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+
+  <ul id="menu" class="menu">
+    
+    
+      
+      <li class="menu-item menu-item-home">
+        <a href="/">
+          <i class="menu-item-icon icon-home"></i> <br />
+          首頁
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-categories">
+        <a href="/categories">
+          <i class="menu-item-icon icon-categories"></i> <br />
+          分類
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-archives">
+        <a href="/archives">
+          <i class="menu-item-icon icon-archives"></i> <br />
+          歸檔
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-tags">
+        <a href="/tags">
+          <i class="menu-item-icon icon-tags"></i> <br />
+          標籤
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-about">
+        <a href="/about">
+          <i class="menu-item-icon icon-about"></i> <br />
+          關於
+        </a>
+      </li>
+    
+  </ul>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+            
+          
+
+          <div id="posts" class="posts-expand">
+            
+  
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              opacity 和 rgba
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2015-06-12
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/12/opacity 和 rgba/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/12/opacity 和 rgba/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          <p>透明效果的引入，有时会达到很好的视觉效果，如<a href="https://www.alipay.com/" target="_blank" rel="external">支付宝</a>的主页面，就使用了大量的透明背景。CSS中的透明主要涉及三个属性或方面——opacity、rgba、png类透明图片。下面就这几个方面做一阐述。</p>
+<h3 id="opacity">opacity</h3><p>opacity 属性设置元素的不透明级别，从 0.0 （完全透明）到 1.0（完全不透明）。<br>opacity的兼容性可点击此处查看-&gt;<a href="http://caniuse.com/#search=opacity" target="_blank" rel="external">opacity兼容性</a><br>为了兼容低版本IE，需要使用filter，具体如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opacity:<span class="number">0.4</span>;</span><br><span class="line">filter:alpha(opacity=<span class="number">40</span>);  /* 针对 IE8 以及更早的版本 */</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>关于IE的alpha滤镜，写法多种，例如半透明如下写法皆可：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">----------------完整写法(IE4-IE9 )---------------------------------</span><br><span class="line">filter:progid:DXImageTransform.Microsoft.Alpha( Opacity=<span class="number">50</span>, FinishOpacity=<span class="number">0</span>, </span><br><span class="line">Style=<span class="number">1</span>, StartX=<span class="number">0</span>,  FinishX=<span class="number">0</span>, StartY=<span class="number">0</span>, FinishY=<span class="number">0</span>)</span><br><span class="line">-----------------简写<span class="number">1</span>(IE4-IE9 )---------------------------------------</span><br><span class="line">filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=<span class="number">50</span>);  </span><br><span class="line">-----------------简写<span class="number">2</span>(IE4-IE9 )---------------------------------------</span><br><span class="line">filter:alpha(opacity=<span class="number">50</span>);</span><br></pre></td></tr></table></figure></p>
+<p></p><p style="border:1px dashed blue;paading:10px;">完整写法中，Style，设置或者调整不透明度的风格；Opacity，设置或调整不透明度值；FinishOpacity，设置或调整最后不透明度值；StartX，设置或调整水平不透明最开始位置，默认值为0；FinishX，设置或调整水平不透明度结束位置，默认值为0；StartY和FinishY不言自明。</p>具体效果请参照官方实例(记得用IE浏览器)-&gt;<a href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/Alpha.htm" target="_blank" rel="external">Alpha Filter</a><br><span style="color:red;">注意：由于IE9同时支持opacity(或rgba)和alpha滤镜，所以在为了兼容而同时使用两个属性时，会更透明，实际使用中要考虑到IE9的特殊情况。</span><br>针对上述的特殊情况，可使用IE条件注释(后续展开再讲)或下述hack：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@media screen\<span class="number">9</span>&#123;...&#125;只对IE6/<span class="number">7</span>生效</span><br><span class="line">@media \<span class="number">0</span>screen &#123;...&#125;只对IE8有效</span><br><span class="line">@media \<span class="number">0</span>screen\,screen\<span class="number">9</span>&#123;...&#125;只对IE6/<span class="number">7</span>/<span class="number">8</span>有效</span><br><span class="line">@media screen\<span class="number">0</span> &#123;...&#125; 只对IE8/<span class="number">9</span>/<span class="number">10</span>有效</span><br><span class="line">@media screen and (min-width:<span class="number">0</span>\<span class="number">0</span>)&#123;...&#125; 只对IE9/<span class="number">10</span>有效</span><br></pre></td></tr></table></figure><p></p>
+<p>所以总体可如下书写：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.test&#123;</span><br><span class="line">	opacity:<span class="number">0.6</span>;  //现代浏览器</span><br><span class="line">&#125;</span><br><span class="line">@media \<span class="number">0</span>screen\,screen\<span class="number">9</span> &#123;  //<span class="keyword">for</span> IE6、<span class="number">7</span>、<span class="number">8</span></span><br><span class="line">    .test&#123;</span><br><span class="line">    filter:Alpha(opacity=<span class="number">60</span>);  </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><span style="color:red;">再次注意：alpha滤镜具有继承性，设置子元素为相对定位，可让子元素不继承Alpha值。如低版本IE下背景透明、文字不透明的实例：</span><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@media \<span class="number">0</span>screen\,screen\<span class="number">9</span> &#123;</span><br><span class="line">    .test p&#123;                     //文字背景透明</span><br><span class="line">    background-color:<span class="comment">#000;</span></span><br><span class="line">    filter:Alpha(opacity=<span class="number">60</span>);</span><br><span class="line">&#125;</span><br><span class="line">.test p span&#123;                    //文字不透明</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="opacity继承问题">opacity继承问题</h3><p>opacity具有继承性，即设置opacity元素的后代元素也会透明。例如父元素opacity设置为0.6，那么子元素在未做此设置的情况下继承父元素opacity后也为0.6。<br><span style="color:red;">再再次注意：当父子元素均设置opacity时，子元素的opacity为多少？答案为二者的乘积。</span><br>无例无真相，看如下例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">------------html(css省略)-----------------</span><br><span class="line">&lt;div class=<span class="string">"test"</span>&gt;             //opacity为<span class="number">0.5</span></span><br><span class="line">     关关雎鸠，在河之洲</span><br><span class="line">	&lt;p&gt;你是一个动人的故事，唱了许多年&lt;/p&gt;</span><br><span class="line">	&lt;div class=<span class="string">"inner"</span>&gt;A&lt;/div&gt;   //opacity为<span class="number">0.6</span></span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=<span class="string">"contrast1"</span>&gt;B&lt;/div&gt;   //opacity为<span class="number">0.6</span></span><br><span class="line">&lt;div class=<span class="string">"contrast2"</span>&gt;C&lt;/div&gt;   //opacity为<span class="number">0.3</span></span><br><span class="line">&lt;div class=<span class="string">"contrast3"</span>&gt;D&lt;/div&gt;   //opacity为<span class="number">0.3</span></span><br></pre></td></tr></table></figure></p>
+<p>chrome中截图如下所示：<br><img src="/imgs/opacity/1.png" alt="opacity"><br>图中，A、D显示是一样的，C、B均与A不一样（因为背景较淡，所以C不一样的不明显），可见A的opacity为0.6，其父元素为0.5,继承后透明效果为0.3，与D效果一样。至于A、C不一样，是因为尽管它们opacity一样为0.3，但是相对的背景不一样，因而显示也不一样。</p>
+<h3 id="RGBA">RGBA</h3><p>opacity可以设置透明，但是元素及子元素全都应用了透明效果，而有时候我们希望只是背景透明，元素内的内容正常显示，此时便可以利用rgba来实现。<br>IE较低版本也不支持rbga，此时可参照前文IE下背景透明、文字不透明的实例。<br>此外，还有一种更好的办法，就是利用IE的渐变滤镜实现rgba类似的透明背景效果，如支付宝的登录框。<br><img src="/imgs/opacity/2.png" alt="opacity"><br>至于样式未启用，是因为浏览器是chrome，而非低版本的IE。<br>下面首先来了解下IE的渐变滤镜。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">filter:progid:DXImageTransform.Microsoft.Gradient(enabled=<span class="string">'ture'</span>,GradientType=<span class="string">'1'</span>,</span><br><span class="line">StartColorStr=<span class="string">'#00000000'</span>,EndColorStr=<span class="string">'#FFFF3300'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>具体实例参照-&gt;<a href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/gradient.htm" target="_blank" rel="external">Gradient Filter</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">enabled</td>
+<td style="text-align:left">可选，boolean类型，默认值为ture，启用过滤器；false为不启用过滤器。</td>
+</tr>
+<tr>
+<td style="text-align:left">GradientType</td>
+<td style="text-align:left">设置渐变的方向，1代表水平方向，0代表垂直方向渐变。</td>
+</tr>
+<tr>
+<td style="text-align:left">StartColorStr</td>
+<td style="text-align:left">设置或者检索开始的颜色值，string类型字符串，默认值为：#FF000000，比如一个值为：#AARRGGBB ，那么AA代表透明度alpha，RR表示红色16进制值，GG表示绿色16进制值，BB表示蓝色16进制值。</td>
+</tr>
+<tr>
+<td style="text-align:left">EndColorStr</td>
+<td style="text-align:left">设置或者检索结束的颜色值，同上。</td>
+</tr>
+</tbody>
+</table>
+<p>所以低版本IE利用渐变滤镜模拟RGBA(221,221,221,0.5)效果的总体代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.test&#123;filter:progid:DXImageTransform.Microsoft.gradient(enabled=<span class="string">'true'</span>,</span><br><span class="line">startColorstr=<span class="string">'#7FDDDDDD'</span>, endColorstr=<span class="string">'#7FDDDDDD'</span>);  //实际alpha为<span class="number">7</span>F/FF=<span class="number">0.4980</span></span><br><span class="line">background:rgba(<span class="number">221</span>,<span class="number">221</span>,<span class="number">221</span>,<span class="number">0.5</span>);&#125;  </span><br><span class="line"></span><br><span class="line">:root .test&#123;filter:progid:DXImageTransform.Microsoft.gradient(enabled=<span class="string">'true'</span>,</span><br><span class="line">startColorstr=<span class="string">'#00DDDDDD'</span>, endColorstr=<span class="string">'#00DDDDDD'</span>);&#125;/*<span class="keyword">for</span> IE9*/</span><br><span class="line"></span><br><span class="line">或者ie9的hack使用： </span><br><span class="line">:root .test&#123;filter:none;&#125;/*<span class="keyword">for</span> IE9*/</span><br></pre></td></tr></table></figure></p>
+<p>具体可参照工具-&gt;<a href="http://www.css88.com/demo/hex_color/" target="_blank" rel="external">CSS透明背景代码生成工具</a><br><span style="color:red;">由于IE9既能运用RGBA，又能运用filter，所以为了防止二者冲突，需要针对IE9做一设置——让filter不起作用。</span>上面代码中，:root为CSS3属性，IE9+才能识别，所以使用其可以对IE9+中的filter进行设置(如果存在的话)。<br>支付宝渐变滤镜代码中的“\9”是一种hack，具体后续会有文章进行分析。</p>
+<blockquote>
+<p>使用渐变滤镜相对于alpha的好处是：子元素不用设置relative来消除对滤镜的继承，也即子元素不继承渐变滤镜效果。</p>
+</blockquote>
+
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+
+        
+          <div class="post-nav">
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2015/06/11/关于line-height的理解/">理解line-height</a>
+              
+            </div>
+          </div>
+        
+
+        
+        
+      </div>
+    
+  </div>
+
+
+
+  
+    <div class="comments" id="comments">
+      
+        <div class="ds-thread" data-thread-key="2015/06/12/opacity 和 rgba/"
+             data-title="opacity 和 rgba" data-url="http://yoursite.com/2015/06/12/opacity 和 rgba/">
+        </div>
+
+      
+    </div>
+  
+
+          </div>
+
+          
+        </div>
+
+        
+<div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+
+    
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview" data-target="site-overview">
+          本站概覽
+        </li>
+      </ul>
+    
+
+    <div class="site-overview">
+      <div class="site-author motion-element">
+        <img class="site-author-image" src="/images/touxiang.png" alt="efan" />
+        <p class="site-author-name">efan</p>
+        <p style="color:gray;font-size:14px;">凡心所向  素履所往</p>
+
+
+      </div>
+      <p class="site-description motion-element"></p>
+      <div class="site-state motion-element">
+        <div class="site-state-item site-state-posts">
+          <a href="/archives">
+            <span class="site-state-item-count">51</span>
+            <span class="site-state-item-name">文章</span>
+          </a>
+        </div>
+
+        <div class="site-state-item site-state-categories">
+          <a href="/categories">
+            <span class="site-state-item-count">10</span>
+            <span class="site-state-item-name">分類</span>
+          </a>
+        </div>
+
+        <div class="site-state-item site-state-tags">
+          <a href="/tags">
+            <span class="site-state-item-count">27</span>
+            <span class="site-state-item-name">標籤</span>
+          </a>
+        </div>
+
+      </div>
+
+      
+
+      <div class="links-of-author motion-element">
+        
+      </div>
+
+      
+      
+
+    </div>
+
+    
+      <div class="post-toc-wrap sidebar-panel-active">
+        <div class="post-toc-indicator-top post-toc-indicator"></div>
+        <div class="post-toc">
+          
+          
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#opacity"><span class="nav-number">1.</span> <span class="nav-text">opacity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#opacity继承问题"><span class="nav-number">2.</span> <span class="nav-text">opacity继承问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RGBA"><span class="nav-number">3.</span> <span class="nav-text">RGBA</span></a></li></ol></div>
+          
+        </div>
+        <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+      </div>
+    
+
+  </div>
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp; 
+  2015
+  
+  <span class="author">efan</span> | Powered By Hexo
+</div>
+
+
+
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.content img').each(function () {
+        var $image = $(this);
+        var $imageWrapLink = $image.parent('a');
+
+        if ($imageWrapLink.size() < 1) {
+          $imageWrapLink = $image.wrap('<a href="' + this.getAttribute('src') + '"></a>').parent('a');
+        }
+        $imageWrapLink.addClass('fancybox');
+      });
+    });
+    $('.fancybox').fancybox({
+      helpers: {
+        overlay: {
+          locked: false
+        }
+      }
+    });
+  </script>
+
+
+  <script type="text/javascript">
+  function hasMobileUA () {
+    var nav = window.navigator;
+    var ua = nav.userAgent;
+    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g;
+
+    return pa.test(ua);
+  }
+
+  function isDesktop () {
+    return screen.width > 991 && !hasMobileUA();
+  }
+
+  function isTablet () {
+    return screen.width < 992 && screen.width > 767 && hasMobileUA();
+  }
+
+  function isMobile () {
+    return screen.width < 767 && hasMobileUA();
+  }
+
+  function escapeSelector (selector) {
+    return selector.replace(/[!"$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, "\\$&")
+  }
+</script>
+
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" id="motion.global">
+  $(document).ready(function () {
+    var body = $('body');
+    var isSidebarVisible = false;
+    var sidebarToggle = $('.sidebar-toggle');
+    var sidebarToggleLine1st = $('.sidebar-toggle-line-first')
+    var sidebarToggleLine2nd = $('.sidebar-toggle-line-middle');
+    var sidebarToggleLine3rd = $('.sidebar-toggle-line-last');
+    var sidebar = $('.sidebar');
+
+    var SIDEBAR_WIDTH = '320px';
+    var SIDEBAR_DISPLAY_DURATION = 300;
+
+    var sidebarToogleLineStatusInit = {width: '100%', opacity: 1, left: 0, rotateZ: 0, top: 0};
+
+    var sidebarToggleLine1stStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine1stStatusArrow = {width: '50%', rotateZ: '-45deg', top: '2px'};
+    var sidebarToogleLine1stStatusClose = {width: '100%', rotateZ: '-45deg', top: '5px'};
+
+    var sidebarToggleLine2ndStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine2ndStatusArrow = {width: '90%'};
+    var sidebarToogleLine2ndStatusClose = {opacity: 0};
+
+    var sidebarToggleLine3rdStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine3rdStatusArrow = {width: '50%', rotateZ: '45deg', top: '-2px'};
+    var sidebarToogleLine3rdStatusClose = {width: '100%', rotateZ: '45deg', top: '-5px'};
+
+    LogoAndMenuMotion();
+    sidebatToggleMotion();
+    postsListMotion();
+    backToTopMotion();
+
+
+    $(document)
+      .on('sidebar.isShowing', function () {
+        isDesktop() && body.velocity(
+          {paddingRight: SIDEBAR_WIDTH},
+          SIDEBAR_DISPLAY_DURATION
+        );
+        sidebarContentMotion();
+      })
+      .on('sidebar.isHiding', function () {});
+
+    function LogoAndMenuMotion() {
+      $.Velocity.RunSequence([
+        { e: $('.brand'), p: { opacity: 1 }, o: { duration: 100 } },
+        { e: $('.logo'), p: { opacity: 1, top: 0 }, o: { duration: 50} },
+        
+        { e: $('.logo-line-before i'), p: { translateX: "100%" }, o: { duration: 500, sequenceQueue: false } },
+        { e: $('.logo-line-after i'), p: { translateX: "-100%" }, o: { duration: 500, sequenceQueue: false } },
+        
+        { e: $('.site-title'), p: { opacity: 1, top: 0 }, o: { duration: 200 } }
+      ]);
+      $('.menu-item').velocity('transition.slideDownIn', {display: null});
+    }
+
+
+    function backToTopMotion () {
+      var b2top = $('.back-to-top');
+      b2top.on('click', function () {
+        body.velocity('scroll');
+      });
+    }
+
+    function sidebarShowMotion () {
+
+      sidebarToggleLine1st.velocity(sidebarToogleLine1stStatusClose);
+      sidebarToggleLine2nd.velocity(sidebarToogleLine2ndStatusClose);
+      sidebarToggleLine3rd.velocity(sidebarToogleLine3rdStatusClose);
+
+      sidebar.velocity({width: SIDEBAR_WIDTH}, {
+        display: 'block',
+        duration: SIDEBAR_DISPLAY_DURATION,
+        complete: function () {
+          sidebar.addClass('sidebar-active');
+          sidebar.trigger('sidebar.didShow');
+        }
+      });
+      sidebar.trigger('sidebar.isShowing');
+    }
+
+    function sidebarHideMotion () {
+      isDesktop() && body.velocity({paddingRight: 0});
+      sidebar.velocity('reverse');
+
+      sidebarToggleLine1st.velocity(sidebarToggleLine1stStatusInit);
+      sidebarToggleLine2nd.velocity(sidebarToggleLine2ndStatusInit);
+      sidebarToggleLine3rd.velocity(sidebarToggleLine3rdStatusInit);
+
+      sidebar.removeClass('sidebar-active');
+      sidebar.trigger('sidebar.isHiding');
+    };
+
+    function sidebarContentMotion () {
+      $('.sidebar .motion-element').velocity(
+        'transition.slideRightIn',
+        {stagger: 50, drag: true}
+      );
+    }
+
+    function postsListMotion () {
+      var postMotionOptions = window.postMotionOptions || {stagger: 300, drag: true};
+      $('.post').velocity('transition.slideDownIn', postMotionOptions);
+    }
+
+    function sidebatToggleMotion () {
+      sidebarToggle.on('click', function () {
+        isSidebarVisible ? sidebarHideMotion() : sidebarShowMotion();
+        isSidebarVisible = !isSidebarVisible;
+      });
+
+      sidebarToggle.hover(function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusArrow);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusArrow);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusArrow);
+      }, function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusInit);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusInit);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusInit);
+      });
+    }
+  });
+
+</script>
+
+
+
+
+
+  
+  
+<script type="text/javascript" id="bootstrap.scrollspy.custom">
+  /* ========================================================================
+  * Bootstrap: scrollspy.js v3.3.2
+  * http://getbootstrap.com/javascript/#scrollspy
+  * ========================================================================
+  * Copyright 2011-2015 Twitter, Inc.
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  * ======================================================================== */
+
+  /**
+   * Custom by iissnan
+   *
+   * - Add a `clear.bs.scrollspy` event.
+   * - Esacpe targets selector.
+   */
+
+
+  +function ($) {
+    'use strict';
+
+    // SCROLLSPY CLASS DEFINITION
+    // ==========================
+
+    function ScrollSpy(element, options) {
+      this.$body          = $(document.body)
+      this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
+      this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
+      this.selector       = (this.options.target || '') + ' .nav li > a'
+      this.offsets        = []
+      this.targets        = []
+      this.activeTarget   = null
+      this.scrollHeight   = 0
+
+      this.$scrollElement.on('scroll.bs.scrollspy', $.proxy(this.process, this))
+      this.refresh()
+      this.process()
+    }
+
+    ScrollSpy.VERSION  = '3.3.2'
+
+    ScrollSpy.DEFAULTS = {
+      offset: 10
+    }
+
+    ScrollSpy.prototype.getScrollHeight = function () {
+      return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
+    }
+
+    ScrollSpy.prototype.refresh = function () {
+      var that          = this
+      var offsetMethod  = 'offset'
+      var offsetBase    = 0
+
+      this.offsets      = []
+      this.targets      = []
+      this.scrollHeight = this.getScrollHeight()
+
+      if (!$.isWindow(this.$scrollElement[0])) {
+        offsetMethod = 'position'
+        offsetBase   = this.$scrollElement.scrollTop()
+      }
+
+      this.$body
+        .find(this.selector)
+        .map(function () {
+          var $el   = $(this)
+          var href  = $el.data('target') || $el.attr('href')
+          var $href = /^#./.test(href) && $(escapeSelector(href)) // Need to escape selector.
+
+          return ($href
+            && $href.length
+            && $href.is(':visible')
+            && [[$href[offsetMethod]().top + offsetBase, href]]) || null
+        })
+        .sort(function (a, b) { return a[0] - b[0] })
+        .each(function () {
+          that.offsets.push(this[0])
+          that.targets.push(this[1])
+        })
+
+
+    }
+
+    ScrollSpy.prototype.process = function () {
+      var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
+      var scrollHeight = this.getScrollHeight()
+      var maxScroll    = this.options.offset + scrollHeight - this.$scrollElement.height()
+      var offsets      = this.offsets
+      var targets      = this.targets
+      var activeTarget = this.activeTarget
+      var i
+
+      if (this.scrollHeight != scrollHeight) {
+        this.refresh()
+      }
+
+      if (scrollTop >= maxScroll) {
+        return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
+      }
+
+      if (activeTarget && scrollTop < offsets[0]) {
+        $(this.selector).trigger('clear.bs.scrollspy')  // Add a custom event.
+        this.activeTarget = null
+        return this.clear()
+      }
+
+      for (i = offsets.length; i--;) {
+        activeTarget != targets[i]
+          && scrollTop >= offsets[i]
+          && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
+          && this.activate(targets[i])
+      }
+    }
+
+    ScrollSpy.prototype.activate = function (target) {
+      this.activeTarget = target
+
+      this.clear()
+
+      var selector = this.selector +
+        '[data-target="' + target + '"],' +
+        this.selector + '[href="' + target + '"]'
+
+      var active = $(selector)
+        .parents('li')
+        .addClass('active')
+
+      if (active.parent('.dropdown-menu').length) {
+        active = active
+          .closest('li.dropdown')
+          .addClass('active')
+      }
+
+      active.trigger('activate.bs.scrollspy')
+    }
+
+    ScrollSpy.prototype.clear = function () {
+      $(this.selector)
+        .parentsUntil(this.options.target, '.active')
+        .removeClass('active')
+    }
+
+
+    // SCROLLSPY PLUGIN DEFINITION
+    // ===========================
+
+    function Plugin(option) {
+      return this.each(function () {
+        var $this   = $(this)
+        var data    = $this.data('bs.scrollspy')
+        var options = typeof option == 'object' && option
+
+        if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)))
+        if (typeof option == 'string') data[option]()
+      })
+    }
+
+    var old = $.fn.scrollspy
+
+    $.fn.scrollspy             = Plugin
+    $.fn.scrollspy.Constructor = ScrollSpy
+
+
+    // SCROLLSPY NO CONFLICT
+    // =====================
+
+    $.fn.scrollspy.noConflict = function () {
+      $.fn.scrollspy = old
+      return this
+    }
+
+
+    // SCROLLSPY DATA-API
+    // ==================
+
+    $(window).on('load.bs.scrollspy.data-api', function () {
+      $('[data-spy="scroll"]').each(function () {
+        var $spy = $(this)
+        Plugin.call($spy, $spy.data())
+      })
+    })
+
+  }(jQuery);
+</script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+      currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });  
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+     var $tocContent = $('.post-toc-content');
+     /*  if ($tocContent.length > 0 && $tocContent.html().trim().length > 0 && isDesktop()) {
+        setTimeout(function () {
+          $('.sidebar-toggle').trigger('click');
+        }, 800);
+      }  */
+    });
+  </script>
+
+
+
+
+  
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"efan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+  
+</body>
+</html>
