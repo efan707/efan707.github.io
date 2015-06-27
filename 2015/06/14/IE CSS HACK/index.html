@@ -19,9 +19,19 @@
 
 
 
-	<meta name="keywords" content="Shapes," />
 
-  <title> CSS画图形 // Efan’s Notes </title>
+    <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+    <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.1" />
+
+
+
+
+  <title> IE CSS hack // Efan’s Notes </title>
 </head>
 
 <body>
@@ -111,7 +121,7 @@
           
           
             
-              CSS画图形
+              IE CSS hack
             
           
         </h1>
@@ -120,7 +130,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            日期: 2014-12-06
+            日期: 2015-06-14
           
         </span>
 
@@ -143,8 +153,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2014/12/06/CSS之各式图形/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/12/06/CSS之各式图形/"></span>
+            <a href="/2015/06/14/IE CSS HACK/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/14/IE CSS HACK/"></span>
             </a>
           </span>
           
@@ -159,41 +169,19 @@
         
 
         
-          <p>利用CSS，可以画出<a href="http://www.cssshapes.com/" target="_blank" rel="external">各式各样的图形</a>，下面就列举一二示之。</p>
-<h3 id="不同边界样式">不同边界样式</h3><p>通过对border属性的设置，可以产生一些另类的效果。<br><img src="/imgs/shape1.png" alt="shape1"> <img src="/imgs/shape2.png" alt="shape2"> <img src="/imgs/shape3.png" alt="shape3"> <img src="/imgs/shape4.png" alt="shape4"> <img src="/imgs/shape5.png" alt="shape5"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#border-style1&#123;</span></span><br><span class="line">    width: <span class="number">40</span>px;</span><br><span class="line">    height: <span class="number">40</span>px;</span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-width: <span class="number">30</span>px;</span><br><span class="line">    border-color: red blue green yellow; &#125;</span><br><span class="line"><span class="comment">#border-style2&#123;</span></span><br><span class="line">    width: <span class="number">0</span>;</span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-width: <span class="number">50</span>px;</span><br><span class="line">    border-color: red blue green yellow; &#125;</span><br><span class="line"><span class="comment">#border-style3&#123;</span></span><br><span class="line">    width: <span class="number">20</span>px;</span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-width: <span class="number">50</span>px <span class="number">40</span>px;</span><br><span class="line">    border-color: red blue green yellow;&#125;</span><br><span class="line"><span class="comment">#border-style4&#123;</span></span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-width: <span class="number">70</span>px <span class="number">60</span>px <span class="number">30</span>px <span class="number">40</span>px;</span><br><span class="line">    border-color: red blue green yellow; &#125;</span><br><span class="line"><span class="comment">#border-style5&#123;</span></span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-width: <span class="number">70</span>px <span class="number">60</span>px <span class="number">30</span>px <span class="number">40</span>px;</span><br><span class="line">    border-color: red blue green yellow;</span><br><span class="line">    -webkit-transform: skew(<span class="number">20</span>deg);    </span><br><span class="line">    -moz-transform: skew(<span class="number">20</span>deg);          </span><br><span class="line">    -o-transform: skew(<span class="number">20</span>deg); &#125;</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<h3 id="梯形">梯形</h3><p><img src="/imgs/shape6.png" alt="shape6"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#trapezoid&#123;</span></span><br><span class="line">   width: <span class="number">40</span>px;</span><br><span class="line">   height: <span class="number">40</span>px;  </span><br><span class="line">   border-style: solid;</span><br><span class="line">   border-width: <span class="number">30</span>px;</span><br><span class="line">   border-color: transparent transparent green transparent;&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="三角形">三角形</h3><p>通过设置边框显示与否，可以形成各个方向的三角形。<br><img src="/imgs/shape7.png" alt="shape7"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#triangle&#123;</span></span><br><span class="line">   width: <span class="number">0</span>;</span><br><span class="line">   border-style: solid;</span><br><span class="line">   border-width: <span class="number">50</span>px;</span><br><span class="line">   border-color: transparent transparent green transparent;&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="空心三角形">空心三角形</h3><p>通过设置两个三角形，after形成的三角形定位到原三角形内部，并设置颜色为背景色，形成“空心”。<br><img src="/imgs/shape8.png" alt="shape8"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">#hollow-triangle&#123;</span></span><br><span class="line">    width: <span class="number">0</span>;</span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-width: <span class="number">50</span>px;</span><br><span class="line">    border-color: transparent transparent green transparent;&#125;</span><br><span class="line"><span class="comment">#hollow-triangle:after&#123;</span></span><br><span class="line">    content: <span class="string">""</span>;   </span><br><span class="line">    width: <span class="number">0</span>;</span><br><span class="line">    border-style: solid;</span><br><span class="line">    border-width: <span class="number">48</span>px;</span><br><span class="line">    border-color: transparent transparent white transparent;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: <span class="number">30</span>px;</span><br><span class="line">    top: <span class="number">11</span>px;&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="五角星">五角星</h3><p>CSS3还能实现更为复杂的图形。<br>五角星的画法其实也比较简单，主要是由三个等腰三角形拼凑而成(两大一小)，当然也可以借由其他方式进行整合。<br><img src="/imgs/fivestar1.png" alt="shape"> <img src="/imgs/fivestar2.png" alt="shape"> <img src="/imgs/shape10.png" alt="shape10"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#five-star &#123;    </span></span><br><span class="line">    margin: <span class="number">50</span>px <span class="number">0</span>;    </span><br><span class="line">    position: relative;       </span><br><span class="line">    color: red;    </span><br><span class="line">    width: <span class="number">0</span>px;    height: <span class="number">0</span>px;   </span><br><span class="line">    border-right:  <span class="number">100</span>px solid transparent;    </span><br><span class="line">    border-bottom: <span class="number">70</span>px  solid red;    </span><br><span class="line">    border-left:   <span class="number">100</span>px solid transparent;    </span><br><span class="line">    -moz-transform:    rotate(<span class="number">35</span>deg);    </span><br><span class="line">    -webkit-transform: rotate(<span class="number">35</span>deg);    </span><br><span class="line">    -ms-transform:     rotate(<span class="number">35</span>deg);  </span><br><span class="line">    -o-transform:      rotate(<span class="number">35</span>deg); &#125; </span><br><span class="line"> <span class="comment">#five-star:before &#123;</span></span><br><span class="line">     position: absolute;    </span><br><span class="line">     height: <span class="number">0</span>;    width: <span class="number">0</span>;    top: -<span class="number">45</span>px;    left: -<span class="number">62</span>px;       </span><br><span class="line">     content: <span class="string">''</span>;      </span><br><span class="line">     border-bottom: <span class="number">80</span>px solid red;    </span><br><span class="line">     border-left: <span class="number">30</span>px solid transparent;   </span><br><span class="line">     border-right: <span class="number">30</span>px solid transparent;     </span><br><span class="line">     -webkit-transform: rotate(-<span class="number">35</span>deg);    </span><br><span class="line">     -moz-transform:    rotate(-<span class="number">35</span>deg);   </span><br><span class="line">     -ms-transform:     rotate(-<span class="number">35</span>deg);    </span><br><span class="line">     -o-transform:      rotate(-<span class="number">35</span>deg);      &#125;</span><br><span class="line"> <span class="comment">#five-star:after &#123;    </span></span><br><span class="line">    position: absolute;    display: block;    </span><br><span class="line">    color: red;    </span><br><span class="line">    top: <span class="number">3</span>px;    left: -<span class="number">105</span>px;    width: <span class="number">0</span>px;    height: <span class="number">0</span>px;   </span><br><span class="line">    border-right: <span class="number">100</span>px solid transparent;    </span><br><span class="line">    border-bottom: <span class="number">70</span>px solid red;    </span><br><span class="line">    border-left: <span class="number">100</span>px solid transparent;   </span><br><span class="line">    -webkit-transform: rotate(-<span class="number">70</span>deg);    </span><br><span class="line">    -moz-transform:    rotate(-<span class="number">70</span>deg);    </span><br><span class="line">    -ms-transform:     rotate(-<span class="number">70</span>deg);  </span><br><span class="line">    -o-transform:      rotate(-<span class="number">70</span>deg);   </span><br><span class="line">    content: <span class="string">''</span>; &#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="心形">心形</h3><p><img src="/imgs/heart1.png" alt="heart"> <img src="/imgs/heart2.png" alt="heart"> <img src="/imgs/shape11.png" alt="shape11"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">#heart&#123;</span></span><br><span class="line">    width: <span class="number">160</span>px;</span><br><span class="line">    height: <span class="number">100</span>px;</span><br><span class="line">    background-color: red;</span><br><span class="line">    border-radius: <span class="number">50</span>px <span class="number">0</span> <span class="number">0</span> <span class="number">50</span>px;</span><br><span class="line">    -webkit-transform: rotate(<span class="number">45</span>deg);        </span><br><span class="line">    -moz-transform:    rotate(<span class="number">45</span>deg);        </span><br><span class="line">    -ms-transform:     rotate(<span class="number">45</span>deg);      </span><br><span class="line">    -o-transform:      rotate(<span class="number">45</span>deg);  </span><br><span class="line">    position: absolute;</span><br><span class="line">    top:<span class="number">50</span>px; &#125;</span><br><span class="line"><span class="comment">#heart:after&#123;</span></span><br><span class="line">    content: <span class="string">""</span>;</span><br><span class="line">    width: <span class="number">160</span>px;</span><br><span class="line">    height: <span class="number">100</span>px;</span><br><span class="line">    background-color: red;</span><br><span class="line">    border-radius: <span class="number">50</span>px <span class="number">0</span> <span class="number">0</span> <span class="number">50</span>px;</span><br><span class="line">    position: absolute;</span><br><span class="line">    -ms-transform: rotate(<span class="number">90</span>deg); /* IE <span class="number">9</span> */</span><br><span class="line">    -ms-transform-origin:<span class="number">69</span>% <span class="number">50</span>%; /* IE <span class="number">9</span> */</span><br><span class="line">    -webkit-transform: rotate(<span class="number">90</span>deg); /* Safari and Chrome */</span><br><span class="line">    -webkit-transform-origin:<span class="number">69</span>% <span class="number">50</span>%; /* Safari and Chrome */</span><br><span class="line">    -moz-transform: rotate(<span class="number">90</span>deg); /* Firefox */</span><br><span class="line">    -moz-transform-origin:<span class="number">69</span>% <span class="number">50</span>%; /* Firefox */</span><br><span class="line">    -o-transform: rotate(<span class="number">90</span>deg); /* Opera */</span><br><span class="line">    -o-transform-origin:<span class="number">69</span>% <span class="number">50</span>%; /* Opera */ &#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="八卦">八卦</h3><p>八卦的思路如下所示：<br><img src="/imgs/bagua1.png" alt="八卦"> <img src="/imgs/bagua2.png" alt="八卦"> <img src="/imgs/bagua3.png" alt="八卦"> <img src="/imgs/bagua4.png" alt="八卦"></p>
-<pre><code class="bash"><span class="comment">#ba-gua{</span>
-       width: <span class="number">96</span>px;     height: <span class="number">48</span>px;     
-       background: <span class="comment">#eee;     </span>
-       border-color: red;     
-       border-style: solid;    
-       border-width: <span class="number">2</span>px <span class="number">2</span>px <span class="number">50</span>px <span class="number">2</span>px;     
-       border-radius: <span class="number">100</span>%;     
-       position: relative;
-}
- <span class="comment">#ba-gua:before {     </span>
-    content: <span class="string">""</span>;     
-    position: absolute;     
-    top: <span class="number">50</span>%;     left: <span class="number">0</span>;     
-    background: <span class="comment">#eee;    </span>
-    border: <span class="number">18</span>px solid red;     
-    border-radius: <span class="number">100</span>%;     
-    width: <span class="number">12</span>px;     height: <span class="number">12</span>px; }   
-<span class="comment">#ba-gua:after {    </span>
-     content: <span class="string">""</span>;     
-     position: absolute;     
-     top: <span class="number">50</span>%;     left: <span class="number">50</span>%;     
-     background: red;     
-     border: <span class="number">18</span>px solid <span class="comment">#eee;     </span>
-     border-radius:<span class="number">100</span>%;     
-     width: <span class="number">12</span>px;     height: <span class="number">12</span>px; }
-</code></pre>
+          <p>IE特别是较低版本的IE应该会让很多前端开发者抓狂。说它特立独行也好，说它奇葩难用也罢，今天就各种IE CSS hack做一总结。</p>
+<h3 id="何为CSS_hack">何为<a href="http://baike.baidu.com/link?url=mF2Pl0T0AwrW_IjJLgcROmZ-PIqLHIGIui8QpNMOfPYxkpnqPZfNqW6ZqCzaDdr-9U4Bhjdiidqy70hTU7rRjq" target="_blank" rel="external">CSS hack</a></h3><p>不同厂商的流览器或某浏览器的不同版本，对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果。这时，为了获得统一的页面效果，就需要针对不同的浏览器或不同版本写特定的CSS样式，我们把这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hack。IE CSS Hack大致有3种表现形式，CSS属性前缀法、选择器前缀法以及条件注释法。<br><a id="more"></a></p>
+<h3 id="条件注释法">条件注释法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">	&lt;!--[<span class="keyword">if</span> IE]&gt;</span><br><span class="line">	   //只在IE中生效</span><br><span class="line">	&lt;![endif]--&gt;</span><br><span class="line">------------------------------------</span><br><span class="line">	&lt;!--[<span class="keyword">if</span> IE <span class="number">6</span>]&gt;</span><br><span class="line">	   //只在IE6中生效</span><br><span class="line">	&lt;![endif]--&gt;</span><br><span class="line">------------------------------------	</span><br><span class="line">	&lt;!--[<span class="keyword">if</span> gte IE <span class="number">6</span>]&gt;</span><br><span class="line">	  //只在IE6+(包括IE6)中生效</span><br><span class="line">	&lt;![endif]--&gt;</span><br><span class="line">------------------------------------	</span><br><span class="line">	&lt;!--[<span class="keyword">if</span> ! IE <span class="number">8</span>]&gt;</span><br><span class="line">	   //在非IE8中生效</span><br><span class="line">	&lt;![endif]--&gt;</span><br><span class="line">-------------------------------------</span><br><span class="line">	&lt;!--[<span class="keyword">if</span> !IE]&gt;</span><br><span class="line">	   //在非IE中生效</span><br><span class="line">	&lt;![endif]--&gt;</span><br></pre></td></tr></table></figure>
+<p>条件注释法有以下几个关键字：</p>
+<ul>
+<li>lte：Less than or equal to的简写，小于或等于的意思。</li>
+<li>lt ：Less than的简写，小于的意思。</li>
+<li>gte：Greater than or equal to的简写，大于或等于的意思。</li>
+<li>gt ：Greater than的简写，大于的意思。</li>
+<li>!  ：不等于的意思。</li>
+</ul>
+<h3 id="属性前缀法">属性前缀法</h3><p>属性前缀法顾名思义，就是在属性前加上前缀，好让特定类型特定版本的浏览器识别。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.test&#123;   </span><br><span class="line">    background-color:blue;       /* 现代浏览器*/  </span><br><span class="line">    background-color:red\<span class="number">9</span>;      /*all IE*/  </span><br><span class="line">    background-color:yellow\<span class="number">0</span>;   /*<span class="keyword">for</span> IE8/IE9/<span class="number">10</span> 及最新版opera*/ </span><br><span class="line">    *background-color:black;     /* <span class="keyword">for</span> IE6/<span class="number">7</span> */   </span><br><span class="line">    +background-color:pink;      /*<span class="keyword">for</span> I6E/<span class="number">7</span>*/  </span><br><span class="line">    _background-color:orange;    /*<span class="keyword">for</span> I6E*/  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="选择器前缀法">选择器前缀法</h3><p>选择器前缀法，是在选择器前面加上特性的符号，以让特定版本的浏览器识别。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">*html .test&#123;background-color:blue; &#125;   //<span class="keyword">for</span> IE <span class="number">6</span></span><br><span class="line">*+html .test&#123;background-color:blue; &#125;   //<span class="keyword">for</span> IE <span class="number">7</span></span><br><span class="line">@media screen\<span class="number">9</span>&#123;...&#125;只对IE6/<span class="number">7</span>生效</span><br><span class="line">@media \<span class="number">0</span>screen &#123;...&#125;只对IE8有效</span><br><span class="line">@media \<span class="number">0</span>screen\,screen\<span class="number">9</span>&#123;...&#125;只对IE6/<span class="number">7</span>/<span class="number">8</span>有效</span><br><span class="line">@media screen\<span class="number">0</span> &#123;...&#125; 只对IE8/<span class="number">9</span>/<span class="number">10</span>有效</span><br><span class="line">@media screen and (min-width:<span class="number">0</span>\<span class="number">0</span>)&#123;...&#125; 只对IE9/<span class="number">10</span>有效</span><br><span class="line">@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) </span><br><span class="line">       &#123;body &#123; background: orange; &#125;&#125; 只对IE10有效</span><br></pre></td></tr></table></figure></p>
 
         
       </div>
@@ -202,26 +190,16 @@
     
       <div class="post-footer">
         
-          <div class="post-tags">
-            
-              <a href="/tags/Shapes/">
-                #Shapes
-              </a>
-            
-          </div>
-        
 
         
           <div class="post-nav">
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2014/12/07/CSS3静态样式/">CSS3静态样式</a>
-              
             </div>
 
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2014/11/30/JS实现简单拖拽/">JS实现简单拖拽</a>
+                <a href="/2015/06/12/opacity 和 rgba/">opacity 和 rgba</a>
               
             </div>
           </div>
@@ -238,8 +216,8 @@
   
     <div class="comments" id="comments">
       
-        <div class="ds-thread" data-thread-key="2014/12/06/CSS之各式图形/"
-             data-title="CSS画图形" data-url="http://yoursite.com/2014/12/06/CSS之各式图形/">
+        <div class="ds-thread" data-thread-key="2015/06/14/IE CSS HACK/"
+             data-title="IE CSS hack" data-url="http://yoursite.com/2015/06/14/IE CSS HACK/">
         </div>
 
       
@@ -324,7 +302,7 @@
         <div class="post-toc">
           
           
-            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#不同边界样式"><span class="nav-number">1.</span> <span class="nav-text">不同边界样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯形"><span class="nav-number">2.</span> <span class="nav-text">梯形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三角形"><span class="nav-number">3.</span> <span class="nav-text">三角形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空心三角形"><span class="nav-number">4.</span> <span class="nav-text">空心三角形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五角星"><span class="nav-number">5.</span> <span class="nav-text">五角星</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#心形"><span class="nav-number">6.</span> <span class="nav-text">心形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八卦"><span class="nav-number">7.</span> <span class="nav-text">八卦</span></a></li></ol></div>
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#何为CSS_hack"><span class="nav-number">1.</span> <span class="nav-text">何为CSS hack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件注释法"><span class="nav-number">2.</span> <span class="nav-text">条件注释法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性前缀法"><span class="nav-number">3.</span> <span class="nav-text">属性前缀法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器前缀法"><span class="nav-number">4.</span> <span class="nav-text">选择器前缀法</span></a></li></ol></div>
           
         </div>
         <div class="post-toc-indicator-bottom post-toc-indicator"></div>
