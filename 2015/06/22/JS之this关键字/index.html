@@ -31,7 +31,7 @@
 
 
 
-  <title> 文件路径相关 // Efan’s Notes </title>
+  <title> JS之this对象 // Efan’s Notes </title>
 </head>
 
 <body>
@@ -121,7 +121,7 @@
           
           
             
-              文件路径相关
+              JS之this对象
             
           
         </h1>
@@ -130,7 +130,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            日期: 2015-06-04
+            日期: 2015-06-22
           
         </span>
 
@@ -139,7 +139,7 @@
             <span class="post-category">
               &nbsp; | &nbsp; 分类:
               
-                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
+                <a style="text-decoration:none;" href="/categories/JS/">JS</a>
 
                 
                 
@@ -153,8 +153,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/04/文件路径相关/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/04/文件路径相关/"></span>
+            <a href="/2015/06/22/JS之this关键字/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/22/JS之this关键字/"></span>
             </a>
           </span>
           
@@ -169,10 +169,14 @@
         
 
         
-          <p>在web开发过程中，我们会经常引用各式各样的文件，如CSS、JS、图片文件等。而这，就涉及到文件路径的问题。以如下工程为例：<br><img src="/imgs/path/1.png" alt="path"><br><a id="more"></a></p>
-<h3 id="CSS相对位置">CSS相对位置</h3><p>CSS中的相对位置以自己为基准，其中“./”表示当前目录下，“../”表示上一级目录下，“../../”表示上上一级目录下。<br>下面以index.css引用1.jpg为例，则路径为：<br>“../images/thumbs/1.jpg”</p>
-<h3 id="JS相对位置">JS相对位置</h3><p>JS中的相对位置与CSS的不同，它是以引用自己的那个文件位置为基准，比如本项目中，由于index.html引用了index.js，所以index.js以index.html的位置为基准。举一栗子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-------------------index.html---------------------</span><br><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line"> &lt;head&gt;</span><br><span class="line"> &lt;/head&gt;</span><br><span class="line"> &lt;body&gt; </span><br><span class="line">    &lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"./js/index.js"</span>&gt;&lt;/script&gt;</span><br><span class="line"> &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">--------------------index.js---------------------</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">writeimg</span></span>() </span><br><span class="line">&#123; </span><br><span class="line">  document.write(<span class="string">"&lt;img src='./images/close.gif' /&gt;"</span>); //此处相对的是index.html的位置</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="绝对位置">绝对位置</h3><p>有时候也可以使用绝对位置，比如电脑上的某个文件位置D:\Efan-blog\source即为绝对路径。绝对路径用“/”来设置下一级。</p>
+          <p>JS中的this对象是在运行时基于函数的执行环境绑定的。</p><p style="color:red;">在全局函数中，this等于window；而当函数作为某个对象的方法调用时，this等于那个对象；匿名函数的执行环境具有全局性，因此this对象通常指向window。值得注意，this关键字在Javascript中和执行环境，而非声明环境有关。</p>为了描述清楚，下面举例说明：<p></p>
+<h3 id="全局函数中的this">全局函数中的this</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var name = <span class="string">"window"</span>;</span><br><span class="line">　　<span class="keyword">function</span> <span class="function"><span class="title">test</span></span>()&#123;</span><br><span class="line">　　　　alert(this.name);</span><br><span class="line">　　&#125;</span><br><span class="line">　　<span class="built_in">test</span>(); // <span class="string">"window"</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="对象方法中的this">对象方法中的this</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var someone = &#123;</span><br><span class="line">    name: <span class="string">"aa"</span>,</span><br><span class="line">    showName: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        alert(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">var other = &#123;</span><br><span class="line">    name: <span class="string">"bb"</span>,</span><br><span class="line">    showName: someone.showName</span><br><span class="line">&#125;;</span><br><span class="line">other.showName();　　//<span class="string">"bb"</span></span><br></pre></td></tr></table></figure>
+<p>上例中，this所在的函数作为对象的方法，所以指向调用此方法的那个对象，即other对象，而非声明环境someone，所以显示“bb”。</p>
+<h3 id="构造函数中的this">构造函数中的this</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var name=<span class="string">"aa"</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">test</span></span>()&#123;</span><br><span class="line">　　　　this.name = <span class="string">"bb"</span>;</span><br><span class="line">　　&#125;</span><br><span class="line">　　var newObj = new <span class="built_in">test</span>();</span><br><span class="line">　　alert(newObj.name); // <span class="string">"bb"</span>，指向调用对象</span><br><span class="line">    alert(name);  //<span class="string">"aa"</span></span><br></pre></td></tr></table></figure>
+<p>所谓构造函数，就是通过这个函数生成一个新对象（object）。这时，this就指这个新对象。</p>
+<h3 id="apply/call调用时的this">apply/call调用时的this</h3><p>apply()/call()方法的第一个参数表示在其中运行函数的作用域，缺省时默认为全局对象，this便指向这个所定的执行环境。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var name = <span class="string">"aa"</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">test</span></span>()&#123;</span><br><span class="line">　 alert(this.name);</span><br><span class="line">　&#125;</span><br><span class="line">var newObj=&#123;&#125;;</span><br><span class="line">newObj.name= <span class="string">"bb"</span>;</span><br><span class="line">newObj.m = <span class="built_in">test</span>;</span><br><span class="line">(newObj.m)();     //<span class="string">"bb"</span>，指向调用对象</span><br><span class="line">newObj.m.apply(); //<span class="string">"aa"</span>，指向全局</span><br><span class="line">newObj.m.apply(newObj); //<span class="string">"bb"</span>，指向newObj</span><br></pre></td></tr></table></figure></p>
 
         
       </div>
@@ -186,13 +190,11 @@
           <div class="post-nav">
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2015/06/06/滚动条样式DIY/">滚动条样式DIY</a>
-              
             </div>
 
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2015/06/02/移动开发与viewport/">移动开发与viewport</a>
+                <a href="/2015/06/21/JS之事件处理/">JS之事件处理</a>
               
             </div>
           </div>
@@ -209,8 +211,8 @@
   
     <div class="comments" id="comments">
       
-        <div class="ds-thread" data-thread-key="2015/06/04/文件路径相关/"
-             data-title="文件路径相关" data-url="http://yoursite.com/2015/06/04/文件路径相关/">
+        <div class="ds-thread" data-thread-key="2015/06/22/JS之this关键字/"
+             data-title="JS之this对象" data-url="http://yoursite.com/2015/06/22/JS之this关键字/">
         </div>
 
       
@@ -295,7 +297,7 @@
         <div class="post-toc">
           
           
-            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS相对位置"><span class="nav-number">1.</span> <span class="nav-text">CSS相对位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS相对位置"><span class="nav-number">2.</span> <span class="nav-text">JS相对位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绝对位置"><span class="nav-number">3.</span> <span class="nav-text">绝对位置</span></a></li></ol></div>
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局函数中的this"><span class="nav-number">1.</span> <span class="nav-text">全局函数中的this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象方法中的this"><span class="nav-number">2.</span> <span class="nav-text">对象方法中的this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数中的this"><span class="nav-number">3.</span> <span class="nav-text">构造函数中的this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apply/call调用时的this"><span class="nav-number">4.</span> <span class="nav-text">apply/call调用时的this</span></a></li></ol></div>
           
         </div>
         <div class="post-toc-indicator-bottom post-toc-indicator"></div>
