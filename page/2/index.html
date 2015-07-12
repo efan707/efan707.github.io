@@ -124,6 +124,185 @@
           
           
             
+              <a class="post-title-link" href="/2015/06/21/JS之判断滚动方向/">
+                JS之判断滚动方向
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2015-06-21
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/JS/">JS</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/21/JS之判断滚动方向/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/21/JS之判断滚动方向/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <p>原理比较简单：侦听滚动事件，当滚动发生后，比较页面的scrollTop，其值增大则向下滚动，反之向上滚动。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">   var beforeScrollTop = document.body.scrollTop|| document.documentElement.scrollTop ;</span><br><span class="line">----------------------事件处理程序----------------------------</span><br><span class="line">   var handler=<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        var afterScrollTop = document.body.scrollTop|| document.documentElement.scrollTop </span><br><span class="line">        ,delta = afterScrollTop - beforeScrollTop;</span><br><span class="line">        <span class="keyword">if</span>( delta === <span class="number">0</span> ) <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        console.log( delta &gt; <span class="number">0</span> ? <span class="string">"down"</span> : <span class="string">"up"</span> );</span><br><span class="line">        beforeScrollTop = afterScrollTop;</span><br><span class="line">     &#125;;</span><br><span class="line">-----------------------添加事件------------------------------</span><br><span class="line">    <span class="keyword">if</span> (window.addEventListener)&#123;</span><br><span class="line">      window.addEventListener(<span class="string">"scroll"</span>, handler, <span class="literal">false</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (window.attachEvent)&#123;</span><br><span class="line">      window.attachEvent(<span class="string">"onscroll"</span>, handler); </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      window[<span class="string">"onscroll"</span> ] = handler;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2015/06/21/JS之判断滚动方向/#more">
+                Read More
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/06/14/IE CSS HACK/">
+                IE CSS hack
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2015-06-14
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/14/IE CSS HACK/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/14/IE CSS HACK/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <p>IE特别是较低版本的IE应该会让很多前端开发者抓狂。说它特立独行也好，说它奇葩难用也罢，今天就各种IE CSS hack做一总结。</p>
+<h3 id="何为CSS_hack">何为<a href="http://baike.baidu.com/link?url=mF2Pl0T0AwrW_IjJLgcROmZ-PIqLHIGIui8QpNMOfPYxkpnqPZfNqW6ZqCzaDdr-9U4Bhjdiidqy70hTU7rRjq">CSS hack</a></h3><p>不同厂商的流览器或某浏览器的不同版本，对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果。这时，为了获得统一的页面效果，就需要针对不同的浏览器或不同版本写特定的CSS样式，我们把这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hack。IE CSS Hack大致有3种表现形式，CSS属性前缀法、选择器前缀法以及条件注释法。<br>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2015/06/14/IE CSS HACK/#more">
+                Read More
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2015/06/12/opacity 和 rgba/">
                 opacity 和 rgba
               </a>
@@ -385,186 +564,6 @@
 
 
   
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/09/页面中插入FLASH/">
-                页面中插入FLASH
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            日期: 2015-06-09
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分类:
-              
-                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/09/页面中插入FLASH/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/09/页面中插入FLASH/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <p>随着html5的发展，flash的地位岌岌可危，但是瘦死的骆驼比马大，所以我们经常在网页上还可以看见各式各样的flash，下面就网页中如何插入flash作一说明。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;object classid=clsid:D27CDB6E-AE6D-<span class="number">11</span>cf-<span class="number">96</span>B8-<span class="number">444553540000</span> codebase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab<span class="comment">#version=4,0,2,0 height=600 width=1200&gt;</span></span><br><span class="line">&lt;param name=<span class="string">"movie"</span> value=<span class="string">"images/bluefly.swf"</span>&gt;</span><br><span class="line">&lt;param name=<span class="string">"quality"</span> value=<span class="string">"high"</span>&gt;</span><br><span class="line">&lt;param name=<span class="string">"wmode"</span> value=<span class="string">"transparent"</span>&gt;</span><br><span class="line">&lt;embed src=<span class="string">"images/bluefly.swf"</span> quality=high pluginspage=<span class="string">"http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"</span> <span class="built_in">type</span>=<span class="string">"application/x-shockwave-flash"</span> width=<span class="string">"1200"</span> height=<span class="string">"600"</span> wmode=<span class="string">"transparent"</span>&gt;</span><br><span class="line">&lt;/embed&gt;</span><br><span class="line">&lt;/object&gt;</span><br></pre></td></tr></table></figure></p>
-            <div class="post-more-link text-center">
-              <a class="btn" href="/2015/06/09/页面中插入FLASH/#more">
-                Read More
-              </a>
-            </div>
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/08/动态背景实现二法/">
-                动态背景实现二法
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            日期: 2015-06-08
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分类:
-              
-                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/08/动态背景实现二法/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/08/动态背景实现二法/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <p>动态背景使得页面更为活泼和生动，其“动”的元素有很多，本文主要说明下背景图片的动态实现。<br>背景动态是基于background-position属性的，通过不断改变背景图片的位置，实现背景动态的效果。<br>首先需要引入背景图片，并且需要repeat(本例以水平方向上背景动态移动为例)。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: <span class="comment">#9fddea url(../images/clouds.png) repeat-x scroll 0 0;</span></span><br></pre></td></tr></table></figure></p>
-<p>当背景图片不断向右移动时，便会有一种即视的动态感。控制移动可通过JS或CSS3。</p>
-<h3 id="基于JS的背景滚动">基于JS的背景滚动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var xpos = <span class="number">0</span>;    //初始background-position为(<span class="number">0</span>,<span class="number">0</span>)</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">scrollBg</span></span>()&#123;</span><br><span class="line">	xpos++;    </span><br><span class="line">	$(<span class="string">'#container'</span>).css(<span class="string">'background-position'</span>,xpos); //移动后的背景位置为(xpos,<span class="number">0</span>)</span><br><span class="line">	<span class="keyword">if</span> (xpos&gt;<span class="number">1600</span>) &#123;</span><br><span class="line">            xpos=<span class="number">0</span>;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">set</span>Interval(scrollBg,<span class="number">100</span>);  //<span class="number">100</span>ms移动一次</span><br></pre></td></tr></table></figure>
-            <div class="post-more-link text-center">
-              <a class="btn" href="/2015/06/08/动态背景实现二法/#more">
-                Read More
-              </a>
-            </div>
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
 
           </div>
 
@@ -601,7 +600,7 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">56</span>
+            <span class="site-state-item-count">58</span>
             <span class="site-state-item-name">文章</span>
           </a>
         </div>
