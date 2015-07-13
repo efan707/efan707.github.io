@@ -124,6 +124,105 @@
           
           
             
+              <a class="post-title-link" href="/2014/12/08/CSS3动画/">
+                CSS3动画
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2014-12-08
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2014/12/08/CSS3动画/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2014/12/08/CSS3动画/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <p>CSS3中的动画主要有两类，一类是过渡动画，一类是animation动画。主要涉及transition、transform、animation属性，下面逐一述之。</p>
+<h3 id="transition"><strong>transition</strong></h3><p>1、属性说明<br>语法为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transition：[ transition-property ] || [ transition-duration ] || [ transition-timing-function ] || [ transition-delay ]</span><br></pre></td></tr></table></figure></p>
+<p><img src="/imgs/transition1.png" alt="transition"><br>关于 transition-timing-function，可参照下图：<br><img src="/imgs/transition2.png" alt="transition"><br>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2014/12/08/CSS3动画/#more">
+                Read More
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/CSS3/">
+                #CSS3
+              </a>
+            
+          </div>
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2014/12/07/CSS3静态样式/">
                 CSS3静态样式
               </a>
@@ -503,103 +602,6 @@
 
 
   
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2014/11/26/JS判断鼠标进出方向/">
-                JS判断鼠标进出方向
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            日期: 2014-11-25
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分类:
-              
-                <a style="text-decoration:none;" href="/categories/JS/">JS</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2014/11/26/JS判断鼠标进出方向/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/26/JS判断鼠标进出方向/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <h3 id="实现原理">实现原理</h3><p>实际过程中，有时候需要判断鼠标进出容器的方向，<a href="http://stackoverflow.com/questions/3627042/jquery-animation-for-a-hover-with-mouse-direction">jQuery animation for a hover with mouse direction</a>便给出了解决方案。具体代码如下所示。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">jQuery(document).ready(<span class="keyword">function</span>($) &#123;</span><br><span class="line">	$(<span class="string">"#test"</span>).bind(<span class="string">"mouseenter mouseleave"</span>,<span class="keyword">function</span>(e) &#123;</span><br><span class="line">        var w = $(this).width();</span><br><span class="line">        var h = $(this).height();</span><br><span class="line">        var x = (e.pageX - this.offsetLeft - (w / <span class="number">2</span>)) * (w &gt; h ? (h / w) : <span class="number">1</span>);</span><br><span class="line">        var y = (e.pageY - this.offsetTop - (h / <span class="number">2</span>)) * (h &gt; w ? (w / h) : <span class="number">1</span>);</span><br><span class="line">        var direction = Math.round((((Math.atan2(y, x) * (<span class="number">180</span> / Math.PI)) + <span class="number">180</span>) / <span class="number">90</span>) + <span class="number">3</span>) % <span class="number">4</span>; </span><br><span class="line">        //direction的值为“<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>”分别对应着“上，右，下，左”</span><br><span class="line">        var eventType = e.type;</span><br><span class="line">        var dirName = new Array(<span class="string">'上方'</span>,<span class="string">'右侧'</span>,<span class="string">'下方'</span>,<span class="string">'左侧'</span>);</span><br><span class="line">        <span class="keyword">if</span>(e.type == <span class="string">'mouseenter'</span>)&#123;</span><br><span class="line">           $(<span class="string">"#result"</span>).html(dirName[direction]+<span class="string">'进入'</span>);</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">           $(<span class="string">'#result'</span>).html(dirName[direction]+<span class="string">'离开'</span>);</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-            <div class="post-more-link text-center">
-              <a class="btn" href="/2014/11/26/JS判断鼠标进出方向/#more">
-                Read More
-              </a>
-            </div>
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-          <div class="post-tags">
-            
-              <a href="/tags/Direction/">
-                #Direction
-              </a>
-            
-          </div>
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
 
           </div>
 
@@ -636,7 +638,7 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">58</span>
+            <span class="site-state-item-count">59</span>
             <span class="site-state-item-name">文章</span>
           </a>
         </div>
