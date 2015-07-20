@@ -124,6 +124,94 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/03/科普之日常生活中的辐射/">
+                科普之日常生活中的辐射
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2015-07-03
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/东扯西拉/">东扯西拉</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/07/03/科普之日常生活中的辐射/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/03/科普之日常生活中的辐射/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <p>生活中，我们触及各种电子设备，无线电波充斥在我们周围，但就其辐射，很多人却知之甚少。因此，有了孕妇防辐射服、手机一格电时辐射放大1000倍、辐射致癌等无稽之谈。今天，就辐射问题，摆出两个视频，相信看完以后，你会对辐射有新的理解。<br>视频1：6分钟了解辐射</p>
+<embed height="348" width="550" class="player" allowfullscreeninteractive="true" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" allowscriptaccess="always" rel="noreferrer" flashvars="type=page&url=http://www.acfun.tv/v/ac623261" src="http://static.acfun.mm111.net/player/ACFlashPlayer.out.swf" type="application/x-shockwave-flash" allowfullscreen="true" quality="high" wmode="window">
+
+<p>视频2：手机辐射有多强</p>
+<embed src="http://player.video.qiyi.com/9987e0635f8436aa22017971eddf3a54/0/0/w_19rrfdnmpt.swf-albumId=922971309-tvId=922971309-isPurchase=0-cnId=27" allowfullscreen="true" quality="high" width="480" height="350" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/01/margin值与元素逻辑大小/">
                 margin值与元素逻辑大小
               </a>
@@ -472,104 +560,12 @@
 
 
   
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/26/页面加载与JS执行/">
-                页面加载与JS执行
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            日期: 2015-06-26
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分类:
-              
-                <a style="text-decoration:none;" href="/categories/JS/">JS</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/26/页面加载与JS执行/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/26/页面加载与JS执行/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <p>在web设计时，往往选择合适的时机去执行JS脚本。对此，原生JS、JQUERY均提供了相应的方法。</p>
-<h3 id="window-onload方法">window.onload方法</h3><p>原生js提供了window.onload方法，表示在页面完全加载后(包括图片等元素)执行。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  window.onload=<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">  //JS代码</span><br><span class="line">  &#125; </span><br><span class="line">------------或者如下写法-----------</span><br><span class="line">window.onload=<span class="keyword">function</span>Name;</span><br></pre></td></tr></table></figure></p>
-<p>但是上述写法只能执行一个函数，后面的会将前面的覆盖掉，例如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">window.onload=func1;</span><br><span class="line">window.onload=func2;</span><br></pre></td></tr></table></figure></p>
-<p>页面加载后只会执行func2，func1被func2覆盖掉。为此，各路大神各处奇招，让window.onload支持页面加载后多个函数执行。<br>
-            <div class="post-more-link text-center">
-              <a class="btn" href="/2015/06/26/页面加载与JS执行/#more">
-                Read More
-              </a>
-            </div>
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
 
           </div>
 
           
             <div class="pagination">
-              <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
+              <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
             </div>
           
         </div>
@@ -600,14 +596,14 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">60</span>
+            <span class="site-state-item-count">61</span>
             <span class="site-state-item-name">文章</span>
           </a>
         </div>
 
         <div class="site-state-item site-state-categories">
           <a href="/categories">
-            <span class="site-state-item-count">10</span>
+            <span class="site-state-item-count">11</span>
             <span class="site-state-item-name">分類</span>
           </a>
         </div>

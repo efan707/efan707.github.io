@@ -124,6 +124,103 @@
           
           
             
+              <a class="post-title-link" href="/2014/11/30/JS实现简单拖拽/">
+                JS实现简单拖拽
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2014-11-30
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/JS/">JS</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2014/11/30/JS实现简单拖拽/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/30/JS实现简单拖拽/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <h3 id="实现原理">实现原理</h3><p>前提条件：对象为body子元素，position为absolute。<br>拖拽原理：拖拽前后主要有三个事件——mousedown、mouseover和mouseup。当鼠标按下并且移动时，对象跟随移动；当鼠标up时，拖拽结束。<br>a、鼠标按下时，设置可拖动标识为true，并且获得鼠标相对于对象边框的距离，如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">obj.onmousedown = <span class="keyword">function</span> (event)&#123;   </span><br><span class="line">   var e=event?event:window.event;</span><br><span class="line">   dragable = <span class="literal">true</span>;  </span><br><span class="line">   deltaX = e.clientX - obj.offsetLeft;  //鼠标与对象相对位置</span><br><span class="line">   deltaY = e.clientY - obj.offsetTop;    </span><br><span class="line">   <span class="built_in">return</span> <span class="literal">false</span>;  </span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure></p>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2014/11/30/JS实现简单拖拽/#more">
+                Read More
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Code/">
+                #Code
+              </a>
+            
+          </div>
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2014/11/26/JS实现简单漂浮/">
                 JS实现简单漂浮
               </a>
@@ -549,108 +646,12 @@
 
 
   
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2014/11/18/Doctype、Meta和CSSReset/">
-                DOCTYPE声明/META标签/CSSreset
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            日期: 2014-11-18
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分类:
-              
-                <a style="text-decoration:none;" href="/categories/前端/">前端</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2014/11/18/Doctype、Meta和CSSReset/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/18/Doctype、Meta和CSSReset/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <h3 id="DOCTYPE声明">DOCTYPE声明</h3><p><a href="http://baike.baidu.com/view/73768.htm?fr=aladdin" target="_blank" rel="external">DOCTYPE</a>标签是一种标准通用标记语言的文档类型声明，它的目的是要告诉标准通用标记语言解析器，它应该使用什么样的文档类型定义（DTD）来解析文档。<br>&lt;!DOCTYPE&gt; 声明必须是HTML文档的第一行，位于<html>标签之前。在HTML4.01中，&lt;!DOCTYPE&gt;声明引用DTD，因为HTML4.01基于 SGML。DTD规定了标记语言的规则，这样浏览器才能正确地呈现内容。<br>HTML5不基于SGML，所以不需要引用DTD。<br>HTML5中书写格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br></pre></td></tr></table></figure></html></p>
-<p>HTML4.0.1以及XHML中的文档类型分为Strict、Transitional 以及 Frameset。具体请参照<a href="http://www.w3school.com.cn/tags/tag_doctype.asp" target="_blank" rel="external">HTML &lt;!DOCTYPE&gt; 标签</a>。下面以HTML4.0.1的Transitional为例进行讲解：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span> </span><br><span class="line">	<span class="string">"http://www.w3.org/TR/html4/loose.dtd"</span>&gt;</span><br><span class="line">//解析：指定DTD中声明的顶级元素类型为HTML，PUBLIC表示后面DTD可公开访问，<span class="string">'-'</span>表示组织名称未注册（+为已注册），</span><br><span class="line">W3C为组织名，后面接着是具体的DTD，最后的URL为前面DTD的链接所在。</span><br><span class="line">``` </span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"><span class="comment">###META标签</span></span><br><span class="line">[META](http://baike.baidu.com/link?url=EDbCi9avAcq8G2Z30xOVhhKSf15lCYtI52sJDkp8d-IRhKSn2UvRtmDi__D2yHz9)标签用来描述一个HTML网页文档的属性，例如作者、日期和时间、网页描述、关键词、页面刷新等。META标签的内容设计对于搜索引擎营销来说也是至关重要的一个因素。</span><br><span class="line">下面是一些常用的META标签：</span><br><span class="line">``` bash</span><br><span class="line">//用以说明主页制作所使用的文字以及语言</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=gb2312"</span> /&gt;</span><br><span class="line">&lt;meta http equiv=<span class="string">"Content-Language"</span> content=<span class="string">"zh-CN"</span>&gt; </span><br><span class="line">//网页<span class="number">5</span>秒后重定向到http://yichao.me</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Refresh"</span> content=<span class="string">"5;url=http://yichao.me"</span> /&gt;</span><br><span class="line">//当前窗口中以独立页面显示，防止他人以frame页调用</span><br><span class="line">&lt;meta http-equiv=<span class="string">"windows-Target"</span> content=<span class="string">"_top"</span>&gt;</span><br><span class="line">//为搜索引擎提供的关键字列表</span><br><span class="line">&lt;meta name=<span class="string">"Keywords"</span> content=<span class="string">"关键词1,关键词2，关键词3,关键词4"</span>&gt;</span><br><span class="line">//告诉搜索引擎你的网站主要内容</span><br><span class="line">&lt;meta name=<span class="string">"Description"</span> content=<span class="string">"你网页的简述"</span>&gt;</span><br><span class="line">//标注网页的作者及版权</span><br><span class="line">&lt;meta name=<span class="string">"Author"</span> content=<span class="string">"张三，abc@sina.com"</span>&gt;</span><br><span class="line">&lt;meta name=<span class="string">"Copyright"</span> content=<span class="string">"本页版权归Zerospace所有。All Rights Reserved"</span>&gt;</span><br></pre></td></tr></table></figure></p>
-<p>此外，META标签还可用于Cookie设定、设置网页过期时间、缓存与否等。</p>
-<h3 id="CSS_Reset">CSS Reset</h3><p>HTML标签在浏览器里有默认的样式，但不同浏览器的默认样式之间会有差别，在切换页面的时候，浏览器的默认样式往往会给我们带来麻烦，影响开发效率。解决的方法是通过定义一些样式，将浏览器提供的默认样式覆盖掉！这就是<a href="http://baike.baidu.com/item/reset.css?fr=aladdin" target="_blank" rel="external">CSS reset</a>。如今还有一种解决方案，那就是Normalize.css。两者的区别可参照<a href="http://www.zhihu.com/question/20094066" target="_blank" rel="external">Normalize.css 与传统的 CSS Reset 有哪些区别</a> 。<br>下面是YUI的reset CSS：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,</span><br><span class="line">form,fieldset,input,textarea,p,blockquote,th,td &#123;</span><br><span class="line">padding: <span class="number">0</span>;</span><br><span class="line">margin: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">table &#123;</span><br><span class="line">border-collapse: collapse;</span><br><span class="line">border-spacing: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">fieldset,img &#123;</span><br><span class="line">border: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">address,caption,cite,code,dfn,em,strong,th,var &#123;</span><br><span class="line">font-weight: normal;</span><br><span class="line">font-style: normal;</span><br><span class="line">&#125;</span><br><span class="line">ol,ul &#123;</span><br><span class="line">list-style: none;</span><br><span class="line">&#125;</span><br><span class="line">caption,th &#123;</span><br><span class="line">text-align: left;</span><br><span class="line">&#125;</span><br><span class="line">h1,h2,h3,h4,h5,h6 &#123;</span><br><span class="line">font-weight: normal;</span><br><span class="line">font-size: <span class="number">100</span>%;</span><br><span class="line">&#125;</span><br><span class="line">q:before,q:after &#123;</span><br><span class="line">content:<span class="string">''</span>;</span><br><span class="line">&#125;</span><br><span class="line">abbr,acronym &#123; border: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-          <div class="post-tags">
-            
-              <a href="/tags/CSS/">
-                #CSS
-              </a>
-            
-          </div>
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
 
           </div>
 
           
             <div class="pagination">
-              <a class="extend prev" rel="prev" href="/page/9/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/11/">&raquo;</a>
+              <a class="extend prev" rel="prev" href="/page/9/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/11/">&raquo;</a>
             </div>
           
         </div>
@@ -681,14 +682,14 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">60</span>
+            <span class="site-state-item-count">61</span>
             <span class="site-state-item-name">文章</span>
           </a>
         </div>
 
         <div class="site-state-item site-state-categories">
           <a href="/categories">
-            <span class="site-state-item-count">10</span>
+            <span class="site-state-item-count">11</span>
             <span class="site-state-item-name">分類</span>
           </a>
         </div>
