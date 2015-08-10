@@ -31,7 +31,7 @@
 
 
 
-  <title> opacity 和 rgba // Efan’s Notes </title>
+  <title> document.body和document.documentElement那点事儿 // Efan’s Notes </title>
 </head>
 
 <body>
@@ -121,7 +121,7 @@
           
           
             
-              opacity 和 rgba
+              document.body和document.documentElement那点事儿
             
           
         </h1>
@@ -130,7 +130,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            日期: 2015-06-12
+            日期: 2015-08-05
           
         </span>
 
@@ -139,7 +139,7 @@
             <span class="post-category">
               &nbsp; | &nbsp; 分类:
               
-                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
+                <a style="text-decoration:none;" href="/categories/JS/">JS</a>
 
                 
                 
@@ -153,8 +153,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/12/opacity 和 rgba/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/12/opacity 和 rgba/"></span>
+            <a href="/2015/08/05/document.body和document.documentElement那点事儿/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/05/document.body和document.documentElement那点事儿/"></span>
             </a>
           </span>
           
@@ -169,50 +169,30 @@
         
 
         
-          <p>透明效果的引入，有时会达到很好的视觉效果，如<a href="https://www.alipay.com/" target="_blank" rel="external">支付宝</a>的主页面，就使用了大量的透明背景。CSS中透明相关的属性为——opacity和rgba。下面就一一阐述之。</p>
-<h3 id="opacity">opacity</h3><p>opacity 属性设置元素的不透明级别，从 0.0 （完全透明）到 1.0（完全不透明）。<br>opacity的兼容性可点击此处查看-&gt;<a href="http://caniuse.com/#search=opacity" target="_blank" rel="external">opacity兼容性</a><br>为了兼容低版本IE，需要使用filter，具体如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opacity:<span class="number">0.4</span>;</span><br><span class="line">filter:alpha(opacity=<span class="number">40</span>);  /* 针对 IE8 以及更早的版本 */</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p><span style="color:red;">注意：有时候可能滤镜不起作用，此时可触发IE的hasLayout试试。</span></p>
-<p>关于IE的alpha滤镜，写法多种，例如半透明如下写法皆可：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">----------------完整写法(IE4-IE9 )---------------------------------</span><br><span class="line">filter:progid:DXImageTransform.Microsoft.Alpha( Opacity=<span class="number">50</span>, FinishOpacity=<span class="number">0</span>, </span><br><span class="line">Style=<span class="number">1</span>, StartX=<span class="number">0</span>,  FinishX=<span class="number">0</span>, StartY=<span class="number">0</span>, FinishY=<span class="number">0</span>)</span><br><span class="line">-----------------简写<span class="number">1</span>(IE4-IE9 )---------------------------------------</span><br><span class="line">filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=<span class="number">50</span>);  </span><br><span class="line">-----------------简写<span class="number">2</span>(IE4-IE9 )---------------------------------------</span><br><span class="line">filter:alpha(opacity=<span class="number">50</span>);</span><br></pre></td></tr></table></figure></p>
-<p></p><p style="border:1px dashed blue;paading:10px;">完整写法中，Style，设置或者调整不透明度的风格；Opacity，设置或调整不透明度值；FinishOpacity，设置或调整最后不透明度值；StartX，设置或调整水平不透明最开始位置，默认值为0；FinishX，设置或调整水平不透明度结束位置，默认值为0；StartY和FinishY不言自明。</p>具体效果请参照官方实例(记得用IE浏览器)-&gt;<a href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/Alpha.htm" target="_blank" rel="external">Alpha Filter</a><br><span style="color:red;">注意：由于IE9同时支持opacity(或rgba)和alpha滤镜，所以在为了兼容而同时使用两个属性时，会更透明，实际使用中要考虑到IE9的特殊情况。</span><br>针对上述的特殊情况，可使用IE条件注释(后续展开再讲)或下述hack：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@media screen\<span class="number">9</span>&#123;...&#125;只对IE6/<span class="number">7</span>生效</span><br><span class="line">@media \<span class="number">0</span>screen &#123;...&#125;只对IE8有效</span><br><span class="line">@media \<span class="number">0</span>screen\,screen\<span class="number">9</span>&#123;...&#125;只对IE6/<span class="number">7</span>/<span class="number">8</span>有效</span><br><span class="line">@media screen\<span class="number">0</span> &#123;...&#125; 只对IE8/<span class="number">9</span>/<span class="number">10</span>有效</span><br><span class="line">@media screen and (min-width:<span class="number">0</span>\<span class="number">0</span>)&#123;...&#125; 只对IE9/<span class="number">10</span>有效</span><br></pre></td></tr></table></figure><p></p>
-<p>所以总体可如下书写：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.test&#123;</span><br><span class="line">	opacity:<span class="number">0.6</span>;  //现代浏览器</span><br><span class="line">&#125;</span><br><span class="line">@media \<span class="number">0</span>screen\,screen\<span class="number">9</span> &#123;  //<span class="keyword">for</span> IE6、<span class="number">7</span>、<span class="number">8</span></span><br><span class="line">    .test&#123;</span><br><span class="line">    filter:Alpha(opacity=<span class="number">60</span>);  </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><span style="color:red;">再次注意：alpha滤镜具有继承性，设置子元素为相对定位，可让子元素不继承Alpha值。如低版本IE下背景透明、文字不透明的实例：</span><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@media \<span class="number">0</span>screen\,screen\<span class="number">9</span> &#123;</span><br><span class="line">    .test p&#123;                     //文字背景透明</span><br><span class="line">    background-color:<span class="comment">#000;</span></span><br><span class="line">    filter:Alpha(opacity=<span class="number">60</span>);</span><br><span class="line">&#125;</span><br><span class="line">.test p span&#123;                    //文字不透明</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="opacity继承问题">opacity继承问题</h3><p>opacity具有继承性，即设置opacity元素的后代元素也会透明。例如父元素opacity设置为0.6，那么子元素在未做此设置的情况下继承父元素opacity后也为0.6。<br><span style="color:red;">再再次注意：当父子元素均设置opacity时，子元素的opacity为多少？答案为二者的乘积。</span><br>无例无真相，看如下例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">------------html(css省略)-----------------</span><br><span class="line">&lt;div class=<span class="string">"test"</span>&gt;             //opacity为<span class="number">0.5</span></span><br><span class="line">     关关雎鸠，在河之洲</span><br><span class="line">	&lt;p&gt;你是一个动人的故事，唱了许多年&lt;/p&gt;</span><br><span class="line">	&lt;div class=<span class="string">"inner"</span>&gt;A&lt;/div&gt;   //opacity为<span class="number">0.6</span></span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=<span class="string">"contrast1"</span>&gt;B&lt;/div&gt;   //opacity为<span class="number">0.6</span></span><br><span class="line">&lt;div class=<span class="string">"contrast2"</span>&gt;C&lt;/div&gt;   //opacity为<span class="number">0.3</span></span><br><span class="line">&lt;div class=<span class="string">"contrast3"</span>&gt;D&lt;/div&gt;   //opacity为<span class="number">0.3</span></span><br></pre></td></tr></table></figure></p>
-<p>chrome中截图如下所示：<br><img src="/imgs/opacity/1.png" alt="opacity"><br>图中，A、D显示是一样的，C、B均与A不一样（因为背景较淡，所以C不一样的不明显），可见A的opacity为0.6，其父元素为0.5,继承后透明效果为0.3，与D效果一样。至于A、C不一样，是因为尽管它们opacity一样为0.3，但是相对的背景不一样，因而显示也不一样。</p>
-<h3 id="RGBA">RGBA</h3><p>opacity可以设置透明，但是元素及子元素全都应用了透明效果，而有时候我们希望只是背景透明，元素内的内容正常显示，此时便可以利用rgba来实现。<br>IE较低版本也不支持rbga，此时可参照前文IE下背景透明、文字不透明的实例。<br>此外，还有一种更好的办法，就是利用IE的渐变滤镜实现rgba类似的透明背景效果，如支付宝的登录框。<br><img src="/imgs/opacity/2.png" alt="opacity"><br>至于样式未启用，是因为浏览器是chrome，而非低版本的IE。<br>下面首先来了解下IE的渐变滤镜。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">filter:progid:DXImageTransform.Microsoft.Gradient(enabled=<span class="string">'ture'</span>,GradientType=<span class="string">'1'</span>,</span><br><span class="line">StartColorStr=<span class="string">'#00000000'</span>,EndColorStr=<span class="string">'#FFFF3300'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>具体实例参照-&gt;<a href="http://samples.msdn.microsoft.com/workshop/samples/author/filter/gradient.htm" target="_blank" rel="external">Gradient Filter</a></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">属性</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">enabled</td>
-<td style="text-align:left">可选，boolean类型，默认值为ture，启用过滤器；false为不启用过滤器。</td>
-</tr>
-<tr>
-<td style="text-align:left">GradientType</td>
-<td style="text-align:left">设置渐变的方向，1代表水平方向，0代表垂直方向渐变。</td>
-</tr>
-<tr>
-<td style="text-align:left">StartColorStr</td>
-<td style="text-align:left">设置或者检索开始的颜色值，string类型字符串，默认值为：#FF000000，比如一个值为：#AARRGGBB ，那么AA代表透明度alpha，RR表示红色16进制值，GG表示绿色16进制值，BB表示蓝色16进制值。</td>
-</tr>
-<tr>
-<td style="text-align:left">EndColorStr</td>
-<td style="text-align:left">设置或者检索结束的颜色值，同上。</td>
-</tr>
-</tbody>
-</table>
-<p>所以低版本IE利用渐变滤镜模拟RGBA(221,221,221,0.5)效果的总体代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.test&#123;filter:progid:DXImageTransform.Microsoft.gradient(enabled=<span class="string">'true'</span>,</span><br><span class="line">startColorstr=<span class="string">'#7FDDDDDD'</span>, endColorstr=<span class="string">'#7FDDDDDD'</span>);  //实际alpha为<span class="number">7</span>F/FF=<span class="number">0.4980</span></span><br><span class="line">background:rgba(<span class="number">221</span>,<span class="number">221</span>,<span class="number">221</span>,<span class="number">0.5</span>);&#125;  </span><br><span class="line"></span><br><span class="line">:root .test&#123;filter:progid:DXImageTransform.Microsoft.gradient(enabled=<span class="string">'true'</span>,</span><br><span class="line">startColorstr=<span class="string">'#00DDDDDD'</span>, endColorstr=<span class="string">'#00DDDDDD'</span>);&#125;/*<span class="keyword">for</span> IE9*/</span><br><span class="line"></span><br><span class="line">或者ie9的hack使用： </span><br><span class="line">:root .test&#123;filter:none;&#125;/*<span class="keyword">for</span> IE9*/</span><br></pre></td></tr></table></figure></p>
-<p>具体可参照工具-&gt;<a href="http://www.css88.com/demo/hex_color/" target="_blank" rel="external">CSS透明背景代码生成工具</a><br><span style="color:red;">由于IE9既能运用RGBA，又能运用filter，所以为了防止二者冲突，需要针对IE9做一设置——让filter不起作用。</span>上面代码中，:root为CSS3属性，IE9+才能识别，所以使用其可以对IE9+中的filter进行设置(如果存在的话)。<br>支付宝渐变滤镜代码中的“\9”是一种hack，具体后续会有文章进行分析。</p>
-<blockquote>
-<p>使用渐变滤镜相对于alpha的好处是：子元素不用设置relative来消除对滤镜的继承，也即子元素不继承渐变滤镜效果。</p>
-</blockquote>
+          <p>多说无益，让我们用例子说话。代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">----------HTML-----------</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span><br><span class="line">&lt;title&gt;<span class="built_in">test</span>&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=<span class="string">"test"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt; </span><br><span class="line">----------CSS----------</span><br><span class="line">*&#123;</span><br><span class="line">	margin:<span class="number">0</span>px;</span><br><span class="line">	padding: <span class="number">0</span>px;&#125;</span><br><span class="line">.test&#123;</span><br><span class="line">	width:<span class="number">200</span>px;</span><br><span class="line">	height: <span class="number">1200</span>px;</span><br><span class="line">	background-color: blue;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>本文只针对DTD声明的情况下，经测试，得结论如下。<br><a id="more"></a><br>IE下</p>
+<pre>
+document.documentElement.scrollHeight  浏览器所有内容高度 
+document.body.scrollHeight             浏览器所有内容高度
+document.documentElement.scrollTop     浏览器滚动部分高度
+document.body.scrollTop                始终为0
+document.documentElement.clientHeight  浏览器可视部分高度
+document.body.clientHeight             浏览器实际内容高度
+</pre>
 
+<p>FF下</p>
+<pre>
+document.documentElement.scrollHeight  浏览器所有内容高度 
+document.body.scrollHeight             浏览器所有内容高度
+document.documentElement.scrollTop     浏览器滚动部分高度
+document.body.scrollTop                始终为0
+document.documentElement.clientHeight  浏览器可视部分高度
+document.body.clientHeight             浏览器实际内容高度
+</pre>
+
+<p>Chrome下</p>
+<p><pre><br>document.documentElement.scrollHeight  浏览器所有内容高度<br>document.body.scrollHeight             浏览器所有内容高度<br>document.documentElement.scrollTop     始终为0<br>document.body.scrollTop                浏览器滚动部分高度<br>document.documentElement.clientHeight  浏览器可视部分高度<br>document.body.clientHeight             浏览器实际内容高度<br></pre><br>对于滚动条不存在的情况下，scrollHeight/scrollWidth与clientHeight/clientWidth之间的关系并不清晰，具体可参照《JS高级程序设计》323页所述。</p>
+<p style="color:#008B8B">结论:<br>1、滚动部分高度：document.documentElement.scrollTop +document.body.scrollTop ;<br>2、浏览器可视区域高度：document.documentElement.clientHeight;<br>3、浏览器实际内容高度：document.body.clientHeight;<br></p><p style="color:red">后续：通过测试，document.documentElement.offsetHeight与document.body.offsetHeight在.test元素有margin的情况下，在各浏览器中表现有区别，还有各种因浏览器而产生的不同，就不详述。</p>
         
       </div>
     
@@ -225,13 +205,11 @@
           <div class="post-nav">
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2015/06/14/IE CSS HACK/">IE CSS hack</a>
-              
             </div>
 
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2015/06/11/关于line-height的理解/">理解line-height</a>
+                <a href="/2015/08/03/word-wrap&word-break傻傻分不清楚/">word-wrap&word-break傻傻分不清楚</a>
               
             </div>
           </div>
@@ -248,8 +226,8 @@
   
     <div class="comments" id="comments">
       
-        <div class="ds-thread" data-thread-key="2015/06/12/opacity 和 rgba/"
-             data-title="opacity 和 rgba" data-url="http://yoursite.com/2015/06/12/opacity 和 rgba/">
+        <div class="ds-thread" data-thread-key="2015/08/05/document.body和document.documentElement那点事儿/"
+             data-title="document.body和document.documentElement那点事儿" data-url="http://yoursite.com/2015/08/05/document.body和document.documentElement那点事儿/">
         </div>
 
       
@@ -334,7 +312,7 @@
         <div class="post-toc">
           
           
-            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#opacity"><span class="nav-number">1.</span> <span class="nav-text">opacity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#opacity继承问题"><span class="nav-number">2.</span> <span class="nav-text">opacity继承问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RGBA"><span class="nav-number">3.</span> <span class="nav-text">RGBA</span></a></li></ol></div>
+            <p class="post-toc-empty">此文章未包含目錄</p>
           
         </div>
         <div class="post-toc-indicator-bottom post-toc-indicator"></div>
