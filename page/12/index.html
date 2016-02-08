@@ -124,6 +124,107 @@
           
           
             
+              <a class="post-title-link" href="/2014/11/17/WAMP实现局域网访问/">
+                WAMP实现局域网访问
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2014-11-17
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/wordpress/">wordpress</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2014/11/17/WAMP实现局域网访问/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2014/11/17/WAMP实现局域网访问/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <p>基于WAMP的wordpress站点要想实现局域网内访问，需要作如下设置：<br>1、首先修改WAMP的httpd.conf文件<br><img src="/imgs/wamp.png" alt="conf文件"><br>其中相应内容作如下修改：</p>
+<pre><code class="bash">Order Deny,Allow
+Deny from none      //修改前为：Deny from all 
+Allow from all      //修改前为：Allow from <span class="number">127.0</span>.<span class="number">0.1</span>
+</code></pre>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2014/11/17/WAMP实现局域网访问/#more">
+                Read More
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/wamp/">
+                #wamp
+              </a>
+            
+          </div>
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2014/11/16/博文目录导航/">
                 博文导航
               </a>
@@ -560,103 +661,6 @@ $ git push -u origin gh-pages
 
 
   
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2014/10/29/各种位置关系/">
-                浏览器中的各种位置关系梳理
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            日期: 2014-10-29
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分类:
-              
-                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2014/10/29/各种位置关系/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/10/29/各种位置关系/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <h2 id="滚动大小scroll-dimension">滚动大小scroll-dimension</h2><p>scroll包含scrollHeight、scrollWidth、scrollLeft、scrollTop，位置关系如下：<br><img src="/imgs/scroll.png" alt="scroll位置图"><br>scrollLeft和scrollTop既可以确定元素当前的滚动状态，也可以用于设置元素的滚动位置(例如element.scrollTop=10，element滚动到scrollTop为10px的位置)。下面主要说下浏览器页面的滚动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">document.documentElement.scrollTop;      //标准模式下</span><br><span class="line">document.documentElement.scrollTop=val； //设置scrollTop为val</span><br><span class="line">document.body.scrollTop;                //混杂模式下（无文档类型声明或早期IE）</span><br><span class="line">$(document).scrollTop();                //Jquery获取scrollTop</span><br><span class="line">$(document.body).scrollTop();           //混杂模式下（无文档类型声明或早期IE）</span><br><span class="line">$(window).scrollTop()；           </span><br><span class="line">$(<span class="string">"body,html"</span>).scrollTop(val);      //兼容性好，推荐使用</span><br><span class="line">$(document).scrollTop(val);         //Jquery下设置scrollTop为val</span><br><span class="line">$(window).scrollTop(val);           //Jquery下设置scrollTop为val</span><br></pre></td></tr></table></figure></p>
-            <div class="post-more-link text-center">
-              <a class="btn" href="/2014/10/29/各种位置关系/#more">
-                Read More
-              </a>
-            </div>
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-          <div class="post-tags">
-            
-              <a href="/tags/position-css/">
-                #position  css
-              </a>
-            
-          </div>
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
 
           </div>
 
@@ -693,14 +697,14 @@ $ git push -u origin gh-pages
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">64</span>
+            <span class="site-state-item-count">65</span>
             <span class="site-state-item-name">文章</span>
           </a>
         </div>
 
         <div class="site-state-item site-state-categories">
           <a href="/categories">
-            <span class="site-state-item-count">11</span>
+            <span class="site-state-item-count">12</span>
             <span class="site-state-item-name">分類</span>
           </a>
         </div>
@@ -739,7 +743,7 @@ $ git push -u origin gh-pages
         <div class="copyright">
   
   &copy; &nbsp; 
-  2015
+  2016
   
   <span class="author">efan</span> | Powered By Hexo
 </div>

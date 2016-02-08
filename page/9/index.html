@@ -124,6 +124,105 @@
           
           
             
+              <a class="post-title-link" href="/2014/12/16/正则表达式/">
+                正则表达式
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2014-12-16
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/JS/">JS</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2014/12/16/正则表达式/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2014/12/16/正则表达式/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <p>正则表达式非一言两语所能说清，有很多相关的书籍进行了专门的介绍。今天主要是管中窥豹，不做长篇大论。正则表达式的书写方式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var expression = /pattern/flags;  //flags可省略 </span><br><span class="line">var expression = new RegExp(<span class="string">"pattern"</span>,<span class="string">"flags"</span>); //flags可省略</span><br></pre></td></tr></table></figure></p>
+<p>正则表达式字面量始终会共享一个RegExp实例，而使用构造函数创建的每一个实例都是新的实例。</p>
+<h3 id="RegExp方法与属性">RegExp方法与属性</h3><p>JS中关于正则的方法如下，关于这些函数的具体使用方法，可以参阅JS的相关函数手册。<br>test — RegExp的test方法用来测试字符串是否匹配给出的匹配模式，返回布尔值；<br>exec — RegExp的exec方法返回包含第一个匹配的的数组或null；<br>match — String的match方法返回包含所有匹配子字符串的数组；<br>replace — String的replace方法完成string的替换操作，支持正则表达式；<br>search — 与String的indexof方法类似，不同的是search支持正则表达式，而不仅仅是字符串；<br>split — 按照一定规则拆分字符串并将子字符串存储到数组中的String方法。<br>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2014/12/16/正则表达式/#more">
+                Read More
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/RegExp/">
+                #RegExp
+              </a>
+            
+          </div>
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2014/12/15/HTML5多媒体播放/">
                 HTML5多媒体播放
               </a>
@@ -506,104 +605,6 @@
 
 
   
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2014/12/12/Less is more/">
-                Less is more
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            日期: 2014-12-12
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分类:
-              
-                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2014/12/12/Less is more/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/12/12/Less is more/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <p><a href="http://less.bootcss.com/#">Less</a>是一种由AlexisSellier设计的动态层叠样式表语言，是开源的，其第一个版本由Ruby写成，但在后续的版本当中，Ruby逐渐被替换为JavaScript。受益于JavaScript，Less可以在客户端上运行（IE6+、Webkit、Firefox），也可以在服务端运行（Node.js、Rhino）。<br>在语法方面，Less与CSS较为接近，一个合法的CSS代码段本身也是一段合法的Less代码段。Less提供变量、嵌套、混合、操作符、函数等一般编程所需的抽象机制。</p>
-<h3 id="编译工具"><strong>编译工具</strong></h3><p>编译Less的方法很多，具体可参照官方文档中的<a href="http://less.bootcss.com/usage/#using-less-environments">Less使用</a>,在这里推荐使用一个图形界面的编译器—<a href="http://koala-app.com/index-zh.html">Koala</a>。koala是一个前端预处理器语言图形编译工具，支持Less、Sass、Compass、CoffeeScript，帮助web开发者更高效地使用它们进行开发。跨平台运行，完美兼容windows、linux、mac。<br>下面就一些常用的语法简要说明下，具体更详细的资料请查阅<a href="http://less.bootcss.com/features/">官方文档</a>。<br>
-            <div class="post-more-link text-center">
-              <a class="btn" href="/2014/12/12/Less is more/#more">
-                Read More
-              </a>
-            </div>
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-          <div class="post-tags">
-            
-              <a href="/tags/Less/">
-                #Less
-              </a>
-            
-          </div>
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
 
           </div>
 
@@ -640,14 +641,14 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">64</span>
+            <span class="site-state-item-count">65</span>
             <span class="site-state-item-name">文章</span>
           </a>
         </div>
 
         <div class="site-state-item site-state-categories">
           <a href="/categories">
-            <span class="site-state-item-count">11</span>
+            <span class="site-state-item-count">12</span>
             <span class="site-state-item-name">分類</span>
           </a>
         </div>
@@ -686,7 +687,7 @@
         <div class="copyright">
   
   &copy; &nbsp; 
-  2015
+  2016
   
   <span class="author">efan</span> | Powered By Hexo
 </div>
