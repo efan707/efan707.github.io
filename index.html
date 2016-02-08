@@ -176,11 +176,12 @@
         
           
             <p>ACTCMS是一款具有强大的功能的基于ASP语言的开源内容管理软件，有UTF-8和GB2312两个编码版本，支持ACCESS和MSSQL两种数据库。ACTCMS是一款完全开源的程序，用户不需额外安装其他DLL组件，其最大的特点是易用，ACTCMS搭积木式的网站建设 ，国内目前为止ASPCMS唯一支持注册模型的CMS。<br>使用ACTCMS系统后，用户可以通过后台随心所欲调用文章列表、图片信息、视频信息等，再通过前台搭配设计，便可以达到“没有你做不到，只有你想不到”的效果，各种CMS网站便不在话下。<br>当然，以上纯属官方说法，此ACTCMS系统安全性不是很好，所以内网啥的可以用用，对于安全性能要求比较高的网站，还是绕道为好。</p>
-<h3 id="主页样式修改">主页样式修改</h3><p>通过修改templets文件夹下的index.htm以及top.htm，可对主页面样式进行修改。代码中的{ACTCMS_热点关注}是调用数据库中的内容，可以是图片、文章列表、视频等，通过后台设置。（管理员账号：admin    密码：drzd26525）<br><img src="/imgs/actcms/1.jpg" alt="actcms"></p>
-<h3 id="后台生成各种类型内容以供前台调用">后台生成各种类型内容以供前台调用</h3><p>首先管理员登录，便可通过后台添加各类型的内容，下面述之。<br>A、添加栏目<br><img src="/imgs/actcms/2.jpg" alt="actcms"><br>栏目添加以后，便可以通过新闻投稿或者在线编辑的方式添加内容。<br>B、调用内容<br>首先进入后台，在标签系统中添加标签，如军事标签添加方式如下：<br><img src="/imgs/actcms/3.jpg" alt="actcms"><br>前台便可以通过{ACTCMS_军事}进行调用。可调用内容的类型为图片、幻灯片、新闻列表、下拉列表等。<br>C、更多。。。<br>代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;td background=<span class="string">"image/8.jpg"</span> width=<span class="string">"50"</span> class=<span class="string">"style11"</span>&gt;</span><br><span class="line">&lt;a href=<span class="string">"article/TypeClass.asp?ClassID=8131208287"</span>&gt;更多..&lt;/a&gt;&lt;/td&gt;</span><br></pre></td></tr></table></figure></p>
-<p>其中ClassID为栏目前ID号。<br><img src="/imgs/actcms/4.jpg" alt="actcms"><br>D、关于点开后的页面样式<br><img src="/imgs/actcms/5.jpg" alt="actcms"><br>更多页面架构由栏目模板决定，即\wwwroot\templets\article\Class.Htm可以修改。<br>某篇新闻点击后，样式由\wwwroot\templets\article\Content.Htm内容页模板决定。<br>E、还可以通过后台构建静态标签，模块化样式，以供调用。</p>
-<h3 id="WIN7下的配置">WIN7下的配置</h3><p>1、首先配置IIS，然后添加网络如下图所示：<br><img src="/imgs/actcms/1.png" alt="actcms"><br>2、打开网站目录，打开根目录下的web.config文件，添加<clear>标签如下：<br><img src="/imgs/actcms/2.png" alt="actcms"><br>3、在IIS中，设置网站的ASP，启用父路径。<br><img src="/imgs/actcms/3.png" alt="actcms"><br>4、    如果提示数据库连接错误，还需要设置权限问题。右键网站》编辑权限》安全，如果存在下面账户，且权限如下则可，否则点击编辑，添加一everyone用户，并设置权限为完全控制。（Authenticated Users：Windows系统中所有使用用户名、密码登录并通过身份验证的账户，不包括来宾账户Guest，即使来宾帐户有密码。 与Everyone的区别在于Everyone包括所有账户，如内置的来宾账户和LOCAL_SERVICE）<br><img src="/imgs/actcms/4.png" alt="actcms"><br>5、如果此时还是数据库连接有问题，则打开C盘下window》temp文件夹，右键属性》安全选项，添加everyone用户，且权<br>限设置如下：<br><img src="/imgs/actcms/6.png" alt="actcms"><br><img src="/imgs/actcms/7.png" alt="actcms"></clear></p>
-
+<h3 id="主页样式修改">主页样式修改</h3><p>通过修改templets文件夹下的index.htm以及top.htm，可对主页面样式进行修改。代码中的{ACTCMS_热点关注}是调用数据库中的内容，可以是图片、文章列表、视频等，通过后台设置。（管理员账号：admin    密码：drzd26525）<br><img src="/imgs/actcms/1.jpg" alt="actcms"><br>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2015/11/02/ACTCMS系统使用简介/#more">
+                Read More
+              </a>
+            </div>
           
         
       </div>
