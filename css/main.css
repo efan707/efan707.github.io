@@ -1165,7 +1165,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8cad01;
+  background: #673c5c;
 }
 .sidebar-nav {
   margin: 0;
@@ -1245,6 +1245,9 @@ body {
   position: absolute;
   width: 100%;
   background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI2IDI2IiBoZWlnaHQ9IjI2cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAyNiAyNiIgd2lkdGg9IjI2cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iMC4wNDYsMi41ODIgMi4xMywwLjQ5OCAxMi45NjcsMTEuMzM0IDIzLjgwMywwLjQ5OCAyNS44ODcsMi41ODIgMTIuOTY3LDE1LjUwMiAgIi8+PHBvbHlnb24gZmlsbD0iI0ZGRkZGRiIgcG9pbnRzPSIwLjA0NiwxMy41ODIgMi4xMywxMS40OTggMTIuOTY3LDIyLjMzNCAyMy44MDMsMTEuNDk4IDI1Ljg4NywxMy41ODIgMTIuOTY3LDI2LjUwMiAgIi8+PC9nPjwvc3ZnPg==");
+}
+.sidebar-toggle {
+  background-color: #fff;
 }
 .footer {
   font-size: 14px;
