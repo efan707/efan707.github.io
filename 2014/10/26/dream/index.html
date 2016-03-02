@@ -28,65 +28,76 @@
   <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
-    <div id="header" class="header">
-      <div class="header-inner">
+    <div id="header" class="header" style="box-shadow:#666 0 0 2px;background-color:transparent;">
+      <div class="header-inner" style="padding:5px 0;">
         <h1 class="site-meta">
-  <span class="logo-line-before"><i></i></span>
   <a href="/" class="brand">
-      <span class="logo">
-        <i class="icon-logo"></i>
-      </span>
-      <span class="site-title">Efan’s Notes</span>
+     <img class="site-author-image" src="/images/touxiang.jpg" alt="Efan's Notes">
+     <span class="motto"><i>不忘初心，方得始终</i></span>
   </a>
-  <span class="logo-line-after"><i></i></span>
+  
 </h1>
 
 
-  <ul id="menu" class="menu">
+  <ul id="menu" style="padding:40px 20px;" class="menu">
+    
+    <!--增加swiftype搜索功能-->
+   <form style="display:none;" class="menu-item menu-item-">
+      <input type="text" id="st-search-input" class="st-search-input" style="width:80px;"  /> 
+    </form> 
+    
+    <script type="text/javascript">
+    (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+    })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+    _st('install','rCePqqPPe4HzS9xaA1Pk');
+    </script>
+    <!--增加swiftype搜索功能end-->
     
     
       
       <li class="menu-item menu-item-home">
-        <a href="/">
+        <a style="background-color:transparent;color:#009688;font-size:16px;" href="/">
           <i class="menu-item-icon icon-home"></i> <br />
           Home
         </a>
-      </li>
+      </li><span class="xiexian" style="color:red;">/</span>
     
       
       <li class="menu-item menu-item-categories">
-        <a href="/categories">
+        <a style="background-color:transparent;color:#009688;font-size:16px;" href="/categories">
           <i class="menu-item-icon icon-categories"></i> <br />
           Categories
         </a>
-      </li>
+      </li><span class="xiexian" style="color:red;">/</span>
     
       
       <li class="menu-item menu-item-archives">
-        <a href="/archives">
+        <a style="background-color:transparent;color:#009688;font-size:16px;" href="/archives">
           <i class="menu-item-icon icon-archives"></i> <br />
           Archives
         </a>
-      </li>
+      </li><span class="xiexian" style="color:red;">/</span>
     
       
       <li class="menu-item menu-item-tags">
-        <a href="/tags">
+        <a style="background-color:transparent;color:#009688;font-size:16px;" href="/tags">
           <i class="menu-item-icon icon-tags"></i> <br />
           Tags
         </a>
-      </li>
+      </li><span class="xiexian" style="color:red;">/</span>
     
       
       <li class="menu-item menu-item-about">
-        <a href="/about">
+        <a style="background-color:transparent;color:#009688;font-size:16px;" href="/about">
           <i class="menu-item-icon icon-about"></i> <br />
           About
         </a>
-      </li>
+      </li><span class="xiexian" style="color:red;">/</span>
     
   </ul>
-
 
       </div>
     </div>
@@ -219,10 +230,8 @@
 
         
 <div class="sidebar-toggle">
-  <div class="sidebar-toggle-line-wrap">
-    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  <div class="">
+    <div id="st-launcher-tab" class="st-search-launcher" style="right:-11px;"></div>
   </div>
 </div>
 
@@ -449,7 +458,7 @@
       });
     }
 
-    function sidebarShowMotion () {
+   /*** function sidebarShowMotion () {
 
       sidebarToggleLine1st.velocity(sidebarToogleLine1stStatusClose);
       sidebarToggleLine2nd.velocity(sidebarToogleLine2ndStatusClose);
@@ -465,7 +474,7 @@
       });
       sidebar.trigger('sidebar.isShowing');
     }
-
+    *****/
     function sidebarHideMotion () {
       isDesktop() && body.velocity({paddingRight: 0});
       sidebar.velocity('reverse');

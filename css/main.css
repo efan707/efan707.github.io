@@ -911,9 +911,6 @@ body {
   height: 3px;
   background: #222;
 }
-.header {
-  background: #222;
-}
 .header-inner {
   position: relative;
 }
@@ -924,6 +921,14 @@ body {
   .site-meta {
     text-align: center;
   }
+}
+.motto {
+  font-size: 14px;
+  font-weight: normal;
+  color: #607d8b;
+}
+.xiexian:last-child {
+  display: none;
 }
 .brand {
   position: relative;
@@ -982,6 +987,9 @@ body {
 .menu .menu-item a:hover {
   border-bottom-color: #222;
 }
+.menu .menu-item a:hover {
+  background-color: rgba(68,255,0,0.18) !important;
+}
 .translation {
   margin-top: -20px;
   font-size: 14px;
@@ -1012,6 +1020,9 @@ body {
   .sidebar-toggle {
     display: none;
   }
+}
+.sidebar-toggle {
+  overflow: hidden;
 }
 .sidebar-toggle-line {
   position: relative;
@@ -1154,7 +1165,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f462ff;
+  background: #8cad01;
 }
 .sidebar-nav {
   margin: 0;
