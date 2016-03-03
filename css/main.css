@@ -961,6 +961,28 @@ body {
   position: relative;
   top: -10px;
 }
+.myLogo img {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  border: 2px solid rgba(0,150,136,0.89);
+  border-radius: 50%;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  padding: 2px;
+}
+.myLogo img:hover {
+  -ms-transform: rotate(360deg);
+/* IE 9 */
+  -moz-transform: rotate(360deg);
+/* Firefox */
+  -webkit-transform: rotate(360deg);
+/* Safari 和 Chrome */
+  -o-transform: rotate(360deg);
+/* Opera */
+}
 .menu {
   margin-top: 20px;
   padding-left: 0;
@@ -1071,28 +1093,6 @@ body {
   color: #999;
   text-align: center;
 }
-.site-author-image {
-  display: block;
-  margin: 0 auto;
-  max-width: 96px;
-  height: auto;
-  border-radius: 50%;
-  -ms-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  padding: 2px;
-}
-.site-author-image:hover {
-  -ms-transform: rotate(360deg);
-/* IE 9 */
-  -moz-transform: rotate(360deg);
-/* Firefox */
-  -webkit-transform: rotate(360deg);
-/* Safari 和 Chrome */
-  -o-transform: rotate(360deg);
-/* Opera */
-}
 .site-author-name {
   margin: 5px 0 0;
   color: #808080;
@@ -1165,7 +1165,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #673c5c;
+  background: #ffff8f;
 }
 .sidebar-nav {
   margin: 0;
