@@ -1016,6 +1016,14 @@ body {
 .menu .menu-item a:hover {
   background-color: rgba(68,255,0,0.18) !important;
 }
+@media screen and (max-width: 768px) {
+  .menu {
+    padding: 6px 0 !important;
+  }
+  .menu .menu-item a {
+    padding: 5px !important;
+  }
+}
 .translation {
   margin-top: -20px;
   font-size: 14px;
@@ -1169,7 +1177,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff096b;
+  background: #fffff6;
 }
 .sidebar-nav {
   margin: 0;
