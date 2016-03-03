@@ -961,17 +961,21 @@ body {
   position: relative;
   top: -10px;
 }
+.myLogo {
+  width: 94px;
+  height: 94px;
+  border: 2px solid rgba(0,150,136,0.89);
+  border-radius: 100%;
+}
 .myLogo img {
   width: 90px;
   height: 90px;
-  margin: 0 auto;
-  border: 2px solid rgba(0,150,136,0.89);
+  margin: 2px;
   border-radius: 50%;
   -ms-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
-  padding: 2px;
 }
 .myLogo img:hover {
   -ms-transform: rotate(360deg);
@@ -1165,7 +1169,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff8f;
+  background: #a1c498;
 }
 .sidebar-nav {
   margin: 0;
