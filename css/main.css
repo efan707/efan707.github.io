@@ -966,6 +966,7 @@ body {
   height: 94px;
   border: 2px solid rgba(0,150,136,0.89);
   border-radius: 100%;
+  margin: 0 auto;
 }
 .myLogo img {
   width: 90px;
@@ -989,12 +990,11 @@ body {
 }
 .menu {
   margin-top: 20px;
-  padding-left: 0;
   text-align: center;
 }
 .menu .menu-item {
   display: inline-block;
-  margin-left: 20px;
+  margin: 0 2px !important;
 }
 .menu .menu-item:first-child {
   margin-left: 0;
@@ -1169,7 +1169,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a1c498;
+  background: #ff096b;
 }
 .sidebar-nav {
   margin: 0;
