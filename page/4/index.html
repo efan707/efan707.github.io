@@ -135,8 +135,8 @@
           
           
             
-              <a class="post-title-link" href="/2015/06/21/JS之判断滚动方向/">
-                JS之判断滚动方向
+              <a class="post-title-link" href="/2015/06/22/JS之this关键字/">
+                JS之this对象
               </a>
             
           
@@ -146,7 +146,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            日期: 2015-06-21
+            日期: 2015-06-22
           
         </span>
 
@@ -169,8 +169,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/21/JS之判断滚动方向/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/21/JS之判断滚动方向/"></span>
+            <a href="/2015/06/22/JS之this关键字/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/22/JS之this关键字/"></span>
             </a>
           </span>
           
@@ -186,9 +186,10 @@
 
         
           
-            <p>原理比较简单：侦听滚动事件，当滚动发生后，比较页面的scrollTop，其值增大则向下滚动，反之向上滚动。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">   var beforeScrollTop = document.body.scrollTop|| document.documentElement.scrollTop ;</span><br><span class="line">----------------------事件处理程序----------------------------</span><br><span class="line">   var handler=<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        var afterScrollTop = document.body.scrollTop|| document.documentElement.scrollTop </span><br><span class="line">        ,delta = afterScrollTop - beforeScrollTop;</span><br><span class="line">        <span class="keyword">if</span>( delta === <span class="number">0</span> ) <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        console.log( delta &gt; <span class="number">0</span> ? <span class="string">"down"</span> : <span class="string">"up"</span> );</span><br><span class="line">        beforeScrollTop = afterScrollTop;</span><br><span class="line">     &#125;;</span><br><span class="line">-----------------------添加事件------------------------------</span><br><span class="line">    <span class="keyword">if</span> (window.addEventListener)&#123;</span><br><span class="line">      window.addEventListener(<span class="string">"scroll"</span>, handler, <span class="literal">false</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (window.attachEvent)&#123;</span><br><span class="line">      window.attachEvent(<span class="string">"onscroll"</span>, handler); </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      window[<span class="string">"onscroll"</span> ] = handler;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+            <p>JS中的this对象是在运行时基于函数的执行环境绑定的。<p style="color:red;">在全局函数中，this等于window；而当函数作为某个对象的方法调用时，this等于那个对象；匿名函数的执行环境具有全局性，因此this对象通常指向window。值得注意，this关键字在Javascript中和执行环境，而非声明环境有关。</P>为了描述清楚，下面举例说明：</p>
+<h3 id="全局函数中的this">全局函数中的this</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var name = <span class="string">"window"</span>;</span><br><span class="line">　　<span class="keyword">function</span> <span class="function"><span class="title">test</span></span>()&#123;</span><br><span class="line">　　　　alert(this.name);</span><br><span class="line">　　&#125;</span><br><span class="line">　　<span class="built_in">test</span>(); // <span class="string">"window"</span></span><br></pre></td></tr></table></figure>
             <div class="post-more-link text-center">
-              <a class="btn" href="/2015/06/21/JS之判断滚动方向/#more">
+              <a class="btn" href="/2015/06/22/JS之this关键字/#more">
                 Read More
               </a>
             </div>
@@ -279,6 +280,95 @@
 <h3 id="事件流">事件流</h3><p>事件流描述的是从页面中接收事件的顺序。<p style="color:red;">IE的事件流是冒泡流；Netscape Communicator的事件流是捕获流；“DOM2级事件”规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。</P><br>为了描述清楚，以下面的HTML为例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Event Flow Example&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=<span class="string">"myDiv"</span>&gt;Click ME&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
             <div class="post-more-link text-center">
               <a class="btn" href="/2015/06/21/JS之事件处理/#more">
+                Read More
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/06/21/JS之判断滚动方向/">
+                JS之判断滚动方向
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2015-06-21
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/JS/">JS</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/21/JS之判断滚动方向/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/21/JS之判断滚动方向/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <p>原理比较简单：侦听滚动事件，当滚动发生后，比较页面的scrollTop，其值增大则向下滚动，反之向上滚动。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">   var beforeScrollTop = document.body.scrollTop|| document.documentElement.scrollTop ;</span><br><span class="line">----------------------事件处理程序----------------------------</span><br><span class="line">   var handler=<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        var afterScrollTop = document.body.scrollTop|| document.documentElement.scrollTop </span><br><span class="line">        ,delta = afterScrollTop - beforeScrollTop;</span><br><span class="line">        <span class="keyword">if</span>( delta === <span class="number">0</span> ) <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        console.log( delta &gt; <span class="number">0</span> ? <span class="string">"down"</span> : <span class="string">"up"</span> );</span><br><span class="line">        beforeScrollTop = afterScrollTop;</span><br><span class="line">     &#125;;</span><br><span class="line">-----------------------添加事件------------------------------</span><br><span class="line">    <span class="keyword">if</span> (window.addEventListener)&#123;</span><br><span class="line">      window.addEventListener(<span class="string">"scroll"</span>, handler, <span class="literal">false</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (window.attachEvent)&#123;</span><br><span class="line">      window.attachEvent(<span class="string">"onscroll"</span>, handler); </span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      window[<span class="string">"onscroll"</span> ] = handler;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2015/06/21/JS之判断滚动方向/#more">
                 Read More
               </a>
             </div>
@@ -483,99 +573,6 @@
 
 
   
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/11/关于line-height的理解/">
-                理解line-height
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            日期: 2015-06-11
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分类:
-              
-                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/11/关于line-height的理解/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/11/关于line-height的理解/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <blockquote>
-<p>每个CSS属性都值得深深玩味。</p>
-</blockquote>
-<p>初识line-height，不以为然；后挖掘之，才发现其中之玄妙。<br>line-height故名思议，表示行高。下图中两个中线(蓝线)的垂直距离(上下两行间无padding、margin等)即表示行高。</p>
-<p><div style="width:350px;"><img src="/imgs/line-height/1.png" alt="line-height"></div><br>
-            <div class="post-more-link text-center">
-              <a class="btn" href="/2015/06/11/关于line-height的理解/#more">
-                Read More
-              </a>
-            </div>
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
 
           </div>
 
@@ -610,7 +607,7 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">69</span>
+            <span class="site-state-item-count">70</span>
             <span class="site-state-item-name">日志</span>
           </a>
         </div>
