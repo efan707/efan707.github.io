@@ -135,6 +135,188 @@
           
           
             
+              <a class="post-title-link" href="/2015/06/27/常用JS片段集锦/">
+                常用JS片段集锦
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2015-06-27
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/JS/">JS</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/27/常用JS片段集锦/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/27/常用JS片段集锦/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <p>下面只是常用JS片段中的九牛一毛，源于书本和网络上，已进行验证说明，下面一一述之。</p>
+<h3 id="浏览器类型">浏览器类型</h3><p>Navigator 对象包含有关浏览器的信息，其属性userAgent表示浏览器的用户代理字符串。利用chrome的手机模式，可以查看各设备的navigator.userAgent。<br><img src="/imgs/code/1.png" alt="code"><br>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2015/06/27/常用JS片段集锦/#more">
+                Read More
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/06/26/页面加载与JS执行/">
+                页面加载与JS执行
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2015-06-26
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/JS/">JS</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/26/页面加载与JS执行/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/26/页面加载与JS执行/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <p>在web设计时，往往选择合适的时机去执行JS脚本。对此，原生JS、JQUERY均提供了相应的方法。</p>
+<h3 id="window-onload方法">window.onload方法</h3><p>原生js提供了window.onload方法，表示在页面完全加载后(包括图片等元素)执行。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  window.onload=<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">  //JS代码</span><br><span class="line">  &#125; </span><br><span class="line">------------或者如下写法-----------</span><br><span class="line">window.onload=<span class="keyword">function</span>Name;</span><br></pre></td></tr></table></figure></p>
+<p>但是上述写法只能执行一个函数，后面的会将前面的覆盖掉，例如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">window.onload=func1;</span><br><span class="line">window.onload=func2;</span><br></pre></td></tr></table></figure></p>
+<p>页面加载后只会执行func2，func1被func2覆盖掉。为此，各路大神各处奇招，让window.onload支持页面加载后多个函数执行。<br>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2015/06/26/页面加载与JS执行/#more">
+                Read More
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2015/06/22/JS之this关键字/">
                 JS之this对象
               </a>
@@ -190,96 +372,6 @@
 <h3 id="全局函数中的this">全局函数中的this</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var name = <span class="string">"window"</span>;</span><br><span class="line">　　<span class="keyword">function</span> <span class="function"><span class="title">test</span></span>()&#123;</span><br><span class="line">　　　　alert(this.name);</span><br><span class="line">　　&#125;</span><br><span class="line">　　<span class="built_in">test</span>(); // <span class="string">"window"</span></span><br></pre></td></tr></table></figure>
             <div class="post-more-link text-center">
               <a class="btn" href="/2015/06/22/JS之this关键字/#more">
-                Read More
-              </a>
-            </div>
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/21/JS之事件处理/">
-                JS之事件处理
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            日期: 2015-06-21
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分类:
-              
-                <a style="text-decoration:none;" href="/categories/JS/">JS</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/21/JS之事件处理/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/21/JS之事件处理/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <p>JS与HTML之间的交互是通过事件来实现的。下面就从事件流、事件类型、事件处理程序等方面进行说明。</p>
-<h3 id="事件流">事件流</h3><p>事件流描述的是从页面中接收事件的顺序。<p style="color:red;">IE的事件流是冒泡流；Netscape Communicator的事件流是捕获流；“DOM2级事件”规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。</P><br>为了描述清楚，以下面的HTML为例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Event Flow Example&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=<span class="string">"myDiv"</span>&gt;Click ME&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-            <div class="post-more-link text-center">
-              <a class="btn" href="/2015/06/21/JS之事件处理/#more">
                 Read More
               </a>
             </div>
@@ -404,8 +496,8 @@
           
           
             
-              <a class="post-title-link" href="/2015/06/14/IE CSS HACK/">
-                IE CSS hack
+              <a class="post-title-link" href="/2015/06/21/JS之事件处理/">
+                JS之事件处理
               </a>
             
           
@@ -415,7 +507,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            日期: 2015-06-14
+            日期: 2015-06-21
           
         </span>
 
@@ -424,7 +516,7 @@
             <span class="post-category">
               &nbsp; | &nbsp; 分类:
               
-                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
+                <a style="text-decoration:none;" href="/categories/JS/">JS</a>
 
                 
                 
@@ -438,8 +530,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/14/IE CSS HACK/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/14/IE CSS HACK/"></span>
+            <a href="/2015/06/21/JS之事件处理/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/21/JS之事件处理/"></span>
             </a>
           </span>
           
@@ -455,100 +547,10 @@
 
         
           
-            <p>IE特别是较低版本的IE应该会让很多前端开发者抓狂。说它特立独行也好，说它奇葩难用也罢，今天就各种IE CSS hack做一总结。</p>
-<h3 id="何为CSS_hack">何为<a href="http://baike.baidu.com/link?url=mF2Pl0T0AwrW_IjJLgcROmZ-PIqLHIGIui8QpNMOfPYxkpnqPZfNqW6ZqCzaDdr-9U4Bhjdiidqy70hTU7rRjq">CSS hack</a></h3><p>不同厂商的流览器或某浏览器的不同版本，对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果。这时，为了获得统一的页面效果，就需要针对不同的浏览器或不同版本写特定的CSS样式，我们把这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hack。IE CSS Hack大致有3种表现形式，CSS属性前缀法、选择器前缀法以及条件注释法。<br>
+            <p>JS与HTML之间的交互是通过事件来实现的。下面就从事件流、事件类型、事件处理程序等方面进行说明。</p>
+<h3 id="事件流">事件流</h3><p>事件流描述的是从页面中接收事件的顺序。<p style="color:red;">IE的事件流是冒泡流；Netscape Communicator的事件流是捕获流；“DOM2级事件”规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。</P><br>为了描述清楚，以下面的HTML为例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Event Flow Example&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=<span class="string">"myDiv"</span>&gt;Click ME&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
             <div class="post-more-link text-center">
-              <a class="btn" href="/2015/06/14/IE CSS HACK/#more">
-                Read More
-              </a>
-            </div>
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/12/opacity 和 rgba/">
-                opacity 和 rgba
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            日期: 2015-06-12
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分类:
-              
-                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/12/opacity 和 rgba/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/12/opacity 和 rgba/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <p>透明效果的引入，有时会达到很好的视觉效果，如<a href="https://www.alipay.com/">支付宝</a>的主页面，就使用了大量的透明背景。CSS中透明相关的属性为——opacity和rgba。下面就一一阐述之。</p>
-<h3 id="opacity">opacity</h3><p>opacity 属性设置元素的不透明级别，从 0.0 （完全透明）到 1.0（完全不透明）。<br>opacity的兼容性可点击此处查看-&gt;<a href="http://caniuse.com/#search=opacity">opacity兼容性</a><br>为了兼容低版本IE，需要使用filter，具体如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opacity:<span class="number">0.4</span>;</span><br><span class="line">filter:alpha(opacity=<span class="number">40</span>);  /* 针对 IE8 以及更早的版本 */</span><br></pre></td></tr></table></figure></p>
-            <div class="post-more-link text-center">
-              <a class="btn" href="/2015/06/12/opacity 和 rgba/#more">
+              <a class="btn" href="/2015/06/21/JS之事件处理/#more">
                 Read More
               </a>
             </div>
@@ -578,7 +580,7 @@
 
           
             <div class="pagination">
-              <a class="extend prev" rel="prev" href="/page/3/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/5/">&raquo;</a>
+              <a class="extend prev" rel="prev" href="/page/3/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/5/">&raquo;</a>
             </div>
           
         </div>
@@ -607,14 +609,14 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">70</span>
+            <span class="site-state-item-count">72</span>
             <span class="site-state-item-name">日志</span>
           </a>
         </div>
 
         <div class="site-state-item site-state-categories">
           <a href="/categories">
-            <span class="site-state-item-count">13</span>
+            <span class="site-state-item-count">14</span>
             <span class="site-state-item-name">分类</span>
           </a>
         </div>
