@@ -135,6 +135,96 @@
           
           
             
+              <a class="post-title-link" href="/2015/07/10/页面中固定元素之兼容方案/">
+                position:fixed之IE6下兼容方案
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2015-07-10
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/07/10/页面中固定元素之兼容方案/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/10/页面中固定元素之兼容方案/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <p>浏览各种网站时，常常会遇到右下角固定的广告或者边侧固定的工具栏。在高级浏览器中，使用一个position:fixed设置便可，但IE6并不支持position:fixed，需另寻他路。</p>
+<h3 id="hack方法">hack方法</h3><p>主要思路：利用overflow：hidden将html的滚动条去掉，然后设置body 的overflow为auto，再将元素设置为absolute定位于想要的位置，这样当页面滚动时(其实是body滚动),定位元素因为基于的是html，所以固定不动，有fixed的效果。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">-------HTML----------</span><br><span class="line">&lt;div class=<span class="string">"fixed"</span>&gt;定位于页面右下角的元素&lt;/div&gt;  </span><br><span class="line">-------CSS-----------</span><br><span class="line">html &#123;_overflow: hidden;&#125;   </span><br><span class="line">body &#123;_overflow: auto; _height: <span class="number">100</span>%;&#125;   </span><br><span class="line">.fixed &#123;</span><br><span class="line">width:<span class="number">200</span>px;</span><br><span class="line">height:<span class="number">200</span>px;</span><br><span class="line">position: fixed;  //非IE6</span><br><span class="line">left: <span class="number">0</span>px;  </span><br><span class="line">top: <span class="number">0</span>;</span><br><span class="line">_position: absolute; //IE6</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2015/07/10/页面中固定元素之兼容方案/#more">
+                Read More
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/03/科普之日常生活中的辐射/">
                 科普之日常生活中的辐射
               </a>
@@ -482,96 +572,6 @@
 
 
   
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/27/常用JS片段集锦/">
-                常用JS片段集锦
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            日期: 2015-06-27
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分类:
-              
-                <a style="text-decoration:none;" href="/categories/JS/">JS</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/27/常用JS片段集锦/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/06/27/常用JS片段集锦/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <p>下面只是常用JS片段中的九牛一毛，源于书本和网络上，已进行验证说明，下面一一述之。</p>
-<h3 id="浏览器类型">浏览器类型</h3><p>Navigator 对象包含有关浏览器的信息，其属性userAgent表示浏览器的用户代理字符串。利用chrome的手机模式，可以查看各设备的navigator.userAgent。<br><img src="/imgs/code/1.png" alt="code"><br>
-            <div class="post-more-link text-center">
-              <a class="btn" href="/2015/06/27/常用JS片段集锦/#more">
-                Read More
-              </a>
-            </div>
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
 
           </div>
 
@@ -606,14 +606,14 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">71</span>
+            <span class="site-state-item-count">72</span>
             <span class="site-state-item-name">日志</span>
           </a>
         </div>
 
         <div class="site-state-item site-state-categories">
           <a href="/categories">
-            <span class="site-state-item-count">14</span>
+            <span class="site-state-item-count">15</span>
             <span class="site-state-item-name">分类</span>
           </a>
         </div>
