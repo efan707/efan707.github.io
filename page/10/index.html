@@ -135,6 +135,105 @@
           
           
             
+              <a class="post-title-link" href="/2015/04/10/Wordpress主题制作简明教程/">
+                Wordpress 主题制作简明教程
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2015-04-10
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/wordpress/">wordpress</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/04/10/Wordpress主题制作简明教程/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/10/Wordpress主题制作简明教程/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <h3 id="wordPress主题结构">wordPress主题结构</h3><p>1、index.php首页模板<br> —— header.php头部<br> —— sidebar.php侧边栏<br> —— footer.php底部<br>2、style.css样式表<br>3、single.php文章内页模板<br>4、page.php页面模板<br>5、archive.php分类页面模板<br>6、search.php搜索模板<br>7、404.php错误提示模板</p>
+<h3 id="wordpress_模版制作">wordpress 模版制作</h3><hr>
+<p><strong>1、 模版添加style.css 版权信息</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Theme Name:Efan<span class="string">'s Blog</span><br><span class="line">Theme URI: http://www.yichao.me/</span><br><span class="line">Description:wordpress 主题制作教程演示</span><br><span class="line">Author:efan</span><br><span class="line">Author URI: http://www.yichao.me/</span><br><span class="line">Version: 1.0</span><br><span class="line">Tags: wordpress, blog, efan, theme</span></span><br></pre></td></tr></table></figure></p>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2015/04/10/Wordpress主题制作简明教程/#more">
+                Read More
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/wordpress/">
+                #wordpress
+              </a>
+            
+          </div>
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2015/01/10/Prezi两三事/">
                 Prezi两三事
               </a>
@@ -515,103 +614,6 @@
 
 
   
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2014/12/15/HTML5本地存储/">
-                HTML5本地存储
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            日期: 2014-12-15
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分类:
-              
-                <a style="text-decoration:none;" href="/categories/HTML5/">HTML5</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2014/12/15/HTML5本地存储/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2014/12/15/HTML5本地存储/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <p>HTML5的存储方案主要有以下几种：<br>a、本地存储（localstorage &amp; sessionstorage）<br>b、离线缓存（application cache）<br>c、IndexedDB &amp; WebSql<br>今天着重学习下本地存储localstorage &amp; sessionstorage。它们基本类似，唯一的区别就是localstorage永久存储，而sessionstorage只在页面没有关闭的情况下存在（页面一旦关闭，所存数据便丢失）。本地存储采用键值对的方式，只能存字符串数据，所有数据在写入的时候会被隐式调用toString方法转为字符串。每个域（包括子域）有独立的存储空间，各个存储空间是完全独立的，因此不会造成数据混乱。下面是浏览器关于本地存储的推进史：<br><img src="/imgs/storage/storage1.jpg" alt="浏览器本地存储"><br>HTML5本地存储主要有以下特性：<br>a、和cookie一样提供了把数据保存到本地的能力，页面刷新或者关掉浏览器后，数据依然存在<br>b、一般都在5~10M，比cookie的4k强多了<br>c、本地存储的数据不会被发到服务器，与cookie相比，节省带宽，加快响应速度<br>由于sessionstorage与localstorage方法一样，下面就以localstorage为例进行讲解。<br>
-            <div class="post-more-link text-center">
-              <a class="btn" href="/2014/12/15/HTML5本地存储/#more">
-                Read More
-              </a>
-            </div>
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-          <div class="post-tags">
-            
-              <a href="/tags/Localstorage/">
-                #Localstorage
-              </a>
-            
-          </div>
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
 
           </div>
 
@@ -646,7 +648,7 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">72</span>
+            <span class="site-state-item-count">73</span>
             <span class="site-state-item-name">日志</span>
           </a>
         </div>
