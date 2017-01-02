@@ -398,7 +398,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/08/05/document.body和document.documentElement那点事儿/">
+              <a class="post-title-link" href="/2015/07/25/document.body和document.documentElement那点事儿/">
                 document.body和document.documentElement那点事儿
               </a>
             
@@ -409,7 +409,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            日期: 2015-08-05
+            日期: 2015-07-25
           
         </span>
 
@@ -432,8 +432,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/08/05/document.body和document.documentElement那点事儿/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/05/document.body和document.documentElement那点事儿/"></span>
+            <a href="/2015/07/25/document.body和document.documentElement那点事儿/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/25/document.body和document.documentElement那点事儿/"></span>
             </a>
           </span>
           
@@ -452,7 +452,7 @@
             <p>多说无益，让我们用例子说话。代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">----------HTML-----------</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span><br><span class="line">&lt;title&gt;<span class="built_in">test</span>&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=<span class="string">"test"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt; </span><br><span class="line">----------CSS----------</span><br><span class="line">*&#123;</span><br><span class="line">	margin:<span class="number">0</span>px;</span><br><span class="line">	padding: <span class="number">0</span>px;&#125;</span><br><span class="line">.test&#123;</span><br><span class="line">	width:<span class="number">200</span>px;</span><br><span class="line">	height: <span class="number">1200</span>px;</span><br><span class="line">	background-color: blue;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>本文只针对DTD声明的情况下，经测试，得结论如下。<br>
             <div class="post-more-link text-center">
-              <a class="btn" href="/2015/08/05/document.body和document.documentElement那点事儿/#more">
+              <a class="btn" href="/2015/07/25/document.body和document.documentElement那点事儿/#more">
                 Read More
               </a>
             </div>
@@ -488,7 +488,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/08/03/word-wrap&word-break傻傻分不清楚/">
+              <a class="post-title-link" href="/2015/07/25/word-wrap&word-break傻傻分不清楚/">
                 word-wrap&word-break傻傻分不清楚
               </a>
             
@@ -499,7 +499,7 @@
       <div class="post-meta">
         <span class="post-time">
           
-            日期: 2015-08-03
+            日期: 2015-07-25
           
         </span>
 
@@ -522,8 +522,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/08/03/word-wrap&word-break傻傻分不清楚/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/03/word-wrap&word-break傻傻分不清楚/"></span>
+            <a href="/2015/07/25/word-wrap&word-break傻傻分不清楚/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/25/word-wrap&word-break傻傻分不清楚/"></span>
             </a>
           </span>
           
@@ -542,7 +542,7 @@
             <p>涉及换行有两个CSS属性：word-wrap和word-break。但是很多时候容易混淆这两个属性的使用，今天就例说下它们的用法。<br>1、正常情况下<br>正常情况下，当单词过长时，会新起一行；新的一行宽度不够时，文本溢出。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-----------HTML------------</span><br><span class="line">&lt;div class=<span class="string">"test"</span>&gt;this is a long word aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&lt;/div&gt;</span><br><span class="line">-----------CSS-------------</span><br><span class="line">.test&#123;</span><br><span class="line">	 margin:<span class="number">200</span>px;</span><br><span class="line">	 width:<span class="number">200</span>px;</span><br><span class="line">	 height: <span class="number">200</span>px;</span><br><span class="line">	 border: <span class="number">1</span>px solid green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><img src="/imgs/wrap/1.png" alt="wrap"><br>
             <div class="post-more-link text-center">
-              <a class="btn" href="/2015/08/03/word-wrap&word-break傻傻分不清楚/#more">
+              <a class="btn" href="/2015/07/25/word-wrap&word-break傻傻分不清楚/#more">
                 Read More
               </a>
             </div>
@@ -608,7 +608,7 @@
 
         <div class="site-state-item site-state-categories">
           <a href="/categories">
-            <span class="site-state-item-count">15</span>
+            <span class="site-state-item-count">14</span>
             <span class="site-state-item-name">分类</span>
           </a>
         </div>
@@ -647,14 +647,9 @@
         <div class="copyright">
   
   &copy; &nbsp; 
-  2016
-  
+  2017 
   <span class="author">efan</span> | Powered By Hexo
 </div>
-
-
-
-
 
 
       </div>

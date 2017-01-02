@@ -898,7 +898,6 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  min-height: 50px;
 }
 .footer-inner {
   margin: 20px auto;
@@ -1177,7 +1176,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fffff6;
+  background: #30ff04;
 }
 .sidebar-nav {
   margin: 0;
@@ -1415,7 +1414,6 @@ body {
   box-sizing: border-box;
   margin: auto;
   padding: 3px;
-  border: 1px solid #ddd;
 }
 .posts-expand .post-tags {
   margin-top: 40px;
@@ -2186,7 +2184,7 @@ li {
 }
 .footer-inner {
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
 }
 @media (max-width: 767px) {
   .footer-inner {
