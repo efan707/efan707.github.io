@@ -135,6 +135,186 @@
           
           
             
+              <a class="post-title-link" href="/2015/11/02/ACTCMS系统使用简介/">
+                ACTCMS系统配置简介
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2015-11-02
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/Others/">Others</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/11/02/ACTCMS系统使用简介/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/02/ACTCMS系统使用简介/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <p>ACTCMS是一款具有强大的功能的基于ASP语言的开源内容管理软件，有UTF-8和GB2312两个编码版本，支持ACCESS和MSSQL两种数据库。ACTCMS是一款完全开源的程序，用户不需额外安装其他DLL组件，其最大的特点是易用，ACTCMS搭积木式的网站建设 ，国内目前为止ASPCMS唯一支持注册模型的CMS。<br>使用ACTCMS系统后，用户可以通过后台随心所欲调用文章列表、图片信息、视频信息等，再通过前台搭配设计，便可以达到“没有你做不到，只有你想不到”的效果，各种CMS网站便不在话下。<br>当然，以上纯属官方说法，此ACTCMS系统安全性不是很好，所以内网啥的可以用用，对于安全性能要求比较高的网站，还是绕道为好。</p>
+<h3 id="主页样式修改">主页样式修改</h3><p>通过修改templets文件夹下的index.htm以及top.htm，可对主页面样式进行修改。代码中的{ACTCMS_热点关注}是调用数据库中的内容，可以是图片、文章列表、视频等，通过后台设置。（管理员账号：admin    密码：drzd26525）<br><img src="/imgs/actcms/1.jpg" alt="actcms"><br>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2015/11/02/ACTCMS系统使用简介/#more">
+                Read More
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/07/25/document.body和document.documentElement那点事儿/">
+                document.body和document.documentElement那点事儿
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          
+            日期: 2015-07-25
+          
+        </span>
+
+        
+          
+            <span class="post-category">
+              &nbsp; | &nbsp; 分类:
+              
+                <a style="text-decoration:none;" href="/categories/JS/">JS</a>
+
+                
+                
+
+              
+            </span>
+          
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/07/25/document.body和document.documentElement那点事儿/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/25/document.body和document.documentElement那点事儿/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    
+      <div class="post-body">
+
+        
+        
+
+        
+          
+            <p>多说无益，让我们用例子说话。代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">----------HTML-----------</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=<span class="string">"Content-Type"</span> content=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span><br><span class="line">&lt;title&gt;<span class="built_in">test</span>&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=<span class="string">"test"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt; </span><br><span class="line">----------CSS----------</span><br><span class="line">*&#123;</span><br><span class="line">	margin:<span class="number">0</span>px;</span><br><span class="line">	padding: <span class="number">0</span>px;&#125;</span><br><span class="line">.test&#123;</span><br><span class="line">	width:<span class="number">200</span>px;</span><br><span class="line">	height: <span class="number">1200</span>px;</span><br><span class="line">	background-color: blue;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>本文只针对DTD声明的情况下，经测试，得结论如下。<br>
+            <div class="post-more-link text-center">
+              <a class="btn" href="/2015/07/25/document.body和document.documentElement那点事儿/#more">
+                Read More
+              </a>
+            </div>
+          
+        
+      </div>
+    
+
+    
+      <div class="post-footer">
+        
+
+        
+
+        
+        
+          <div class="post-eof"></div>
+        
+      </div>
+    
+  </div>
+
+
+  
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/25/word-wrap&word-break傻傻分不清楚/">
                 word-wrap&word-break傻傻分不清楚
               </a>
@@ -393,185 +573,6 @@
 
 
   
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/01/margin值与元素逻辑大小/">
-                margin值与元素逻辑大小
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            日期: 2015-07-01
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分类:
-              
-                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/07/01/margin值与元素逻辑大小/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/01/margin值与元素逻辑大小/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <p>在之前的文章<a href="http://yichao.me/2015/05/04/margin%E5%B1%9E%E6%80%A7%E7%9F%A5%E5%A4%9A%E5%B0%91/">margin属性知多少</a>中，对margin的相关属性进行了介绍，为了更进一步完全掌握margin的用法，今天再将抽象的理论具体化。<br>margin有四个属性，分别是margin-top、margin-right、margin-bottom、margin-left，其中上、右外边距是相对于邻近元素的，下、左外边距是相对于自己边界线的。<br>下面所要说的是margin与元素逻辑大小的关系。首先看下两列自适应左侧布局实例：<br><img src="/imgs/buju/1.png" alt="buju"><br>
-            <div class="post-more-link text-center">
-              <a class="btn" href="/2015/07/01/margin值与元素逻辑大小/#more">
-                Read More
-              </a>
-            </div>
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
-    
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/01/前端技术/">
-                CSS Reset 与 CSS Normalize
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          
-            日期: 2015-07-01
-          
-        </span>
-
-        
-          
-            <span class="post-category">
-              &nbsp; | &nbsp; 分类:
-              
-                <a style="text-decoration:none;" href="/categories/CSS/">CSS</a>
-
-                
-                
-
-              
-            </span>
-          
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/07/01/前端技术/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/01/前端技术/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    
-      <div class="post-body">
-
-        
-        
-
-        
-          
-            <p>浏览器差异万千，为了尽可能地统一，我们常常引入CSS Reset或Normalize.css，至于其中的内容及区别，下面述之。</p>
-<h3 id="CSS_Reset">CSS Reset</h3><p>CSS Reset的思想就是先破后立，不管你是IE，还是Chrome，先统统reset到同样的方式，话说好期待浏览器的大一统时代。CSS Reset样式一搜一箩筐，有淘宝的、雅虎的、各位大神的，关于如何选取，还是一句话精辟-不选最贵的，只选适合自己的。实际项目中，由于添加过多的reset样式会影响渲染性能，所以要写一份适合自己项目的reset。而由于各版本reset样式大差不差，所以先选取一份，然后通过增、删、改，量身定做一份属于自己的reset。<br>
-            <div class="post-more-link text-center">
-              <a class="btn" href="/2015/07/01/前端技术/#more">
-                Read More
-              </a>
-            </div>
-          
-        
-      </div>
-    
-
-    
-      <div class="post-footer">
-        
-
-        
-
-        
-        
-          <div class="post-eof"></div>
-        
-      </div>
-    
-  </div>
-
-
-  
 
           </div>
 
@@ -606,7 +607,7 @@
       <div class="site-state motion-element">
         <div class="site-state-item site-state-posts">
           <a href="/archives">
-            <span class="site-state-item-count">73</span>
+            <span class="site-state-item-count">75</span>
             <span class="site-state-item-name">日志</span>
           </a>
         </div>
